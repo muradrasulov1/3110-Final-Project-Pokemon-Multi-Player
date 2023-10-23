@@ -40,14 +40,14 @@ let rec loading_menu () =
     "Built by Shakeim, Murad, Omo, Armaan";
   let e = wait_next_event [ Key_pressed ] in
   if e.key = 'p' then
-   (open_graph "1280x720";
+   (open_graph " 1280x720";
     set_font "-misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1";
     set_color red;
     moveto 570 100;
     draw_string "Game Window Under Construction"; window_state_change ())
   else 
   if e.key = 'c' then
-   (open_graph "1280x720";
+   (open_graph " 1280x720";
     set_font "-misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1";
     set_color red;
     moveto 570 360;
@@ -55,7 +55,7 @@ let rec loading_menu () =
     
   else 
     if e.key = 's' then
-     (open_graph "1280x720";
+     (open_graph " 1280x720";
       set_font "-misc-fixed-medium-r-normal--20-200-75-75-c-100-iso10646-1";
       set_color red;
       moveto 570 360;
@@ -67,5 +67,5 @@ let rec loading_menu () =
 let start () = failwith "Unimplemented"
 
 let execute () =
-  open_graph "1280x720";
+  open_graph " 1280x720";
   loading_menu ()
