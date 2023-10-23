@@ -1,0 +1,3 @@
+(library 
+ (name welcome_screen)
+ (libraries graphics))
