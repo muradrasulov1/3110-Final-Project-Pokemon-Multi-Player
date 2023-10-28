@@ -64,8 +64,8 @@ let rec loading_menu () =
   else loading_menu ()
 
 
-let start () = failwith "Unimplemented"
-
 let execute () =
   open_graph " 1280x720";
   loading_menu ()
+
+let () = execute ()
