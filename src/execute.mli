@@ -4,4 +4,4 @@
     the game when applicatino is first opened. Also presents
     some useful controls (i.e - settings for customizable 
     options).*)
-    val execute : unit
+    val execute : unit -> unit
