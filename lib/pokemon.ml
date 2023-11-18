@@ -36,13 +36,14 @@ module Pokemon  = struct
   | Grass 
   | Fire
   | Dark
+  | Bug
+  | Dragon
   
   type moves = {
     fighter : pokemon;
     name : string;
-    tp : int;
-    bp: move_tp;
-    damage : int;
+    tp : move_tp;
+    basep: int;
     descr : string;
   } 
   
@@ -108,6 +109,8 @@ module Pokemon  = struct
   | Grass -> "Grass"
   | Fire -> "Fire"
   | Dark -> "Dark"
+  | Bug -> "Bug"
+  | Dragon -> "Dragon"
 
   let battle_images = function
   | Charizard -> 
@@ -193,15 +196,32 @@ module Pokemon  = struct
   | Oshawott ->
   "https://img.pokemondb.net/artwork/large/oshawott.jpg"
 
-  let create_move p n d t da de=
+  let create_move p n d t de=
     {
       fighter = p;
       name = n;
       tp = d;
-      bp = t;
-      damage = da;
+      basep = t;
       descr = de
     }
+
+  let int_of_pokemon = function
+  | Normal -> 0
+  | Electric -> 1
+  | Steel -> 2
+  | Flying -> 3
+  | Water -> 4
+  | Ice -> 5
+  | Fighting -> 6
+  | Poison -> 7
+  | Ghost -> 8
+  | Psychic -> 9
+  | Ground -> 10
+  | Grass -> 11
+  | Fire -> 12
+  | Dark -> 13
+  | Bug -> 14
+  | Dragon -> 15
 
   let effectivity_list =
     [
@@ -222,6 +242,8 @@ module Pokemon  = struct
         1.0;
         1.0;
         1.0;
+        1.0;
+        1.0
     ]
     );
 
@@ -242,7 +264,9 @@ module Pokemon  = struct
       0.0;
       0.5;
       1.0;
-      1.0
+      1.0;
+      1.0;
+      0.5
     ]
     );
 
@@ -262,6 +286,8 @@ module Pokemon  = struct
       1.0;
       1.0;
       0.5;
+      1.0;
+      1.0;
       1.0
     ]
     );
@@ -282,6 +308,8 @@ module Pokemon  = struct
       1.0;
       2.0;
       1.0;
+      1.0;
+      2.0;
       1.0
     ]
     );
@@ -302,7 +330,9 @@ module Pokemon  = struct
       2.0;
       0.5;
       2.0;
-      1.0
+      1.0;
+      1.0;
+      0.5
     ]
     );
 
@@ -322,7 +352,9 @@ module Pokemon  = struct
       2.0;
       2.0;
       0.5;
-      1.0
+      1.0;
+      1.0;
+      2.0
     ]
     );
 
@@ -342,7 +374,9 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
-      2.0
+      2.0;
+      0.5;
+      1.0
     ]
     );
 
@@ -361,6 +395,8 @@ module Pokemon  = struct
       1.0;
       0.5;
       2.0;
+      1.0;
+      1.0;
       1.0;
       1.0
     ]
@@ -382,7 +418,9 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
-      0.5
+      0.5;
+      1.0;
+      1.0
     ]
     );
 
@@ -402,7 +440,9 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
-      0.0
+      0.0;
+      1.0;
+      1.0
     ]
     );
 
@@ -423,6 +463,8 @@ module Pokemon  = struct
       0.5;
       1.0;
       1.0;
+      0.5;
+      1.0
     ]
     );
 
@@ -442,7 +484,9 @@ module Pokemon  = struct
       2.0;
       0.5;
       0.5;
-      1.0
+      1.0;
+      0.5;
+      0.5
     ]
     );
 
@@ -462,7 +506,9 @@ module Pokemon  = struct
       1.0;
       2.0;
       0.5;
-      1.0
+      1.0;
+      2.0;
+      0.5
     ]
     );
 
@@ -482,12 +528,69 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
-      0.5
+      0.5;
+      1.0;
+      1.0
     ]
     );
+
+    (* Bug *)
+    (Bug, 
+    [
+      1.0;
+      1.0;
+      0.5;
+      0.5;
+      1.0;
+      1.0;
+      0.5;
+      0.5;
+      0.5;
+      2.0;
+      1.0;
+      2.0;
+      0.5;
+      2.0;
+      1.0;
+      1.0
+    ]
+    );
+
+    (* Dragon *)
+    (Dragon,
+    [
+      1.0;
+      1.0;
+      0.5;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      2.0
+    ]
+    )
     ]
 
-  
+  let move_list = 
+    [
+      (* for Pikachu *)
+      (create_move Pikachu "Tail Whip" Normal 30 
+      "Pikachu hits his enemy with a his tail");
+      (create_move Pikachu "Spark" Electric 20 
+      "An electrically-charged Pikachu tackles his oppnent");
+      (create_move Pikachu "Electro Ball" Electric 10
+      "Pikachu throws an electric ball at opponent");
+      (create_move Pikachu "Thunder Shock" Electric 30
+      "Pikachu summons a thunderstorm of lightning on his opponent");
+      ]
 
 
 end
