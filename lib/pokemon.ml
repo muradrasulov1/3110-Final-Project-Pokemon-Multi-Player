@@ -39,6 +39,8 @@ module Pokemon  = struct
   | Fire
   | Dark
   | None
+  | Bug
+  | Dragon
   
   type moves = {
     fighter : pokemon;
@@ -119,7 +121,9 @@ module Pokemon  = struct
   | Grass -> "Grass"
   | Fire -> "Fire"
   | Dark -> "Dark"
-  |None -> "None"
+  | Dragon -> "Dragon"
+  | Bug -> "Bug"
+  | None -> "None"
 
   let typ_indx = function
   | Normal -> 0
@@ -137,6 +141,8 @@ module Pokemon  = struct
   | Fire -> 12
   | Dark -> 13
   |None -> 14
+  |Dragon -> 15
+  |Bug -> 16
 
   let battle_images = function
   | Charizard -> 
@@ -231,6 +237,25 @@ module Pokemon  = struct
       descr = de
     }
 
+  let int_of_pokemon = function
+  | Normal -> 0
+  | Electric -> 1
+  | Steel -> 2
+  | Flying -> 3
+  | Water -> 4
+  | Ice -> 5
+  | Fighting -> 6
+  | Poison -> 7
+  | Ghost -> 8
+  | Psychic -> 9
+  | Ground -> 10
+  | Grass -> 11
+  | Fire -> 12
+  | Dark -> 13
+  | Bug -> 14
+  | Dragon -> 15
+  | None -> 16
+
   let effectivity_list =
     [
       (* Normal *)
@@ -250,6 +275,8 @@ module Pokemon  = struct
         1.0;
         1.0;
         1.0;
+        1.0;
+        1.0
     ]
     );
 
@@ -270,7 +297,9 @@ module Pokemon  = struct
       0.0;
       0.5;
       1.0;
-      1.0
+      1.0;
+      1.0;
+      0.5
     ]
     );
 
@@ -290,6 +319,8 @@ module Pokemon  = struct
       1.0;
       1.0;
       0.5;
+      1.0;
+      1.0;
       1.0
     ]
     );
@@ -310,6 +341,8 @@ module Pokemon  = struct
       1.0;
       2.0;
       1.0;
+      1.0;
+      2.0;
       1.0
     ]
     );
@@ -330,7 +363,9 @@ module Pokemon  = struct
       2.0;
       0.5;
       2.0;
-      1.0
+      1.0;
+      1.0;
+      0.5
     ]
     );
 
@@ -350,7 +385,9 @@ module Pokemon  = struct
       2.0;
       2.0;
       0.5;
-      1.0
+      1.0;
+      1.0;
+      2.0
     ]
     );
 
@@ -370,7 +407,9 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
-      2.0
+      2.0;
+      0.5;
+      1.0
     ]
     );
 
@@ -389,6 +428,8 @@ module Pokemon  = struct
       1.0;
       0.5;
       2.0;
+      1.0;
+      1.0;
       1.0;
       1.0
     ]
@@ -410,7 +451,9 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
-      0.5
+      0.5;
+      1.0;
+      1.0
     ]
     );
 
@@ -430,7 +473,9 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
-      0.0
+      0.0;
+      1.0;
+      1.0
     ]
     );
 
@@ -451,6 +496,8 @@ module Pokemon  = struct
       0.5;
       1.0;
       1.0;
+      0.5;
+      1.0
     ]
     );
 
@@ -470,7 +517,9 @@ module Pokemon  = struct
       2.0;
       0.5;
       0.5;
-      1.0
+      1.0;
+      0.5;
+      0.5
     ]
     );
 
@@ -490,7 +539,9 @@ module Pokemon  = struct
       1.0;
       2.0;
       0.5;
-      1.0
+      1.0;
+      2.0;
+      0.5
     ]
     );
 
@@ -510,7 +561,9 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
-      0.5
+      0.5;
+      1.0;
+      1.0
     ]
     );
 
@@ -530,9 +583,60 @@ module Pokemon  = struct
       1.0;
       1.0;
       1.0;
+      1.0;
+      1.0;
+      1.0;
+    ]
+    )
+    ;
+
+    (* Bug *)
+    (Bug, 
+    [
+      1.0;
+      1.0;
+      0.5;
+      0.5;
+      1.0;
+      1.0;
+      0.5;
+      0.5;
+      0.5;
+      2.0;
+      1.0;
+      2.0;
+      0.5;
+      2.0;
+      1.0;
       1.0
     ]
-    );
+    )
+    ;
+
+     (* Dragon *)
+     (Dragon,
+     [
+       1.0;
+       1.0;
+       0.5;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       1.0;
+       2.0
+     ]
+     )
+     ;
+
+    
     ]
 
     let random_float_in_range min max = min +. (Random.float (max -. min))
@@ -560,8 +664,23 @@ module Pokemon  = struct
 
     let dmg_done move_info ally_poke enemy_poke = 
       ((float_of_int (ally_poke.attack * move_info.basep))/. (float_of_int enemy_poke.defense)) 
-      *. complete_modifier move_info ally_poke enemy_poke
+      *. complete_modifier (move_info) (ally_poke) (enemy_poke)
   
+
+   
+
+  let move_list = 
+    [
+      (* for Pikachu *)
+      (create_move Pikachu "Tail Whip" Normal 30 
+      "Pikachu hits his enemy with a his tail");
+      (create_move Pikachu "Spark" Electric 20 
+      "An electrically-charged Pikachu tackles his oppnent");
+      (create_move Pikachu "Electro Ball" Electric 10
+      "Pikachu throws an electric ball at opponent");
+      (create_move Pikachu "Thunder Shock" Electric 30
+      "Pikachu summons a thunderstorm of lightning on his opponent");
+      ]
 
 
 end
