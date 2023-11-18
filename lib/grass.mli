@@ -1,4 +1,4 @@
-(** A special feature that a tile can have. 
+(** A speial feature that a tile can have. 
     Tiles can randomly have Pokemon balls to collect*)
     module type Grass = sig
       

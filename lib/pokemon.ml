@@ -1,3 +1,5 @@
+open Random
+
 module Pokemon  = struct
   type pokemon = 
   | Charizard 
@@ -36,13 +38,13 @@ module Pokemon  = struct
   | Grass 
   | Fire
   | Dark
+  | None
   
   type moves = {
     fighter : pokemon;
     name : string;
-    tp : int;
-    bp: move_tp;
-    damage : int;
+    tp : move_tp;
+    basep : int;
     descr : string;
   } 
   
@@ -54,12 +56,21 @@ module Pokemon  = struct
     (* Health of the Pokemon *)
     health : int;
 
+    (* Attack of the Pokemon *)
+    attack : int;
+
+    (* Defense of the Pokemon *)
+    defense : int;
+
+    (* Speed of the Pokemon *)
+    speed : int;
+
     (* List of moves a Pokemon can do;
       specific to a Pokemon *)
     move_list : moves list;
 
-    (* Type of an attack *)
-    sp: move_tp;
+    (* Type of the pokemon *)
+    poke_typ: move_tp * move_tp;
 
     (* Image of Pokemon in battle *)
     battle_image : string;
@@ -108,6 +119,24 @@ module Pokemon  = struct
   | Grass -> "Grass"
   | Fire -> "Fire"
   | Dark -> "Dark"
+  |None -> "None"
+
+  let typ_indx = function
+  | Normal -> 0
+  | Electric -> 1
+  | Steel -> 2
+  | Flying -> 3
+  | Water -> 4
+  | Ice -> 5
+  | Fighting -> 6
+  | Poison -> 7
+  | Ghost -> 8
+  | Psychic -> 9
+  | Ground -> 10
+  | Grass -> 11
+  | Fire -> 12
+  | Dark -> 13
+  |None -> 14
 
   let battle_images = function
   | Charizard -> 
@@ -193,13 +222,12 @@ module Pokemon  = struct
   | Oshawott ->
   "https://img.pokemondb.net/artwork/large/oshawott.jpg"
 
-  let create_move p n d t da de=
+  let create_move p n d t de=
     {
       fighter = p;
       name = n;
       tp = d;
-      bp = t;
-      damage = da;
+      basep = t;
       descr = de
     }
 
@@ -485,8 +513,54 @@ module Pokemon  = struct
       0.5
     ]
     );
+
+    (* None *)
+    (None,
+    [
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0;
+      1.0
+    ]
+    );
     ]
 
+    let random_float_in_range min max = min +. (Random.float (max -. min))
+
+    let random_dmg_modifier = random_float_in_range 0.9 1.1
+
+    let rec find_typ_chart used_move_typ eff_lst = 
+      match eff_lst with
+      |[] -> failwith "TYPE NOT FOUND"
+      |(move_typ,modifier_lst)::t -> 
+        if (used_move_typ == move_typ) then modifier_lst 
+        else find_typ_chart used_move_typ t 
+  
+    let type_dmg_modifier move_info ally_poke enemy_poke = 
+      match (enemy_poke.poke_typ) with
+      |(type1,type2) -> (List.nth (find_typ_chart (move_info.tp) (effectivity_list)) (typ_indx type1))
+       *. (List.nth (find_typ_chart (move_info.tp) (effectivity_list)) (typ_indx type2))
+
+    let stab_dmg_modifier move_info ally_poke = 
+      match (ally_poke.poke_typ) with
+      |(type1,type2) -> if (move_info.tp == type1) || (move_info.tp == type2) then 1.5 else 1.0
+
+    let complete_modifier move_info ally_poke enemy_poke = 
+      (type_dmg_modifier move_info ally_poke enemy_poke) *. (stab_dmg_modifier move_info ally_poke) *. random_dmg_modifier
+
+    let dmg_done move_info ally_poke enemy_poke = 
+      ((float_of_int (ally_poke.attack * move_info.basep))/. (float_of_int enemy_poke.defense)) 
+      *. complete_modifier move_info ally_poke enemy_poke
   
 
 
