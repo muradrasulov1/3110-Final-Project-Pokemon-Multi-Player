@@ -1,4 +1,186 @@
-module Pokemons = struct
+(** The Pokemon type and its attributes to be used and displayed *)
+module type PokemonSprite = sig
+
+  (** Represents Pokemon type of a sprite *)
+  type pokemon
+
+  (** Represents species of a Pokemon *)
+  type poke_tp
+
+  (** Represents Pokemon move *)
+  type moves = {
+  fighter : pokemon;
+  name : string;
+  tp : poke_tp;
+  basep : int;
+  descr : string;
+  } 
+
+  (** Representation type for Pokemon *)
+  type t = {
+    pokemon_name : string;
+    health : int;
+    attack : int;
+    defense : int;
+    speed : int;
+    move_list : moves list;
+    poke_typ : (poke_tp * poke_tp);
+    battle_image : string;
+    search_image : string;
+    descr : string
+  }
+
+  (** Returns string representation of the Pokemon*)
+  val name : pokemon -> string
+
+  (** Returns string representation of Pokemon type*)
+  val typ : poke_tp -> string 
+
+  (** A list of Pokemon images for battle*)
+  val battle_images : pokemon -> string 
+
+  (** A list of Pokemon images for information tab*)
+  val search_images : pokemon -> string 
+
+  (** Creates a Pokemon move with related information*)
+  val create_move : pokemon -> string -> poke_tp ->
+  int -> string -> moves
+
+  (** An association list with keys as a attack types,
+    values are lists of attack effecticeness to other 
+    Pokemon species *)
+    val effectivity_list : (poke_tp * float list) list 
+
+  (** Returns the current health of a Pokemon*)
+  val get_health : t -> int
+
+  (** Creates list of Charizard moves *)
+  val charizard_moves : moves list
+
+  (** Creates list of Squirtle moves *)
+  val squirtle_moves : moves list
+
+  (** Creates list of Beedrill moves *)
+  val beedrill_moves : moves list
+
+  (** Creates list of Raticate moves*)
+  val raticate_moves : moves list
+
+  (** Creates list of Spearow moves *)
+  val spearow_moves : moves list
+
+  (** Creates list of Pikachu moves *)
+  val pikachu_moves : moves list
+
+  (** Creates list of Nidoran moves *)
+  val nidoran_moves : moves list
+
+  (** Creates list of Jigglypuff moves *)
+  val jigglypuff_moves : moves list
+
+  (** Creates list of Golbat moves *)
+  val golbat_moves : moves list
+
+  (** Creates list of Parasect moves *)
+  val parasect_moves : moves list
+
+  (** Creates list of Diglett moves *)
+  val diglett_moves : moves list
+
+  (** Creates list of Meowth moves *)
+  val meowth_moves : moves list
+
+  (** Creates list of Poliwhirl moves *)
+  val poliwhirl_moves : moves list
+
+  (** Creates list of Abra moves *)
+  val abra_moves : moves list
+
+  (** Creates list of Geodude moves *)
+  val geodude_moves : moves list
+
+  (** Creates list of Mewto moves *)
+  val mewtwo_moves : moves list
+
+  (** Creates list of Haunter moves *)
+  val haunter_moves : moves list
+
+  (** Creates list of Eevee moves *)
+  val eevee_moves : moves list
+
+  (** Creates list of Pyroar moves *)
+  val pyroar_moves : moves list
+
+  (** Creates list of Oshawott moves *)
+  val oshawott_moves : moves list
+
+  (** Representation for Charizard*)
+  val charizard : unit -> t
+
+  (** Representation for Squirtle*)
+  val squirtle : unit -> t
+
+  (** Representation for Bedrill*)
+  val beedrill : unit -> t
+
+  (** Representation for Raticate*)
+  val raticate : unit -> t
+
+  (** Representation for Spearow*)
+  val spearow : unit -> t
+
+  (** Representation for Pikachu*)
+  val pikachu : unit -> t
+
+  (** Representation for Nidoran*)
+  val nidoran : unit -> t
+
+  (** Representation for Jigglypuff*)
+  val jigglypuff : unit -> t
+
+  (** Representation for Golbat*)
+  val golbat : unit -> t
+
+  (** Representation for Parasect*)
+  val parasect : unit -> t
+
+  (** Representation for Diglett*)
+  val diglett : unit -> t
+
+  (** Representation for Meowth*)
+  val meowth : unit -> t
+
+  (** Representation for Poliwhirl*)
+  val poliwhirl : unit -> t
+
+  (** Representation for Abra*)
+  val abra : unit -> t 
+
+  (** Representation for Geodude*)
+  val geodude : unit -> t
+
+  (** Representation for Mewto*)
+  val mewtwo : unit -> t
+
+  (** Representation for Haunter*)
+  val haunter : unit -> t
+
+  (** Representation for Eevee*)
+  val eevee : unit -> t
+
+  (** Representation for Pyroar*)
+  val pyroar : unit -> t
+
+  (** Representation for Oshawott*)
+  val oshawott : unit -> t
+
+  (** Calculates the damage of a certain move from
+      one Pokemon type to another*)
+      val dmg_done : moves -> t -> t -> float
+
+end
+
+module Pokemon : PokemonSprite = struct
   type pokemon = 
   | Charizard 
   | Squirtle
@@ -21,7 +203,7 @@ module Pokemons = struct
   | Pyroar
   | Oshawott
   
-  type move_tp =
+  type poke_tp =
   | Normal
   | Electric
   | Steel
@@ -41,9 +223,10 @@ module Pokemons = struct
   | Dragon
   
   type moves = {
+
     fighter : pokemon;
     name : string;
-    tp : move_tp;
+    tp : poke_tp;
     basep : int;
     descr : string;
   } 
@@ -70,7 +253,7 @@ module Pokemons = struct
     move_list : moves list;
 
     (* Type of the pokemon *)
-    poke_typ: move_tp * move_tp;
+    poke_typ : (poke_tp * poke_tp);
 
     (* Image of Pokemon in battle *)
     battle_image : string;
@@ -234,25 +417,6 @@ module Pokemons = struct
       basep = t;
       descr = de
     }
-
-  let int_of_pokemon = function
-  | Normal -> 0
-  | Electric -> 1
-  | Steel -> 2
-  | Flying -> 3
-  | Water -> 4
-  | Ice -> 5
-  | Fighting -> 6
-  | Poison -> 7
-  | Ghost -> 8
-  | Psychic -> 9
-  | Ground -> 10
-  | Grass -> 11
-  | Fire -> 12
-  | Dark -> 13
-  | Bug -> 14
-  | Dragon -> 15
-  | None -> 16
 
   let effectivity_list =
     [
@@ -635,30 +799,32 @@ module Pokemons = struct
     
     ]
 
-    let random_float_in_range min max = min +. (Random.float (max -. min))
+  let get_health a = a.health
 
-    let random_dmg_modifier = random_float_in_range 0.9 1.1
+  let random_float_in_range min max = min +. (Random.float (max -. min))
 
-    let rec find_typ_chart used_move_typ eff_lst = 
+  let random_dmg_modifier = random_float_in_range 0.9 1.1
+
+  let rec find_typ_chart used_move_typ eff_lst = 
       match eff_lst with
       |[] -> failwith "TYPE NOT FOUND"
       |(move_typ,modifier_lst)::t -> 
         if (used_move_typ == move_typ) then modifier_lst 
         else find_typ_chart used_move_typ t 
   
-    let type_dmg_modifier move_info ally_poke enemy_poke = 
+  let type_dmg_modifier move_info enemy_poke = 
       match (enemy_poke.poke_typ) with
       |(type1,type2) -> (List.nth (find_typ_chart (move_info.tp) (effectivity_list)) (typ_indx type1))
        *. (List.nth (find_typ_chart (move_info.tp) (effectivity_list)) (typ_indx type2))
 
-    let stab_dmg_modifier move_info ally_poke = 
+  let stab_dmg_modifier move_info ally_poke = 
       match (ally_poke.poke_typ) with
       |(type1,type2) -> if (move_info.tp == type1) || (move_info.tp == type2) then 1.5 else 1.0
 
-    let complete_modifier move_info ally_poke enemy_poke = 
-      (type_dmg_modifier move_info ally_poke enemy_poke) *. (stab_dmg_modifier move_info ally_poke) *. random_dmg_modifier
+  let complete_modifier move_info ally_poke enemy_poke = 
+      (type_dmg_modifier move_info enemy_poke) *. (stab_dmg_modifier move_info ally_poke) *. random_dmg_modifier
 
-    let dmg_done move_info ally_poke enemy_poke = 
+  let dmg_done move_info ally_poke enemy_poke = 
       ((float_of_int (ally_poke.attack * move_info.basep))/. (float_of_int enemy_poke.defense)) 
       *. complete_modifier (move_info) (ally_poke) (enemy_poke)
   

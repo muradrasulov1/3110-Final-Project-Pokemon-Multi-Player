@@ -8,10 +8,28 @@ module type PokemonSprite = sig
   type poke_tp
 
   (** Represents Pokemon move *)
-  type moves
+  type moves = {
+
+  fighter : pokemon;
+  name : string;
+  tp : poke_tp;
+  basep : int;
+  descr : string;
+  } 
 
   (** Representation type for Pokemon *)
-  type t
+  type t = {
+    pokemon_name : string;
+    health : int;
+    attack : int;
+    defense : int;
+    speed : int;
+    move_list : moves list;
+    poke_typ : (poke_tp * poke_tp);
+    battle_image : string;
+    search_image : string;
+    descr : string
+  }
 
   (** Returns string representation of the Pokemon*)
   val name : pokemon -> string
@@ -26,8 +44,8 @@ module type PokemonSprite = sig
   val search_images : pokemon -> string 
 
   (** Creates a Pokemon move with related information*)
-  val create_move : pokemon -> string -> int ->
-    poke_tp -> moves
+  val create_move : pokemon -> string -> poke_tp ->
+  int -> string -> moves
 
   (** An association list with keys as a attack types,
     values are lists of attack effecticeness to other 
@@ -156,5 +174,9 @@ module type PokemonSprite = sig
 
   (** Representation for Oshawott*)
   val oshawott : unit -> t
+
+  (** Calculates the damage of a certain move from
+      one Pokemon type to another*)
+      val dmg_done : moves -> t -> t -> float
 
 end
