@@ -4,10 +4,15 @@
 module type Tile = sig
   
     (** Representation type for tile *)
-    type t 
+    type t =
+    {
+        pos : int * int;
+        sf : t option
+    }
 
     (** Image of the tile *)
     type image
+
     (** [has_sf] returns true if tile doesn't have a special 
       feature. Otherwise, returns false. *)
     val has_sf : t -> bool
@@ -27,7 +32,7 @@ end
 
 (** A tile with grass that may randomly contain Pokemon balls 
     avaiblable for catching. *)
-module GrassTile : Tile
+(*module GrassTile : Tile
 
 (** A tile with lava on it. If the player stands on this tile 
     for too long, it will decrease their health. *)
@@ -38,4 +43,4 @@ module LavaTile : Tile
 module WallTile : Tile
 
 (** An empty tile that has no special effect *)
-module EmptyTile : Tile
+module EmptyTile : Tile*)

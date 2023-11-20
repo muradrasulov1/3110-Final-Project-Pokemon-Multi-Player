@@ -1,11 +1,13 @@
-(* open Grass *)
-open Random
 
 (** A tile on the playing area *)
 module type Tile = sig
   
   (** Representation type for tile *)
-  type t 
+  type t =
+  {
+    pos : int * int;
+    sf : t option
+  }
 
   (** Image of the tile *)
   type image
@@ -30,12 +32,19 @@ end
 (** A tile with grass that may randomly contain Pokemon balls 
   avaiblable for catching. *)
 
-module GrassTile : Tile = struct
+(*module GrassTile : Tile = struct
 
-  type t = {pos : int * int; sf : Grass.t option}
-  type image = string
+  type t = 
+  {
+    pos = ((Random.int 100), (Random.int 100));
+    sf = None
+  }
+  
+  type image = 
+  "https://2dgameartguru.com/wp-content/uploads/2015/11/tutorial_sample59h.png"
 
-  let has_sf x = x.sf != None
+  let has_sf x = 
+    x.sf != None
 
   (** Adds grass feature *)
   let add_sf x = x.sf = Some Grass.t
@@ -45,4 +54,4 @@ module GrassTile : Tile = struct
   (_, z) -> z
   let set_pos p x = x.pos = p
 
-end
+end*)
