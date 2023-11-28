@@ -5,4 +5,6 @@
       (** Representation type for lava *)
       type t
 
+      (** A regular lava feature*)
+      val lava_block : t
     end

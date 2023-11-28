@@ -179,4 +179,7 @@ module type PokemonSprite = sig
       one Pokemon type to another*)
       val dmg_done : moves -> t -> t -> float
 
+  (** List of pokemon sprites*)
+  val pokelist : (unit -> t) list 
+
 end

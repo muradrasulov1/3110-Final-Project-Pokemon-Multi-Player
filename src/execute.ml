@@ -65,6 +65,6 @@ let rec loading_menu () =
   else loading_menu ()
 
 
-let execute () =
+let () =
   open_graph " 1280x720";
   loading_menu ()
