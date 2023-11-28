@@ -178,6 +178,9 @@ module type PokemonSprite = sig
       one Pokemon type to another*)
       val dmg_done : moves -> t -> t -> float
 
+  (** List of pokemon sprites*)
+  val pokelist : (unit -> t) list
+
 end
 
 module Pokemon : PokemonSprite = struct
@@ -1346,4 +1349,26 @@ let spearow_moves = [
    In response to an attack, it retaliates immediately by slashing."
   }
 
+  let pokelist = [
+    pikachu; 
+    oshawott; 
+    charizard; 
+    pyroar;
+    eevee;
+    haunter;
+    mewtwo;
+    geodude;
+    abra;
+    poliwhirl;
+    meowth;
+    diglett;
+    parasect;
+    golbat;
+    jigglypuff;
+    nidoran;
+    spearow;
+    raticate;
+    beedrill;
+    squirtle;
+    ]
 end

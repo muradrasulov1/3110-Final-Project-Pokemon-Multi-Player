@@ -108,8 +108,8 @@ module EmptyTile (ET : Empty): Tile = struct
   let image () =
   "https://pluspng.com/img-png/tile-floor-png-cora-beige-floor-tile-300.png"
   let has_sf x= 
-    x.sf = None
-  let add_sf (x : t) : t = x
+    x.sf != None
+  let add_sf (x : t) : t = {x with sf = Some ET.empty}
   let get_coordx z = match z.pos with
     | (x,_) -> x
   let get_coordy z = match z.pos with

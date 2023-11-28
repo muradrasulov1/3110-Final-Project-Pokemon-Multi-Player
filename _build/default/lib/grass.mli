@@ -3,13 +3,16 @@
     module type Grass = sig
     
     (** Representation type for pokemon ball*)
-    type pb
+    type pk
       
     (** Representation type for grass *)
     type t
 
     (** Grass that contains no ball*)
     val empty_grass : t
+
+    (**list of pokemon available*)
+    val pokelist : pk list
 
     (** [has_ball] returns true if grass contains a ball. Otherwise,
         returns false. *)

@@ -5,8 +5,12 @@
       (** Representation type for lava *)
       type t
 
+      (** A regular lava feature*)
+      val lava_block : t
+
     end
 
 module LSprite : Lava = struct
   type t = unit
+  let lava_block = ()
 end
