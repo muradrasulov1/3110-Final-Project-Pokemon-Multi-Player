@@ -1,7 +1,7 @@
 .PHONY: test check
 
 build:
-	dune build src
+	dune build
 
 code:
 	-dune build
@@ -9,4 +9,4 @@ code:
 	! dune build --watch
 
 start:
-	OCAMLRUNPARAM=b dune exec src/execute.ml
+	OCAMLRUNPARAM=b dune exec src/execute.exe
