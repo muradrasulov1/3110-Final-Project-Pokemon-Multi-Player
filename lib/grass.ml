@@ -1,14 +1,20 @@
+
+
 (** A special feature that a tile can have. 
   Tiles can randomly have Pokemon balls to collect*)
   module type Grass = sig
-    (** Representation type for pokemon ball*)
-    type pb
+    
+    (** Representation type for pokemon*)
+    type pk
         
     (** Representation type for grass *)
     type t
   
     (** Grass that contains no ball*)
     val empty_grass : t
+
+    (**list of pokemon available*)
+    val pokelist : pk list
 
     (** [has_ball] returns true if grass contains a ball. Otherwise,
         returns false. *)
@@ -24,10 +30,21 @@
 
 module GSprite (Pokeball : Pokemon.PokemonSprite) : Grass = struct
 
-  type pb = unit -> Pokeball.t 
-  type t = pb option
+  type pk = unit -> Pokeball.t 
+  type t = pk option
 
   let empty_grass : t = None
+
+  let pokelist = 
+    [
+    Pokeball.abra;
+    Pokeball.geodude;
+    Pokeball.diglett;
+    Pokeball.meowth;
+    Pokeball.nidoran;
+    Pokeball.jigglypuff;
+    Pokeball.spearow;
+    ]
 
   let has_ball (x : t) : bool = match x with
   | None -> false
@@ -37,6 +54,6 @@ module GSprite (Pokeball : Pokemon.PokemonSprite) : Grass = struct
     match lst with 
   | [] -> empty_grass
   | h::t -> if n=0 then Some h else index (n-1) t
-  let add_ball () = let randindex=(Random.int (List.length Pokeball.pokelist))in
-  let c=(index randindex Pokeball.pokelist) in c
+  let add_ball () = let randindex=(Random.int (List.length pokelist))in
+  let c=(index randindex pokelist) in c
 end
