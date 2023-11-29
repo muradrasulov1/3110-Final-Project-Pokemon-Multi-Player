@@ -1,6 +1,3 @@
-open Map 
-open Pokemon 
-
 (** The Pokemon that the player will use to walk
     around the map and battle other Pokemon*)
     module type PlayerSprite = sig
@@ -38,7 +35,7 @@ open Pokemon
 
 (** Creates a player sprite out of a Pokemon with
     a given location*)
-    module Make (PP : Pokemon.PokemonSprite) = struct
+    module Make (PP : Pokemon.PokemonSprite) : PlayerSprite = struct
       type pk = PP.t 
       type t = 
       {

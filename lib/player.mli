@@ -1,6 +1,3 @@
-open Map 
-open Pokemon 
-
 (** The Pokemon that the player will use to walk
     around the map and battle other Pokemon*)
     module type PlayerSprite = sig
@@ -17,7 +14,11 @@ open Pokemon
       (** Set the player pokemon to Pikachu*)
       val set_location : t -> int * int -> t
 
+      (** Returns the Pokemon the player controls*)
       val get_pokemon : t -> pk
+
+      (** Sets the Pokemon the player controls*)
+      val set_pokemon : t -> pk -> t
 
       (** Moves the player left *)
       val l : t -> t 
@@ -31,7 +32,3 @@ open Pokemon
       (** Moves the player down*)
       val d : t -> t
   end
-
-(** Creates a player sprite out of a Pokemon with
-    a given location*)
-    module Make : PlayerSprite
