@@ -1378,26 +1378,37 @@ let spearow_moves = [
     squirtle;
     ]
 
+
+let print_moves moves =
+  List.iteri (fun i move ->
+    Printf.printf "%d: %s\n" (i + 1) move.name) moves
+
+
+let rec get_valid_input max =
+  let index = read_int () - 1 in
+  if index < 0 || index >= max then begin
+    Printf.printf "Invalid move. Please choose a move between 1 and %d.\n" max;
+    get_valid_input max
+  end else index
     
     let rec ally_move ally_hp enemy_hp ally enemy =
-      if !ally_hp <= 0 then
-        Printf.printf "%s fainted! Enemy wins.\n" (ally.pokemon_name); Loss
-      else if !enemy_hp <= 0 then
-        Printf.printf "%s fainted! Ally wins.\n" (enemy.pokemon_name); Win
-      else
-        begin
-          Printf.printf "Ally %s's turn. Choose a move (1-%d):\n" (ally.pokemon_name) (List.length ally.move_list);
-          let index = read_int () - 1 in
-          if index < 0 || index >= List.length ally.move_list then
-            Printf.printf "Invalid move. Try again.\n"
-          else
-            let move = List.nth ally.move_list index in
-            Printf.printf "Ally used %s.\n" move.name;
-            let dmg = dmg_done move ally enemy in
-            enemy_hp := !enemy_hp - int_of_float dmg;
-            Printf.printf "Enemy %s now has %d health.\n" (enemy.pokemon_name) (!enemy_hp);
-            enemy_move ally_hp enemy_hp ally enemy
-        end
+      if !ally_hp <= 0 then begin
+        Printf.printf "%s fainted! Enemy wins.\n" (ally.pokemon_name);
+        Loss
+      end else if !enemy_hp <= 0 then begin
+        Printf.printf "%s fainted! Ally wins.\n" (enemy.pokemon_name);
+        Win
+      end else begin
+        Printf.printf "Ally %s's turn. Choose a move:\n" (ally.pokemon_name);
+        print_moves ally.move_list;
+        let index = get_valid_input (List.length ally.move_list) in
+        let move = List.nth ally.move_list index in
+        Printf.printf "Ally used %s.\n" move.name;
+        let dmg = dmg_done move ally enemy in
+        enemy_hp := !enemy_hp - int_of_float dmg;
+        Printf.printf "Enemy %s now has %d health.\n" (enemy.pokemon_name) (!enemy_hp);
+        enemy_move ally_hp enemy_hp ally enemy
+      end
     
     and enemy_move ally_hp enemy_hp ally enemy =
       if !enemy_hp <= 0 then
