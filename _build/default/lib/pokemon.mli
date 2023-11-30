@@ -1,23 +1,20 @@
 (** The Pokemon type and its attributes to be used and displayed *)
 module type PokemonSprite = sig
-
-  (** Represents Pokemon type of a sprite *)
   type pokemon
+  (** Represents Pokemon type of a sprite *)
 
-  (** Represents species of a Pokemon *)
   type poke_tp
+  (** Represents species of a Pokemon *)
 
-  (** Represents Pokemon move *)
   type moves = {
+    fighter : pokemon;
+    name : string;
+    tp : poke_tp;
+    basep : int;
+    descr : string;
+  }
+  (** Represents Pokemon move *)
 
-  fighter : pokemon;
-  name : string;
-  tp : poke_tp;
-  basep : int;
-  descr : string;
-  } 
-
-  (** Representation type for Pokemon *)
   type t = {
     pokemon_name : string;
     health : int;
@@ -25,161 +22,163 @@ module type PokemonSprite = sig
     defense : int;
     speed : int;
     move_list : moves list;
-    poke_typ : (poke_tp * poke_tp);
+    poke_typ : poke_tp * poke_tp;
     battle_image : string;
     search_image : string;
-    descr : string
+    descr : string;
   }
+  (** Representation type for Pokemon *)
 
-  (** Returns string representation of the Pokemon*)
+  (**Representation for whether player wins or loses*)
+  type outcome =
+    | Win
+    | Loss
+
   val name : pokemon -> string
+  (** Returns string representation of the Pokemon*)
 
+  val typ : poke_tp -> string
   (** Returns string representation of Pokemon type*)
-  val typ : poke_tp -> string 
 
+  val battle_images : pokemon -> string
   (** A list of Pokemon images for battle*)
-  val battle_images : pokemon -> string 
 
+  val search_images : pokemon -> string
   (** A list of Pokemon images for information tab*)
-  val search_images : pokemon -> string 
 
+  val create_move : pokemon -> string -> poke_tp -> int -> string -> moves
   (** Creates a Pokemon move with related information*)
-  val create_move : pokemon -> string -> poke_tp ->
-  int -> string -> moves
 
-  (** An association list with keys as a attack types,
-    values are lists of attack effecticeness to other 
-    Pokemon species *)
-    val effectivity_list : (poke_tp * float list) list 
+  val effectivity_list : (poke_tp * float list) list
+  (** An association list with keys as a attack types, values are lists of
+      attack effecticeness to other Pokemon species *)
 
-  (** Returns the current health of a Pokemon*)
   val get_health : t -> int
+  (** Returns the current health of a Pokemon*)
 
-  (** Creates list of Charizard moves *)
   val charizard_moves : moves list
+  (** Creates list of Charizard moves *)
 
-  (** Creates list of Squirtle moves *)
   val squirtle_moves : moves list
+  (** Creates list of Squirtle moves *)
 
-  (** Creates list of Beedrill moves *)
   val beedrill_moves : moves list
+  (** Creates list of Beedrill moves *)
 
-  (** Creates list of Raticate moves*)
   val raticate_moves : moves list
+  (** Creates list of Raticate moves*)
 
-  (** Creates list of Spearow moves *)
   val spearow_moves : moves list
+  (** Creates list of Spearow moves *)
 
-  (** Creates list of Pikachu moves *)
   val pikachu_moves : moves list
+  (** Creates list of Pikachu moves *)
 
-  (** Creates list of Nidoran moves *)
   val nidoran_moves : moves list
+  (** Creates list of Nidoran moves *)
 
-  (** Creates list of Jigglypuff moves *)
   val jigglypuff_moves : moves list
+  (** Creates list of Jigglypuff moves *)
 
-  (** Creates list of Golbat moves *)
   val golbat_moves : moves list
+  (** Creates list of Golbat moves *)
 
-  (** Creates list of Parasect moves *)
   val parasect_moves : moves list
+  (** Creates list of Parasect moves *)
 
-  (** Creates list of Diglett moves *)
   val diglett_moves : moves list
+  (** Creates list of Diglett moves *)
 
-  (** Creates list of Meowth moves *)
   val meowth_moves : moves list
+  (** Creates list of Meowth moves *)
 
-  (** Creates list of Poliwhirl moves *)
   val poliwhirl_moves : moves list
+  (** Creates list of Poliwhirl moves *)
 
-  (** Creates list of Abra moves *)
   val abra_moves : moves list
+  (** Creates list of Abra moves *)
 
-  (** Creates list of Geodude moves *)
   val geodude_moves : moves list
+  (** Creates list of Geodude moves *)
 
-  (** Creates list of Mewto moves *)
   val mewtwo_moves : moves list
+  (** Creates list of Mewto moves *)
 
-  (** Creates list of Haunter moves *)
   val haunter_moves : moves list
+  (** Creates list of Haunter moves *)
 
-  (** Creates list of Eevee moves *)
   val eevee_moves : moves list
+  (** Creates list of Eevee moves *)
 
-  (** Creates list of Pyroar moves *)
   val pyroar_moves : moves list
+  (** Creates list of Pyroar moves *)
 
-  (** Creates list of Oshawott moves *)
   val oshawott_moves : moves list
+  (** Creates list of Oshawott moves *)
 
-  (** Representation for Charizard*)
   val charizard : unit -> t
+  (** Representation for Charizard*)
 
-  (** Representation for Squirtle*)
   val squirtle : unit -> t
+  (** Representation for Squirtle*)
 
-  (** Representation for Bedrill*)
   val beedrill : unit -> t
+  (** Representation for Bedrill*)
 
-  (** Representation for Raticate*)
   val raticate : unit -> t
+  (** Representation for Raticate*)
 
-  (** Representation for Spearow*)
   val spearow : unit -> t
+  (** Representation for Spearow*)
 
-  (** Representation for Pikachu*)
   val pikachu : unit -> t
+  (** Representation for Pikachu*)
 
-  (** Representation for Nidoran*)
   val nidoran : unit -> t
+  (** Representation for Nidoran*)
 
-  (** Representation for Jigglypuff*)
   val jigglypuff : unit -> t
+  (** Representation for Jigglypuff*)
 
-  (** Representation for Golbat*)
   val golbat : unit -> t
+  (** Representation for Golbat*)
 
-  (** Representation for Parasect*)
   val parasect : unit -> t
+  (** Representation for Parasect*)
 
-  (** Representation for Diglett*)
   val diglett : unit -> t
+  (** Representation for Diglett*)
 
-  (** Representation for Meowth*)
   val meowth : unit -> t
+  (** Representation for Meowth*)
 
-  (** Representation for Poliwhirl*)
   val poliwhirl : unit -> t
+  (** Representation for Poliwhirl*)
 
+  val abra : unit -> t
   (** Representation for Abra*)
-  val abra : unit -> t 
 
-  (** Representation for Geodude*)
   val geodude : unit -> t
+  (** Representation for Geodude*)
 
-  (** Representation for Mewto*)
   val mewtwo : unit -> t
+  (** Representation for Mewto*)
 
-  (** Representation for Haunter*)
   val haunter : unit -> t
+  (** Representation for Haunter*)
 
-  (** Representation for Eevee*)
   val eevee : unit -> t
+  (** Representation for Eevee*)
 
-  (** Representation for Pyroar*)
   val pyroar : unit -> t
+  (** Representation for Pyroar*)
 
-  (** Representation for Oshawott*)
   val oshawott : unit -> t
+  (** Representation for Oshawott*)
 
-  (** Calculates the damage of a certain move from
-      one Pokemon type to another*)
-      val dmg_done : moves -> t -> t -> float
+  val dmg_done : moves -> t -> t -> float
+  (** Calculates the damage of a certain move from one Pokemon type to another*)
 
+  val pokelist : (unit -> t) list
   (** List of pokemon sprites*)
-  val pokelist : (unit -> t) list 
-
 end
