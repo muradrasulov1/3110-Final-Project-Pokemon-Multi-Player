@@ -15,6 +15,9 @@ module Lava = Sprite__Lava
 (** @canonical Sprite.Map *)
 module Map = Sprite__Map
 
+(** @canonical Sprite.Player *)
+module Player = Sprite__Player
+
 (** @canonical Sprite.Pokemon *)
 module Pokemon = Sprite__Pokemon
 

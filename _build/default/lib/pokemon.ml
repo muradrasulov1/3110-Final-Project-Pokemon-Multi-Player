@@ -181,6 +181,8 @@ module type PokemonSprite = sig
   (** List of pokemon sprites*)
   val pokelist : (unit -> t) list
 
+  val 
+
 end
 
 module Pokemon : PokemonSprite = struct
@@ -267,6 +269,10 @@ module Pokemon : PokemonSprite = struct
     (* Description of Pokemon *)
     descr : string
   }
+
+type outcome =
+|Win
+|Loss
 
   let name = function
   | Charizard -> "Charizard"
@@ -1371,4 +1377,48 @@ let spearow_moves = [
     beedrill;
     squirtle;
     ]
+
+    
+    let rec ally_move ally_hp enemy_hp ally enemy =
+      if !ally_hp <= 0 then
+        Printf.printf "%s fainted! Enemy wins.\n" (ally.pokemon_name); Loss
+      else if !enemy_hp <= 0 then
+        Printf.printf "%s fainted! Ally wins.\n" (enemy.pokemon_name); Win
+      else
+        begin
+          Printf.printf "Ally %s's turn. Choose a move (1-%d):\n" (ally.pokemon_name) (List.length ally.move_list);
+          let index = read_int () - 1 in
+          if index < 0 || index >= List.length ally.move_list then
+            Printf.printf "Invalid move. Try again.\n"
+          else
+            let move = List.nth ally.move_list index in
+            Printf.printf "Ally used %s.\n" move.name;
+            let dmg = dmg_done move ally enemy in
+            enemy_hp := !enemy_hp - int_of_float dmg;
+            Printf.printf "Enemy %s now has %d health.\n" (enemy.pokemon_name) (!enemy_hp);
+            enemy_move ally_hp enemy_hp ally enemy
+        end
+    
+    and enemy_move ally_hp enemy_hp ally enemy =
+      if !enemy_hp <= 0 then
+        Printf.printf "%s fainted! Ally wins.\n" (enemy.pokemon_name); Win
+      else if !ally_hp <= 0 then
+        Printf.printf "%s fainted! Enemy wins.\n" (ally.pokemon_name); Loss
+      else
+        begin
+          Printf.printf "Enemy %s's turn.\n" (enemy.pokemon_name);
+          let move = List.nth enemy.move_list (Random.int (List.length enemy.move_list)) in
+          Printf.printf "Enemy used %s.\n" move.name;
+          let dmg = dmg_done move enemy ally in
+          ally_hp := !ally_hp - int_of_float dmg;
+          Printf.printf "Ally %s now has %d health.\n" (ally.pokemon_name) (!ally_hp);
+          ally_move ally_hp enemy_hp ally enemy
+        end
+    
+    let battle (ally : t) (enemy : t) : outcome =
+      let ally_hp = ref (get_health ally) in
+      let enemy_hp = ref (get_health enemy) in
+      Printf.printf "Battle Start! %s vs %s\n" (ally.pokemon_name) (enemy.pokemon_name);
+      ally_move ally_hp enemy_hp ally enemy
+    
 end

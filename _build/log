@@ -1,9 +1,10 @@
 # dune build
 # OCAMLPARAM: unset
 # Shared cache: disabled
-# Workspace root: /home/ooa7/cs3110/final
-# Auto-detected concurrency: 8
-$ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_1017f1_output
+# Workspace root:
+# /Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player
+# Auto-detected concurrency: 11
+$ /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/gn/0g_1rx_s6pj3q1gf1qpk_p700000gn/T/dune_3b67d0_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -12,64 +13,71 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_1017f1_outpu
 #  ; for_host = None
 #  ; fdo_target_exe = None
 #  ; build_dir = In_build_dir "default"
-#  ; ocaml_bin = External "/home/ooa7/.opam/cs3110-2023fa/bin"
-#  ; ocaml = Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocaml"
-#  ; ocamlc = External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt"
-#  ; ocamlopt = Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt"
-#  ; ocamldep = Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt"
+#  ; ocaml_bin = External "/Users/armaantewary/.opam/cs3110-2023fa/bin"
+#  ; ocaml = Ok External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocaml"
+#  ; ocamlc = External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocamldep.opt"
 #  ; ocamlmklib =
-#      Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
+#      Ok External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
 #  ; env =
 #      map
 #        { "DUNE_OCAML_HARDCODED" :
-#            "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml:/home/ooa7/.opam/cs3110-2023fa/lib"
-#        ; "DUNE_OCAML_STDLIB" : "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
-#        ; "DUNE_SOURCEROOT" : "/home/ooa7/cs3110/final"
-#        ; "INSIDE_DUNE" : "/home/ooa7/cs3110/final/_build/default"
+#            "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml:/Users/armaantewary/.opam/cs3110-2023fa/lib"
+#        ; "DUNE_OCAML_STDLIB" :
+#            "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player"
+#        ; "INSIDE_DUNE" :
+#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/default"
+#        ; "MANPATH" :
+#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/install/default/man"
 #        ; "OCAMLFIND_IGNORE_DUPS_IN" :
-#            "/home/ooa7/cs3110/final/_build/install/default/lib"
-#        ; "OCAMLPATH" : "/home/ooa7/cs3110/final/_build/install/default/lib"
+#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/install/default/lib"
 #        ; "OCAMLTOP_INCLUDE_PATH" :
-#            "/home/ooa7/cs3110/final/_build/install/default/lib/toplevel"
+#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/install/default/lib/toplevel"
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
 #  ; findlib_paths =
-#      [ External "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
-#      ; External "/home/ooa7/.opam/cs3110-2023fa/lib"
+#      [ External "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml"
+#      ; External "/Users/armaantewary/.opam/cs3110-2023fa/lib"
 #      ]
 #  ; natdynlink_supported = true
 #  ; supports_shared_libraries = true
 #  ; ocaml_config =
 #      { version = "5.0.0"
-#      ; standard_library_default = "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
-#      ; standard_library = "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
+#      ; standard_library_default =
+#          "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml"
+#      ; standard_library = "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml"
 #      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
 #      ; ccomp_type = "cc"
-#      ; c_compiler = "gcc"
+#      ; c_compiler = "cc"
 #      ; ocamlc_cflags =
-#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
 #      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
 #      ; ocamlopt_cflags =
-#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
 #      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
 #      ; bytecomp_c_compiler =
-#          [ "gcc"
+#          [ "cc"
 #          ; "-O2"
 #          ; "-fno-strict-aliasing"
 #          ; "-fwrapv"
 #          ; "-pthread"
-#          ; "-fPIC"
 #          ; "-D_FILE_OFFSET_BITS=64"
 #          ]
 #      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
 #      ; native_c_compiler =
-#          [ "gcc"
+#          [ "cc"
 #          ; "-O2"
 #          ; "-fno-strict-aliasing"
 #          ; "-fwrapv"
 #          ; "-pthread"
-#          ; "-fPIC"
 #          ; "-D_FILE_OFFSET_BITS=64"
 #          ]
 #      ; native_c_libraries = [ "-lm"; "-lpthread" ]
@@ -79,8 +87,8 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_1017f1_outpu
 #      ; model = "default"
 #      ; int_size = 63
 #      ; word_size = 64
-#      ; system = "linux"
-#      ; asm = [ "as" ]
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
 #      ; asm_cfi_supported = true
 #      ; with_frame_pointers = false
 #      ; ext_exe = ""
@@ -91,8 +99,8 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_1017f1_outpu
 #      ; os_type = "Unix"
 #      ; default_executable_name = "a.out"
 #      ; systhread_supported = true
-#      ; host = "x86_64-pc-linux-gnu"
-#      ; target = "x86_64-pc-linux-gnu"
+#      ; host = "x86_64-apple-darwin21.5.0"
+#      ; target = "x86_64-apple-darwin21.5.0"
 #      ; profiling = false
 #      ; flambda = false
 #      ; spacetime = false
@@ -112,12 +120,15 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_1017f1_outpu
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/grass.mli) > _build/default/lib/.sprite.objs/sprite__Grass.intf.d
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Grass.cmi -c -intf lib/grass.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Grass.cmo -c -impl lib/grass.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Tile.cmo -c -impl lib/tile.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Grass.cmx -c -impl lib/grass.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o lib/sprite.cma lib/.sprite.objs/byte/sprite.cmo lib/.sprite.objs/byte/sprite__Wall.cmo lib/.sprite.objs/byte/sprite__Empty.cmo lib/.sprite.objs/byte/sprite__Pokemon.cmo lib/.sprite.objs/byte/sprite__Grass.cmo lib/.sprite.objs/byte/sprite__Health.cmo lib/.sprite.objs/byte/sprite__Lava.cmo lib/.sprite.objs/byte/sprite__Tile.cmo lib/.sprite.objs/byte/sprite__Map.cmo)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Tile.cmx -c -impl lib/tile.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o lib/sprite.cmxa lib/.sprite.objs/native/sprite.cmx lib/.sprite.objs/native/sprite__Wall.cmx lib/.sprite.objs/native/sprite__Empty.cmx lib/.sprite.objs/native/sprite__Pokemon.cmx lib/.sprite.objs/native/sprite__Grass.cmx lib/.sprite.objs/native/sprite__Health.cmx lib/.sprite.objs/native/sprite__Lava.cmx lib/.sprite.objs/native/sprite__Tile.cmx lib/.sprite.objs/native/sprite__Map.cmx)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I lib -o lib/sprite.cmxs lib/sprite.cmxa)
+$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/pokemon.ml) > _build/default/lib/.sprite.objs/sprite__Pokemon.impl.d
+> File "lib/pokemon.ml", line 186, characters 0-3:
+> 186 | end
+>       ^^^
+> Error: Syntax error
+[2]
+$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/pokemon.mli) > _build/default/lib/.sprite.objs/sprite__Pokemon.intf.d
+$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Pokemon.cmi -c -intf lib/pokemon.mli)
+$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Grass.cmo -c -impl lib/grass.ml)
+$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Player.cmo -c -impl lib/player.ml)
+$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Player.cmx -c -impl lib/player.ml)
+$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Grass.cmx -c -impl lib/grass.ml)

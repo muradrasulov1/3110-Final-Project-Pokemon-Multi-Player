@@ -31,6 +31,13 @@ module type PokemonSprite = sig
     descr : string
   }
 
+  (**Representation of the outcome of a Pokemon battle*)
+  type outcome = 
+  |Win
+  |Loss
+
+  
+
   (** Returns string representation of the Pokemon*)
   val name : pokemon -> string
 
