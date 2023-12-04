@@ -181,8 +181,6 @@ module type PokemonSprite = sig
   (** List of pokemon sprites*)
   val pokelist : (unit -> t) list
 
-  val 
-
 end
 
 module Pokemon : PokemonSprite = struct
@@ -1411,11 +1409,13 @@ let rec get_valid_input max =
       end
     
     and enemy_move ally_hp enemy_hp ally enemy =
-      if !enemy_hp <= 0 then
-        Printf.printf "%s fainted! Ally wins.\n" (enemy.pokemon_name); Win
-      else if !ally_hp <= 0 then
+      if !enemy_hp <= 0 then begin
+        Printf.printf "%s fainted! Ally wins.\n" (enemy.pokemon_name); 
+        Win
+      end
+      else if !ally_hp <= 0 then begin
         Printf.printf "%s fainted! Enemy wins.\n" (ally.pokemon_name); Loss
-      else
+      end else
         begin
           Printf.printf "Enemy %s's turn.\n" (enemy.pokemon_name);
           let move = List.nth enemy.move_list (Random.int (List.length enemy.move_list)) in
@@ -1425,6 +1425,7 @@ let rec get_valid_input max =
           Printf.printf "Ally %s now has %d health.\n" (ally.pokemon_name) (!ally_hp);
           ally_move ally_hp enemy_hp ally enemy
         end
+        
     
     let battle (ally : t) (enemy : t) : outcome =
       let ally_hp = ref (get_health ally) in

@@ -28,7 +28,6 @@ type move =
 type tile =
   | Empty
   | Grass
-  | Path
   | Lava
   | FirstAid
   | Wall

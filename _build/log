@@ -2,9 +2,9 @@
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root:
-# /Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player
-# Auto-detected concurrency: 11
-$ /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/gn/0g_1rx_s6pj3q1gf1qpk_p700000gn/T/dune_3b67d0_output
+# /Users/shakeimfrancis/Downloads/3110/3110-Final-Project-Pokemon-Multi-Player
+# Auto-detected concurrency: 8
+$ /Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/h7/6c9hmd2s5975c_81wwp78_280000gn/T/dune_632b01_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -13,47 +13,35 @@ $ /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/
 #  ; for_host = None
 #  ; fdo_target_exe = None
 #  ; build_dir = In_build_dir "default"
-#  ; ocaml_bin = External "/Users/armaantewary/.opam/cs3110-2023fa/bin"
-#  ; ocaml = Ok External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocaml"
-#  ; ocamlc = External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt"
+#  ; ocaml_bin = External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin"
+#  ; ocaml = Ok External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocaml"
+#  ; ocamlc =
+#      External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlc.opt"
 #  ; ocamlopt =
-#      Ok External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlopt.opt"
+#      Ok External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlopt.opt"
 #  ; ocamldep =
-#      Ok External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocamldep.opt"
+#      Ok External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamldep.opt"
 #  ; ocamlmklib =
-#      Ok External "/Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
-#  ; env =
+#      Ok
+#        External
+#          "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
+#  ; installed_env =
 #      map
-#        { "DUNE_OCAML_HARDCODED" :
-#            "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml:/Users/armaantewary/.opam/cs3110-2023fa/lib"
-#        ; "DUNE_OCAML_STDLIB" :
-#            "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml"
-#        ; "DUNE_SOURCEROOT" :
-#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player"
-#        ; "INSIDE_DUNE" :
-#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/default"
-#        ; "MANPATH" :
-#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/install/default/man"
-#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
-#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/install/default/lib"
-#        ; "OCAMLPATH" :
-#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/install/default/lib"
-#        ; "OCAMLTOP_INCLUDE_PATH" :
-#            "/Users/armaantewary/development/git/3110-Final-Project-Pokemon-Multi-Player/_build/install/default/lib/toplevel"
+#        { "INSIDE_DUNE" :
+#            "/Users/shakeimfrancis/Downloads/3110/3110-Final-Project-Pokemon-Multi-Player/_build/default"
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
 #  ; findlib_paths =
-#      [ External "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml"
-#      ; External "/Users/armaantewary/.opam/cs3110-2023fa/lib"
+#      [ External "/Users/shakeimfrancis/.opam/cs3110-2023fa/lib/ocaml"
+#      ; External "/Users/shakeimfrancis/.opam/cs3110-2023fa/lib"
 #      ]
-#  ; natdynlink_supported = true
-#  ; supports_shared_libraries = true
 #  ; ocaml_config =
 #      { version = "5.0.0"
 #      ; standard_library_default =
-#          "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml"
-#      ; standard_library = "/Users/armaantewary/.opam/cs3110-2023fa/lib/ocaml"
+#          "/Users/shakeimfrancis/.opam/cs3110-2023fa/lib/ocaml"
+#      ; standard_library =
+#          "/Users/shakeimfrancis/.opam/cs3110-2023fa/lib/ocaml"
 #      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
 #      ; ccomp_type = "cc"
 #      ; c_compiler = "cc"
@@ -83,7 +71,7 @@ $ /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/
 #      ; native_c_libraries = [ "-lm"; "-lpthread" ]
 #      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
 #      ; cc_profile = []
-#      ; architecture = "amd64"
+#      ; architecture = "arm64"
 #      ; model = "default"
 #      ; int_size = 63
 #      ; word_size = 64
@@ -99,8 +87,8 @@ $ /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/
 #      ; os_type = "Unix"
 #      ; default_executable_name = "a.out"
 #      ; systhread_supported = true
-#      ; host = "x86_64-apple-darwin21.5.0"
-#      ; target = "x86_64-apple-darwin21.5.0"
+#      ; host = "aarch64-apple-darwin21.6.0"
+#      ; target = "aarch64-apple-darwin21.6.0"
 #      ; profiling = false
 #      ; flambda = false
 #      ; spacetime = false
@@ -119,16 +107,25 @@ $ /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/
 #      ; supports_shared_libraries = true
 #      ; windows_unicode = false
 #      }
+#  ; instrument_with = []
 #  }
-$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/pokemon.ml) > _build/default/lib/.sprite.objs/sprite__Pokemon.impl.d
-> File "lib/pokemon.ml", line 186, characters 0-3:
-> 186 | end
->       ^^^
-> Error: Syntax error
+$ (cd _build/default && /Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Pokemon.cmo -c -impl lib/pokemon.ml)
+> File "lib/pokemon.ml", line 1:
+> Error: The implementation lib/pokemon.ml
+>        does not match the interface lib/.sprite.objs/byte/sprite__Pokemon.cmi:
+>         ... The first module type is not included in the second ...
+>        At position module type PokemonSprite = <here>
+>        The type `outcome' is required but not provided
+>        File "lib/pokemon.mli", lines 35-37, characters 2-7:
+>          Expected declaration
 [2]
-$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/pokemon.mli) > _build/default/lib/.sprite.objs/sprite__Pokemon.intf.d
-$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Pokemon.cmi -c -intf lib/pokemon.mli)
-$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Grass.cmo -c -impl lib/grass.ml)
-$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Player.cmo -c -impl lib/player.ml)
-$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Player.cmx -c -impl lib/player.ml)
-$ (cd _build/default && /Users/armaantewary/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Grass.cmx -c -impl lib/grass.ml)
+$ (cd _build/default && /Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Pokemon.cmx -c -impl lib/pokemon.ml)
+> File "lib/pokemon.ml", line 1:
+> Error: The implementation lib/pokemon.ml
+>        does not match the interface lib/.sprite.objs/byte/sprite__Pokemon.cmi:
+>         ... The first module type is not included in the second ...
+>        At position module type PokemonSprite = <here>
+>        The type `outcome' is required but not provided
+>        File "lib/pokemon.mli", lines 35-37, characters 2-7:
+>          Expected declaration
+[2]
