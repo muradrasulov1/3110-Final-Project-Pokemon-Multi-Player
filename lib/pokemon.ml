@@ -7,6 +7,227 @@ module type PokemonSprite = sig
   (** Represents species of a Pokemon *)
 
   type moves = {
+<<<<<<< HEAD
+=======
+  fighter : pokemon;
+  name : string;
+  tp : poke_tp;
+  basep : int;
+  descr : string;
+  } 
+
+  (** Representation type for Pokemon *)
+  type t = {
+    pokemon_name : string;
+    health : int;
+    attack : int;
+    defense : int;
+    speed : int;
+    move_list : moves list;
+    poke_typ : (poke_tp * poke_tp);
+    battle_image : string;
+    search_image : string;
+    descr : string
+  }
+
+  (** Returns string representation of the Pokemon*)
+  val name : pokemon -> string
+
+  (** Returns string representation of Pokemon type*)
+  val typ : poke_tp -> string 
+
+  (** A list of Pokemon images for battle*)
+  val battle_images : pokemon -> string 
+
+  (** A list of Pokemon images for information tab*)
+  val search_images : pokemon -> string 
+
+  (** Creates a Pokemon move with related information*)
+  val create_move : pokemon -> string -> poke_tp ->
+  int -> string -> moves
+
+  (** An association list with keys as a attack types,
+    values are lists of attack effecticeness to other 
+    Pokemon species *)
+    val effectivity_list : (poke_tp * float list) list 
+
+  (** Returns the current health of a Pokemon*)
+  val get_health : t -> int
+
+  (** Creates list of Charizard moves *)
+  val charizard_moves : moves list
+
+  (** Creates list of Squirtle moves *)
+  val squirtle_moves : moves list
+
+  (** Creates list of Beedrill moves *)
+  val beedrill_moves : moves list
+
+  (** Creates list of Raticate moves*)
+  val raticate_moves : moves list
+
+  (** Creates list of Spearow moves *)
+  val spearow_moves : moves list
+
+  (** Creates list of Pikachu moves *)
+  val pikachu_moves : moves list
+
+  (** Creates list of Nidoran moves *)
+  val nidoran_moves : moves list
+
+  (** Creates list of Jigglypuff moves *)
+  val jigglypuff_moves : moves list
+
+  (** Creates list of Golbat moves *)
+  val golbat_moves : moves list
+
+  (** Creates list of Parasect moves *)
+  val parasect_moves : moves list
+
+  (** Creates list of Diglett moves *)
+  val diglett_moves : moves list
+
+  (** Creates list of Meowth moves *)
+  val meowth_moves : moves list
+
+  (** Creates list of Poliwhirl moves *)
+  val poliwhirl_moves : moves list
+
+  (** Creates list of Abra moves *)
+  val abra_moves : moves list
+
+  (** Creates list of Geodude moves *)
+  val geodude_moves : moves list
+
+  (** Creates list of Mewto moves *)
+  val mewtwo_moves : moves list
+
+  (** Creates list of Haunter moves *)
+  val haunter_moves : moves list
+
+  (** Creates list of Eevee moves *)
+  val eevee_moves : moves list
+
+  (** Creates list of Pyroar moves *)
+  val pyroar_moves : moves list
+
+  (** Creates list of Oshawott moves *)
+  val oshawott_moves : moves list
+
+  (** Representation for Charizard*)
+  val charizard : unit -> t
+
+  (** Representation for Squirtle*)
+  val squirtle : unit -> t
+
+  (** Representation for Bedrill*)
+  val beedrill : unit -> t
+
+  (** Representation for Raticate*)
+  val raticate : unit -> t
+
+  (** Representation for Spearow*)
+  val spearow : unit -> t
+
+  (** Representation for Pikachu*)
+  val pikachu : unit -> t
+
+  (** Representation for Nidoran*)
+  val nidoran : unit -> t
+
+  (** Representation for Jigglypuff*)
+  val jigglypuff : unit -> t
+
+  (** Representation for Golbat*)
+  val golbat : unit -> t
+
+  (** Representation for Parasect*)
+  val parasect : unit -> t
+
+  (** Representation for Diglett*)
+  val diglett : unit -> t
+
+  (** Representation for Meowth*)
+  val meowth : unit -> t
+
+  (** Representation for Poliwhirl*)
+  val poliwhirl : unit -> t
+
+  (** Representation for Abra*)
+  val abra : unit -> t 
+
+  (** Representation for Geodude*)
+  val geodude : unit -> t
+
+  (** Representation for Mewto*)
+  val mewtwo : unit -> t
+
+  (** Representation for Haunter*)
+  val haunter : unit -> t
+
+  (** Representation for Eevee*)
+  val eevee : unit -> t
+
+  (** Representation for Pyroar*)
+  val pyroar : unit -> t
+
+  (** Representation for Oshawott*)
+  val oshawott : unit -> t
+
+  (** Calculates the damage of a certain move from
+      one Pokemon type to another*)
+      val dmg_done : moves -> t -> t -> float
+
+  (** List of pokemon sprites*)
+  val pokelist : (unit -> t) list
+
+end
+
+module Pokemon : PokemonSprite = struct
+  type pokemon = 
+  | Charizard 
+  | Squirtle
+  | Beedrill
+  | Raticate
+  | Spearow
+  | Pikachu
+  | Nidoran
+  | Jigglypuff
+  | Golbat
+  | Parasect
+  | Diglett
+  | Meowth
+  | Poliwhirl
+  | Abra
+  | Geodude
+  | Mewtwo
+  | Haunter
+  | Eevee
+  | Pyroar
+  | Oshawott
+  
+  type poke_tp =
+  | Normal
+  | Electric
+  | Steel
+  | Flying
+  | Water
+  | Ice 
+  | Fighting
+  | Poison
+  | Ghost
+  | Psychic
+  | Ground
+  | Grass 
+  | Fire
+  | Dark
+  | None
+  | Bug
+  | Dragon
+  
+  type moves = {
+
+>>>>>>> refs/remotes/origin/main
     fighter : pokemon;
     name : string;
     tp : poke_tp;
@@ -811,6 +1032,7 @@ module Pokemon : PokemonSprite = struct
         "A reckless, life-risking tackle that also hurts the user";
     ]
 
+<<<<<<< HEAD
   let spearow_moves =
     [
       create_move Spearow "Drill Peck" Flying 80
@@ -1363,3 +1585,57 @@ module Pokemon : PokemonSprite = struct
       squirtle;
     ]
 end
+=======
+let rec get_valid_input max =
+  let index = read_int () - 1 in
+  if index < 0 || index >= max then begin
+    Printf.printf "Invalid move. Please choose a move between 1 and %d.\n" max;
+    get_valid_input max
+  end else index
+    
+    let rec ally_move ally_hp enemy_hp ally enemy =
+      if !ally_hp <= 0 then begin
+        Printf.printf "%s fainted! Enemy wins.\n" (ally.pokemon_name);
+        Loss
+      end else if !enemy_hp <= 0 then begin
+        Printf.printf "%s fainted! Ally wins.\n" (enemy.pokemon_name);
+        Win
+      end else begin
+        Printf.printf "Ally %s's turn. Choose a move:\n" (ally.pokemon_name);
+        print_moves ally.move_list;
+        let index = get_valid_input (List.length ally.move_list) in
+        let move = List.nth ally.move_list index in
+        Printf.printf "Ally used %s.\n" move.name;
+        let dmg = dmg_done move ally enemy in
+        enemy_hp := !enemy_hp - int_of_float dmg;
+        Printf.printf "Enemy %s now has %d health.\n" (enemy.pokemon_name) (!enemy_hp);
+        enemy_move ally_hp enemy_hp ally enemy
+      end
+    
+    and enemy_move ally_hp enemy_hp ally enemy =
+      if !enemy_hp <= 0 then begin
+        Printf.printf "%s fainted! Ally wins.\n" (enemy.pokemon_name); 
+        Win
+      end
+      else if !ally_hp <= 0 then begin
+        Printf.printf "%s fainted! Enemy wins.\n" (ally.pokemon_name); Loss
+      end else
+        begin
+          Printf.printf "Enemy %s's turn.\n" (enemy.pokemon_name);
+          let move = List.nth enemy.move_list (Random.int (List.length enemy.move_list)) in
+          Printf.printf "Enemy used %s.\n" move.name;
+          let dmg = dmg_done move enemy ally in
+          ally_hp := !ally_hp - int_of_float dmg;
+          Printf.printf "Ally %s now has %d health.\n" (ally.pokemon_name) (!ally_hp);
+          ally_move ally_hp enemy_hp ally enemy
+        end
+        
+    
+    let battle (ally : t) (enemy : t) : outcome =
+      let ally_hp = ref (get_health ally) in
+      let enemy_hp = ref (get_health enemy) in
+      Printf.printf "Battle Start! %s vs %s\n" (ally.pokemon_name) (enemy.pokemon_name);
+      ally_move ally_hp enemy_hp ally enemy
+    
+end
+>>>>>>> refs/remotes/origin/main

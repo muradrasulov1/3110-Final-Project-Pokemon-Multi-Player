@@ -1,9 +1,16 @@
 # dune build
 # OCAMLPARAM: unset
 # Shared cache: disabled
+<<<<<<< HEAD
 # Workspace root: /home/ooa7/cs3110/final
 # Auto-detected concurrency: 8
 $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_46834d_output
+=======
+# Workspace root:
+# /Users/shakeimfrancis/Downloads/3110/3110-Final-Project-Pokemon-Multi-Player
+# Auto-detected concurrency: 8
+$ /Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/h7/6c9hmd2s5975c_81wwp78_280000gn/T/dune_632b01_output
+>>>>>>> refs/remotes/origin/main
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -12,6 +19,7 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_46834d_outpu
 #  ; for_host = None
 #  ; fdo_target_exe = None
 #  ; build_dir = In_build_dir "default"
+<<<<<<< HEAD
 #  ; ocaml_bin = External "/home/ooa7/.opam/cs3110-2023fa/bin"
 #  ; ocaml = Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocaml"
 #  ; ocamlc = External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt"
@@ -31,19 +39,47 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_46834d_outpu
 #        ; "OCAMLPATH" : "/home/ooa7/cs3110/final/_build/install/default/lib"
 #        ; "OCAMLTOP_INCLUDE_PATH" :
 #            "/home/ooa7/cs3110/final/_build/install/default/lib/toplevel"
+=======
+#  ; ocaml_bin = External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin"
+#  ; ocaml = Ok External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocaml"
+#  ; ocamlc =
+#      External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok External "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok
+#        External
+#          "/Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
+#  ; installed_env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/Users/shakeimfrancis/Downloads/3110/3110-Final-Project-Pokemon-Multi-Player/_build/default"
+>>>>>>> refs/remotes/origin/main
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
 #  ; findlib_paths =
+<<<<<<< HEAD
 #      [ External "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
 #      ; External "/home/ooa7/.opam/cs3110-2023fa/lib"
+=======
+#      [ External "/Users/shakeimfrancis/.opam/cs3110-2023fa/lib/ocaml"
+#      ; External "/Users/shakeimfrancis/.opam/cs3110-2023fa/lib"
+>>>>>>> refs/remotes/origin/main
 #      ]
-#  ; natdynlink_supported = true
-#  ; supports_shared_libraries = true
 #  ; ocaml_config =
 #      { version = "5.0.0"
+<<<<<<< HEAD
 #      ; standard_library_default = "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
 #      ; standard_library = "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
+=======
+#      ; standard_library_default =
+#          "/Users/shakeimfrancis/.opam/cs3110-2023fa/lib/ocaml"
+#      ; standard_library =
+#          "/Users/shakeimfrancis/.opam/cs3110-2023fa/lib/ocaml"
+>>>>>>> refs/remotes/origin/main
 #      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
 #      ; ccomp_type = "cc"
 #      ; c_compiler = "gcc"
@@ -75,7 +111,7 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_46834d_outpu
 #      ; native_c_libraries = [ "-lm"; "-lpthread" ]
 #      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
 #      ; cc_profile = []
-#      ; architecture = "amd64"
+#      ; architecture = "arm64"
 #      ; model = "default"
 #      ; int_size = 63
 #      ; word_size = 64
@@ -91,8 +127,13 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_46834d_outpu
 #      ; os_type = "Unix"
 #      ; default_executable_name = "a.out"
 #      ; systhread_supported = true
+<<<<<<< HEAD
 #      ; host = "x86_64-pc-linux-gnu"
 #      ; target = "x86_64-pc-linux-gnu"
+=======
+#      ; host = "aarch64-apple-darwin21.6.0"
+#      ; target = "aarch64-apple-darwin21.6.0"
+>>>>>>> refs/remotes/origin/main
 #      ; profiling = false
 #      ; flambda = false
 #      ; spacetime = false
@@ -111,7 +152,9 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_46834d_outpu
 #      ; supports_shared_libraries = true
 #      ; windows_unicode = false
 #      }
+#  ; instrument_with = []
 #  }
+<<<<<<< HEAD
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -o lib/.sprite.objs/byte/sprite.cmo -c -impl lib/sprite.ml-gen)
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/experimenting.mli) > _build/default/lib/.sprite.objs/sprite__Experimenting.intf.d
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/experimenting.ml) > _build/default/lib/.sprite.objs/sprite__Experimenting.impl.d
@@ -149,3 +192,25 @@ $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Pokemon.cmx -c -impl lib/pokemon.ml)
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o lib/sprite.cmxa lib/.sprite.objs/native/sprite.cmx lib/.sprite.objs/native/sprite__Wall.cmx lib/.sprite.objs/native/sprite__Empty.cmx lib/.sprite.objs/native/sprite__Pokemon.cmx lib/.sprite.objs/native/sprite__Grass.cmx lib/.sprite.objs/native/sprite__Health.cmx lib/.sprite.objs/native/sprite__Lava.cmx lib/.sprite.objs/native/sprite__Tile.cmx lib/.sprite.objs/native/sprite__Player.cmx lib/.sprite.objs/native/sprite__Map.cmx lib/.sprite.objs/native/sprite__Experimenting.cmx)
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I lib -o lib/sprite.cmxs lib/sprite.cmxa)
+=======
+$ (cd _build/default && /Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Pokemon.cmo -c -impl lib/pokemon.ml)
+> File "lib/pokemon.ml", line 1:
+> Error: The implementation lib/pokemon.ml
+>        does not match the interface lib/.sprite.objs/byte/sprite__Pokemon.cmi:
+>         ... The first module type is not included in the second ...
+>        At position module type PokemonSprite = <here>
+>        The type `outcome' is required but not provided
+>        File "lib/pokemon.mli", lines 35-37, characters 2-7:
+>          Expected declaration
+[2]
+$ (cd _build/default && /Users/shakeimfrancis/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Pokemon.cmx -c -impl lib/pokemon.ml)
+> File "lib/pokemon.ml", line 1:
+> Error: The implementation lib/pokemon.ml
+>        does not match the interface lib/.sprite.objs/byte/sprite__Pokemon.cmi:
+>         ... The first module type is not included in the second ...
+>        At position module type PokemonSprite = <here>
+>        The type `outcome' is required but not provided
+>        File "lib/pokemon.mli", lines 35-37, characters 2-7:
+>          Expected declaration
+[2]
+>>>>>>> refs/remotes/origin/main
