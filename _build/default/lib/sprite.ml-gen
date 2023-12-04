@@ -3,6 +3,9 @@
 (** @canonical Sprite.Empty *)
 module Empty = Sprite__Empty
 
+(** @canonical Sprite.Experimenting *)
+module Experimenting = Sprite__Experimenting
+
 (** @canonical Sprite.Grass *)
 module Grass = Sprite__Grass
 

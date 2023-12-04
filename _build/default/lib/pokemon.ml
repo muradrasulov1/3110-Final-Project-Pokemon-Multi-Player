@@ -257,6 +257,11 @@ module Pokemon : PokemonSprite = struct
     descr : string;
   }
 
+  (**Representation for whether player wins or loses*)
+  type outcome =
+    | Win
+    | Loss
+
   let name = function
     | Charizard -> "Charizard"
     | Squirtle -> "Squirtle"
