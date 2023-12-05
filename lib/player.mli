@@ -1,6 +1,5 @@
 (** The Pokemon that the player will use to walk
-    around the map and battle other Pokemon*)
-    module type PlayerSprite = sig
+  around the map and battle other Pokemon*)
       
       (** Representation type for player*)
       type t 
@@ -31,4 +30,3 @@
 
       (** Moves the player down*)
       val d : t -> t
-  end

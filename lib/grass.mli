@@ -1,6 +1,5 @@
 (** A special feature that a tile can have. Tiles can randomly have Pokemon
-    balls to collect*)
-module type Grass = sig
+balls to collect*)
   type pk
   (** Representation type for pokemon ball*)
 
@@ -21,4 +20,3 @@ module type Grass = sig
   (** [add_ball] adds a Pokemon ball to the grass based on random number
       generator. If number generated is greater than 60, then Some ball is added
       to the grass. Else, grass remains empty. Otherwise, no ball is added *)
-end
