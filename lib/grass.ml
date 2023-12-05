@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 (** A special feature that a tile can have. Tiles can randomly have Pokemon
     balls to collect*)
 module type Grass = sig
@@ -10,20 +9,6 @@ module type Grass = sig
 
   val empty_grass : t
   (** Grass that contains no ball*)
-=======
-(** A special feature that a tile can have. 
-  Tiles can randomly have Pokemon balls to collect*)
-  module type Grass = sig
-    
-    (** Representation type for pokemon*)
-    type pk
-        
-    (** Representation type for grass *)
-    type t
-  
-    (** Grass that contains no ball*)
-    val empty_grass : t
->>>>>>> refs/remotes/origin/main
 
   val pokelist : pk list
   (**list of pokemon available*)
