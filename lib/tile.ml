@@ -9,20 +9,21 @@ module type Tile = sig
   (** [id] returns a string of the type of tile*)
 end
 
-(** A tile with grass that may randomly contain Pokemon balls avaiblable for
-    catching. *)
+(**grass tile template signature*)
 module type GrassTileTemplate = sig
   include Tile
 
   val poke_list : string list
 end
 
+(**health tile template signature*)
 module type HealthTileTemplate = sig
   include Tile
 
   val tile_effect : int
 end
 
+(**A functor which creates grass tiles with easy Pokemon encounters*)
 module EasyGrassTile (TT : Tile) : GrassTileTemplate = struct
   include TT
 
@@ -43,6 +44,7 @@ module EasyGrassTile (TT : Tile) : GrassTileTemplate = struct
     ]
 end
 
+(**A functor which creates grass tiles with harder Pokemon encounters*)
 module HardGrassTile (TT : Tile) : GrassTileTemplate = struct
   include TT
 
@@ -58,6 +60,7 @@ module HardGrassTile (TT : Tile) : GrassTileTemplate = struct
     ]
 end
 
+(**A functor which creates first aid tiles*)
 module FirstAidTile (TT : Tile) : HealthTileTemplate = struct
   include TT
 
@@ -68,6 +71,7 @@ module FirstAidTile (TT : Tile) : HealthTileTemplate = struct
     | _ -> 10
 end
 
+(**A functor which creates lava tiles*)
 module LavaTile (TT : Tile) : HealthTileTemplate = struct
   include TT
 
