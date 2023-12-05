@@ -1,3 +1,5 @@
+(** type tile = | Empty | Grass | Path | Lava | FirstAid | Wall *)
+
 (** A tile on the playing area *)
 module type Tile = sig
   type t
@@ -6,15 +8,6 @@ module type Tile = sig
   val tile_to_string : t -> string
   (** [id] returns a string of the type of tile*)
 end
-
-type tile =
-  | Empty
-  | EasyGrass
-  | HardGrass
-  | Path
-  | Lava
-  | FirstAid
-  | Wall
 
 (** A tile with grass that may randomly contain Pokemon balls avaiblable for
     catching. *)
