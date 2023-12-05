@@ -278,7 +278,7 @@ module Pokemon : PokemonSprite = struct
     | Poliwhirl -> "Poliwhirl"
     | Abra -> "Abra"
     | Geodude -> "Geodude"
-    | Mewtwo -> "Mewto"
+    | Mewtwo -> "Mewtwo"
     | Haunter -> "Haunter"
     | Eevee -> "Eevee"
     | Pyroar -> "Pyroar"

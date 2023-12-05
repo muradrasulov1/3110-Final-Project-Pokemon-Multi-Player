@@ -3,7 +3,7 @@
 # Shared cache: disabled
 # Workspace root: /home/ooa7/cs3110/final
 # Auto-detected concurrency: 8
-$ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_843322_output
+$ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_7e637a_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -31,8 +31,6 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_843322_outpu
 #        ; "OCAMLPATH" : "/home/ooa7/cs3110/final/_build/install/default/lib"
 #        ; "OCAMLTOP_INCLUDE_PATH" :
 #            "/home/ooa7/cs3110/final/_build/install/default/lib/toplevel"
-#        ; "OCAML_COLOR" : "always"
-#        ; "OPAMCOLOR" : "always"
 #        }
 #  ; findlib_paths =
 #      [ External "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
@@ -112,44 +110,21 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_843322_outpu
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -o lib/.sprite.objs/byte/sprite.cmo -c -impl lib/sprite.ml-gen)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/experimenting.ml) > _build/default/lib/.sprite.objs/sprite__Experimenting.impl.d
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/experimenting.mli) > _build/default/lib/.sprite.objs/sprite__Experimenting.intf.d
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Grass.cmi -c -intf lib/grass.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Empty.cmi -c -intf lib/empty.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Health.cmi -c -intf lib/health.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Lava.cmi -c -intf lib/lava.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Map.cmi -c -intf lib/map.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml-gen -no-alias-deps -opaque -o lib/.sprite.objs/native/sprite.cmx -c -impl lib/sprite.ml-gen)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Player.cmi -c -intf lib/player.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Pokemon.cmi -c -intf lib/pokemon.mli)
+$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/tile.mli) > _build/default/lib/.sprite.objs/sprite__Tile.intf.d
+$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/tile.ml) > _build/default/lib/.sprite.objs/sprite__Tile.impl.d
+> File "lib/tile.ml", line 72, characters 0-3:
+> 72 | end
+>      ^^^
+> Error: Syntax error
+[2]
+$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/pokemon.ml) > _build/default/lib/.sprite.objs/sprite__Pokemon.impl.d
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Tile.cmi -c -intf lib/tile.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Empty.cmo -c -impl lib/empty.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Wall.cmi -c -intf lib/wall.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Experimenting.cmi -c -intf lib/experimenting.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Health.cmo -c -impl lib/health.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Lava.cmo -c -impl lib/lava.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Empty.cmx -c -impl lib/empty.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Health.cmx -c -impl lib/health.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Map.cmo -c -impl lib/map.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Lava.cmx -c -impl lib/lava.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Map.cmx -c -impl lib/map.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Grass.cmo -c -impl lib/grass.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Player.cmo -c -impl lib/player.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Wall.cmo -c -impl lib/wall.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Grass.cmx -c -impl lib/grass.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Player.cmx -c -impl lib/player.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Wall.cmx -c -impl lib/wall.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Tile.cmo -c -impl lib/tile.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Experimenting.cmo -c -impl lib/experimenting.ml)
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Pokemon.cmo -c -impl lib/pokemon.ml)
 > File "lib/pokemon.ml", line 825, characters 6-12:
 > 825 |   let battle (ally : t) (enemy : t) : outcome =
 >             ^^^^^^
 > Error (warning 32 [unused-value-declaration]): unused value battle.
 [2]
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Tile.cmx -c -impl lib/tile.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Experimenting.cmx -c -impl lib/experimenting.ml)
 $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Pokemon.cmx -c -impl lib/pokemon.ml)
 > File "lib/pokemon.ml", line 825, characters 6-12:
 > 825 |   let battle (ally : t) (enemy : t) : outcome =
