@@ -124,7 +124,15 @@ let move_pokemon game direction =
   end
   else Invalid
 
-let rec game_loop game =
+  let decide_fate g = let x,y = g.x, g.y in if 
+    string_of_tile (g.map).(x).(y)="X" then true 
+    else false
+    
+    let encounter () = if Pokemon.battle (Pokemon.pikachu ()) (Pokemon.oshawott ())=Win then () else 
+    print_string "GAME OVER"
+    
+  let rec game_loop game =
+  if decide_fate game then encounter () else
   print_game_state game;
   print_string "Enter a direction (WASD), or 'q' to quit: ";
   match read_line () with
