@@ -1,25 +1,32 @@
 (** The Pokemon that the player will use to walk around the map and battle other
     Pokemon*)
-(* module type PlayerSprite = sig
 
-   (** Representation type for player*) type t
+type t
+(** Representation type for player*)
 
-   (** Representation type for pokemon*) type pk
+type pk
+(** Representation type for pokemon*)
 
-   (** Returns the current location of player*) val get_location : t -> int *
-   int
+val get_location : t -> int * int
+(** Returns the current location of player*)
 
-   (** Set the player pokemon to Pikachu*) val set_location : t -> int * int ->
-   t
+val set_location : t -> int * int -> t
+(** Set the player pokemon to Pikachu*)
 
-   (** Returns the Pokemon the player controls*) val get_pokemon : t -> pk
+val get_pokemon : t -> pk
+(** Returns the Pokemon the player controls*)
 
-   (** Sets the Pokemon the player controls*) val set_pokemon : t -> pk -> t
+val set_pokemon : t -> pk -> t
+(** Sets the Pokemon the player controls*)
 
-   (** Moves the player left *) val l : t -> t
+val l : t -> t
+(** Moves the player left *)
 
-   (** Moves the player left *) val r : t -> t
+val r : t -> t
+(** Moves the player left *)
 
-   (** Moves the player left *) val u : t -> t
+val u : t -> t
+(** Moves the player left *)
 
-   (** Moves the player down*) val d : t -> t end *)
+val d : t -> t
+(** Moves the player down*)
