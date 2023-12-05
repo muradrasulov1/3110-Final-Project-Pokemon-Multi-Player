@@ -1,5 +1,4 @@
 (** The Pokemon type and its attributes to be used and displayed *)
-module type PokemonSprite = sig
   type pokemon
   (** Represents Pokemon type of a sprite *)
 
@@ -31,7 +30,7 @@ module type PokemonSprite = sig
 
   (**Representation for whether player wins or loses*)
   type outcome =
-    | Win
+    | Win 
     | Loss
 
   val name : pokemon -> string
@@ -55,6 +54,9 @@ module type PokemonSprite = sig
 
   val get_health : t -> int
   (** Returns the current health of a Pokemon*)
+
+  val battle : t -> t -> outcome
+  (**Conducts battle between two Pokemon*)
 
   val charizard_moves : moves list
   (** Creates list of Charizard moves *)
@@ -181,4 +183,4 @@ module type PokemonSprite = sig
 
   val pokelist : (unit -> t) list
   (** List of pokemon sprites*)
-end
+

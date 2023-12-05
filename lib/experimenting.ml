@@ -39,26 +39,26 @@ open Pokemon
 
 let p_list =
   [
-    "pikachu";
-    "oshawott";
-    "charizard";
-    "pyroar";
-    "eevee";
-    "haunter";
-    "mewtwo";
-    "geodude";
-    "abra";
-    "poliwhirl";
-    "meowth";
-    "diglett";
-    "parasect";
-    "golbat";
-    "jigglypuff";
-    "nidoran";
-    "spearow";
-    "raticate";
-    "beedrill";
-    "squirtle";
+    "Pikachu";
+    "Oshawott";
+    "Charizard";
+    "Pyroar";
+    "Eevee";
+    "Haunter";
+    "Mewtwo";
+    "Geodude";
+    "Abra";
+    "Poliwhirl";
+    "Meowth";
+    "Diglett";
+    "Parasect";
+    "Golbat";
+    "Jigglypuff";
+    "Nidoran";
+    "Spearow";
+    "Raticate";
+    "Beedrill";
+    "Squirtle";
   ]
 
 type command =
@@ -72,7 +72,7 @@ type move =
   | Valid
   | Invalid
 
-type tile =
+type tile = 
   | Empty
   | Grass
   | Path
@@ -84,7 +84,7 @@ type game_state = {
   mutable x : int;
   mutable y : int;
   mutable map : tile array array;
-  mutable starter_pokemon : string option;
+  mutable starter_pokemon : (string option * Pokemon.t option);
       (* mutable starter_pokemon : Pokemon.t option; *)
       (* Option type to represent the possibility of no starter Pokemon *)
 }
@@ -164,19 +164,10 @@ let decide_fate g =
     print_endline "in decide fate";
     false
   end
-
-let encounter () =
-  if Pokemon.battle (Pokemon.pikachu ()) (Pokemon.oshawott ()) = Win then ()
+  
+let encounter poke =
+  if Pokemon.battle (poke) (Pokemon.oshawott ()) = Win then ()
   else print_string "GAME OVER"
-
-(* let rec game_loop game = if decide_fate game then encounter () else
-   print_game_state game; print_string "Enter a direction (WASD), or 'q' to
-   quit: "; match read_line () with | "w" | "W" -> if move_pokemon game Up =
-   Valid then game_loop game else game_loop game | "a" | "A" -> if move_pokemon
-   game Left = Valid then game_loop game else game_loop game | "s" | "S" -> if
-   move_pokemon game Down = Valid then game_loop game else game_loop game | "d"
-   | "D" -> if move_pokemon game Right = Valid then game_loop game else
-   game_loop game | "q" | "Q" -> exit 0 | _ -> game_loop game *)
 
 let print_list_with_spacing lst =
   let rec print_elements = function
@@ -207,34 +198,17 @@ let choose_starter_pokemon () =
 
 let initialize_starter_pokemon name =
   match name with
-  | "pikachu" ->
+  | "Pikachu" ->
       Pokemon.pikachu ()
-        (* { pokemon_name = "Pikachu"; health = max_health; attack = 30; defense
-           = 20; speed = 40; poke_typ = Electric; descr = "An electric-type
-           Pokemon."; } *)
-        "pika"
-  (* | "oshawott" -> { pokemon_name = "Oshawott"; health = max_health; attack =
-     25; defense = 25; speed = 35; poke_typ = Water; descr = "A water-type
-     Pokemon."; } *)
-  (* Add more cases for other Pokemon *)
   | _ -> failwith "Invalid Pokemon choice"
-
-(* let rec game_loop game = if decide_fate game then encounter () else
-   print_game_state game; print_string "Enter a direction (WASD), or 'q' to
-   quit: "; match read_line () with | "w" | "W" -> if move_pokemon game Up =
-   Valid then game_loop game else game_loop game | "a" | "A" -> if move_pokemon
-   game Left = Valid then game_loop game else game_loop game | "s" | "S" -> if
-   move_pokemon game Down = Valid then game_loop game else game_loop game | "d"
-   | "D" -> if move_pokemon game Right = Valid then game_loop game else
-   game_loop game | "q" | "Q" -> exit 0 | _ -> game_loop game *)
 
 let rec game_loop game_state =
   match game_state.starter_pokemon with
-  | Some starter_pokemon -> (
+  | Some name, Some pokemon -> (
       Printf.printf "You chose %s as your starter Pokemon!\n"
         (* starter_pokemon.pokemon_name; *)
-        starter_pokemon;
-      if decide_fate game_state then encounter ()
+        name;
+      if decide_fate game_state then encounter pokemon
       else print_game_state game_state;
       print_string "Enter a direction (WASD), or 'q' to quit: ";
       match read_line () with
@@ -252,11 +226,12 @@ let rec game_loop game_state =
           else game_loop game_state
       | "q" | "Q" -> exit 0
       | _ -> game_loop game_state)
-  | None ->
+  | (None, None) ->
       let starter_pokemon_name = choose_starter_pokemon () in
       let starter_pokemon = initialize_starter_pokemon starter_pokemon_name in
-      game_state.starter_pokemon <- Some starter_pokemon;
+      game_state.starter_pokemon <- (Some starter_pokemon_name, Some starter_pokemon) ;
       game_loop game_state
+    | _ -> failwith "Not_found"
 
 let () =
   let width = 5 in
@@ -268,7 +243,7 @@ let () =
       x = init_x;
       y = init_y;
       map = initialize_map_with_probabilities width height;
-      starter_pokemon = None;
+      starter_pokemon = (None, None);
     }
   in
   game_loop game_state

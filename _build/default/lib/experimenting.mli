@@ -23,7 +23,7 @@ type game_state = {
   mutable x : int;
   mutable y : int;
   mutable map : tile array array;
-  mutable starter_pokemon : string option;
+  mutable starter_pokemon : string option * Pokemon.t option;
       (* Comment: Option type to represent the possibility of no starter
          Pokemon *)
 }
