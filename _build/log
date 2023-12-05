@@ -1,9 +1,10 @@
 # dune build
 # OCAMLPARAM: unset
 # Shared cache: disabled
-# Workspace root: /home/ooa7/cs3110/final
+# Workspace root:
+# /Users/f.m.rasulovgmail.com/3110/3110-Final-Project-Pokemon-Multi
 # Auto-detected concurrency: 8
-$ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_e5beb3_output
+$ /Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/72/1chqvhg13tsf0d4lnmrngj8c0000gn/T/dune_7f51c4_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -12,64 +13,79 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_e5beb3_outpu
 #  ; for_host = None
 #  ; fdo_target_exe = None
 #  ; build_dir = In_build_dir "default"
-#  ; ocaml_bin = External "/home/ooa7/.opam/cs3110-2023fa/bin"
-#  ; ocaml = Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocaml"
-#  ; ocamlc = External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt"
-#  ; ocamlopt = Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt"
-#  ; ocamldep = Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt"
+#  ; ocaml_bin = External "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin"
+#  ; ocaml =
+#      Ok External "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocaml"
+#  ; ocamlc =
+#      External
+#        "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlc.opt"
+#  ; ocamlopt =
+#      Ok
+#        External
+#          "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlopt.opt"
+#  ; ocamldep =
+#      Ok
+#        External
+#          "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamldep.opt"
 #  ; ocamlmklib =
-#      Ok External "/home/ooa7/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
+#      Ok
+#        External
+#          "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlmklib.opt"
 #  ; env =
 #      map
 #        { "DUNE_OCAML_HARDCODED" :
-#            "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml:/home/ooa7/.opam/cs3110-2023fa/lib"
-#        ; "DUNE_OCAML_STDLIB" : "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
-#        ; "DUNE_SOURCEROOT" : "/home/ooa7/cs3110/final"
-#        ; "INSIDE_DUNE" : "/home/ooa7/cs3110/final/_build/default"
+#            "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/lib/ocaml:/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/lib"
+#        ; "DUNE_OCAML_STDLIB" :
+#            "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/f.m.rasulovgmail.com/3110/3110-Final-Project-Pokemon-Multi"
+#        ; "INSIDE_DUNE" :
+#            "/Users/f.m.rasulovgmail.com/3110/3110-Final-Project-Pokemon-Multi/_build/default"
 #        ; "OCAMLFIND_IGNORE_DUPS_IN" :
-#            "/home/ooa7/cs3110/final/_build/install/default/lib"
-#        ; "OCAMLPATH" : "/home/ooa7/cs3110/final/_build/install/default/lib"
+#            "/Users/f.m.rasulovgmail.com/3110/3110-Final-Project-Pokemon-Multi/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/f.m.rasulovgmail.com/3110/3110-Final-Project-Pokemon-Multi/_build/install/default/lib"
 #        ; "OCAMLTOP_INCLUDE_PATH" :
-#            "/home/ooa7/cs3110/final/_build/install/default/lib/toplevel"
+#            "/Users/f.m.rasulovgmail.com/3110/3110-Final-Project-Pokemon-Multi/_build/install/default/lib/toplevel"
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
 #  ; findlib_paths =
-#      [ External "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
-#      ; External "/home/ooa7/.opam/cs3110-2023fa/lib"
+#      [ External "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/lib/ocaml"
+#      ; External "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/lib"
 #      ]
 #  ; natdynlink_supported = true
 #  ; supports_shared_libraries = true
 #  ; ocaml_config =
 #      { version = "5.0.0"
-#      ; standard_library_default = "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
-#      ; standard_library = "/home/ooa7/.opam/cs3110-2023fa/lib/ocaml"
+#      ; standard_library_default =
+#          "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/lib/ocaml"
+#      ; standard_library =
+#          "/Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/lib/ocaml"
 #      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
 #      ; ccomp_type = "cc"
-#      ; c_compiler = "gcc"
+#      ; c_compiler = "cc"
 #      ; ocamlc_cflags =
-#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
 #      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
 #      ; ocamlopt_cflags =
-#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread"; "-fPIC" ]
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-pthread" ]
 #      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64" ]
 #      ; bytecomp_c_compiler =
-#          [ "gcc"
+#          [ "cc"
 #          ; "-O2"
 #          ; "-fno-strict-aliasing"
 #          ; "-fwrapv"
 #          ; "-pthread"
-#          ; "-fPIC"
 #          ; "-D_FILE_OFFSET_BITS=64"
 #          ]
 #      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
 #      ; native_c_compiler =
-#          [ "gcc"
+#          [ "cc"
 #          ; "-O2"
 #          ; "-fno-strict-aliasing"
 #          ; "-fwrapv"
 #          ; "-pthread"
-#          ; "-fPIC"
 #          ; "-D_FILE_OFFSET_BITS=64"
 #          ]
 #      ; native_c_libraries = [ "-lm"; "-lpthread" ]
@@ -79,8 +95,8 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_e5beb3_outpu
 #      ; model = "default"
 #      ; int_size = 63
 #      ; word_size = 64
-#      ; system = "linux"
-#      ; asm = [ "as" ]
+#      ; system = "macosx"
+#      ; asm = [ "cc"; "-c"; "-Wno-trigraphs" ]
 #      ; asm_cfi_supported = true
 #      ; with_frame_pointers = false
 #      ; ext_exe = ""
@@ -91,8 +107,8 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_e5beb3_outpu
 #      ; os_type = "Unix"
 #      ; default_executable_name = "a.out"
 #      ; systhread_supported = true
-#      ; host = "x86_64-pc-linux-gnu"
-#      ; target = "x86_64-pc-linux-gnu"
+#      ; host = "x86_64-apple-darwin22.1.0"
+#      ; target = "x86_64-apple-darwin22.1.0"
 #      ; profiling = false
 #      ; flambda = false
 #      ; spacetime = false
@@ -112,10 +128,9 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_e5beb3_outpu
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl lib/tile.ml) > _build/default/lib/.sprite.objs/sprite__Tile.impl.d
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Tile.cmo -c -impl lib/tile.ml)
-> File "lib/tile.ml", line 17, characters 2-29:
-> 17 |   val poke_list : string list
+$ (cd _build/default && /Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Tile.cmo -c -impl lib/tile.ml)
+> File "lib/tile.ml", line 16, characters 2-29:
+> 16 |   val poke_list : string list
 >        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 > Error (warning 32 [unused-value-declaration]): unused value poke_list.
 > File "lib/tile.ml", line 23, characters 2-23:
@@ -123,23 +138,35 @@ $ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5
 >        ^^^^^^^^^^^^^^^^^^^^^
 > Error (warning 32 [unused-value-declaration]): unused value tile_effect.
 [2]
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Tile.cmx -c -impl lib/tile.ml)
-> File "lib/tile.ml", line 17, characters 2-29:
-> 17 |   val poke_list : string list
->        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-> Error (warning 32 [unused-value-declaration]): unused value poke_list.
-> File "lib/tile.ml", line 23, characters 2-23:
-> 23 |   val tile_effect : int
->        ^^^^^^^^^^^^^^^^^^^^^
-> Error (warning 32 [unused-value-declaration]): unused value tile_effect.
+$ (cd _build/default && /Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Experimenting.cmo -c -impl lib/experimenting.ml)
+> File "lib/experimenting.ml", line 38, characters 0-12:
+> 38 | open Pokemon
+>      ^^^^^^^^^^^^
+> Error (warning 33 [unused-open]): unused open Sprite.Pokemon.
 [2]
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Pokemon.cmo -c -impl lib/pokemon.ml)
+$ (cd _build/default && /Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Pokemon.cmo -c -impl lib/pokemon.ml)
 > File "lib/pokemon.ml", line 825, characters 6-12:
 > 825 |   let battle (ally : t) (enemy : t) : outcome =
 >             ^^^^^^
 > Error (warning 32 [unused-value-declaration]): unused value battle.
 [2]
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Pokemon.cmx -c -impl lib/pokemon.ml)
+$ (cd _build/default && /Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Tile.cmx -c -impl lib/tile.ml)
+> File "lib/tile.ml", line 16, characters 2-29:
+> 16 |   val poke_list : string list
+>        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value poke_list.
+> File "lib/tile.ml", line 23, characters 2-23:
+> 23 |   val tile_effect : int
+>        ^^^^^^^^^^^^^^^^^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value tile_effect.
+[2]
+$ (cd _build/default && /Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Experimenting.cmx -c -impl lib/experimenting.ml)
+> File "lib/experimenting.ml", line 38, characters 0-12:
+> 38 | open Pokemon
+>      ^^^^^^^^^^^^
+> Error (warning 33 [unused-open]): unused open Sprite.Pokemon.
+[2]
+$ (cd _build/default && /Users/f.m.rasulovgmail.com/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Pokemon.cmx -c -impl lib/pokemon.ml)
 > File "lib/pokemon.ml", line 825, characters 6-12:
 > 825 |   let battle (ally : t) (enemy : t) : outcome =
 >             ^^^^^^

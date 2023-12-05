@@ -22,7 +22,10 @@ type tile =
 type game_state = {
   mutable x : int;
   mutable y : int;
-  map : tile array array;
+  mutable map : tile array array;
+  mutable starter_pokemon : string option;
+      (* Comment: Option type to represent the possibility of no starter
+         Pokemon *)
 }
 
 val string_of_tile : tile -> string
