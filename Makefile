@@ -9,4 +9,7 @@ code:
 	! dune build --watch
 
 start:
-	OCAMLRUNPARAM=b dune exec src/execute.exe
+	OCAMLRUNPARAM=b dune exec lib/my_program
+
+test:
+	OCAMLRUNPARAM=b dune exec test/main.exe
