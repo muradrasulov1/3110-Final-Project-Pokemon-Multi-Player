@@ -49,6 +49,12 @@ val effectivity_list : (poke_tp * float list) list
 val get_health : t -> int
 (** Returns the current health of a Pokemon*)
 
+val get_health : pokemon -> int
+(** [get_health a] returns the health of the Pokemon [a]. *)
+
+val pokemon_heal : pokemon -> pokemon
+(** [pokemon_heal a] returns a new Pokemon with increased health. *)
+
 val battle : t -> t -> outcome
 (**Conducts battle between two Pokemon*)
 
