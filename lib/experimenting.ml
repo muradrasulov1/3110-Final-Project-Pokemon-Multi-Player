@@ -1,41 +1,3 @@
-(* open Tile let width = 5 let height = 5 let init_x = width / 2 let init_y =
-   height / 2
-
-   type command = | Up | Left | Right | Down
-
-   type move = | Valid | Invalid
-
-   type tile = | Empty | Grass | Path | Lava | FirstAid | Wall
-
-   let string_of_tile = function | Wall -> "W" | Grass -> "X" | Path -> "." |
-   Lava -> "." | FirstAid -> "+" | Empty -> "."
-
-   let print_map map = let width = Array.length map in let height = Array.length
-   map.(0) in
-
-   for y = 0 to height - 1 do for x = 0 to width - 1 do print_string
-   (string_of_tile map.(x).(y) ^ " ") (* Add more spaces here *) done;
-   print_endline ""; for _ = 1 to 2 do print_endline "" (* Add vertical spacing
-   *) done done
-
-   let prob_of = function | Grass -> 24 | Path -> 50 | Lava | FirstAid -> 13 | _
-   -> 0
-
-   let initialize_map_with_probabilities width height = (* Initialize the Random
-   module with a seed (can be any integer) *) Random.init 42; let grass_prob =
-   prob_of Grass in let path_prob = prob_of Path in let lava_prob = prob_of Lava
-   in
-
-   let map = Array.init width (fun x -> Array.init height (fun y -> let
-   rand_value = Random.int 100 in match rand_value with | _ when x = 0 || x =
-   width - 1 || y = 0 || y = height - 1 -> Wall | _ when rand_value < grass_prob
-   -> Grass | _ when rand_value < grass_prob + path_prob -> Path | _ when
-   rand_value < grass_prob + path_prob + lava_prob -> Lava | _ -> FirstAid)) in
-   map *)
-
-(* pokemon_game.ml *)
-
-open Pokemon
 
 let p_list =
   [
@@ -78,6 +40,7 @@ type tile =
   | Path
   | Lava
   | FirstAid
+  (*boundary*)
   | Wall
 
 type game_state = {
@@ -93,7 +56,7 @@ let string_of_tile = function
   | Wall -> "W"
   | Grass -> "X"
   | Path -> "."
-  | Lava -> "."
+  | Lava -> "!"
   | FirstAid -> "+"
   | Empty -> "."
 
@@ -116,9 +79,9 @@ let print_game_state game =
   done
 
 let prob_of = function
-  | Grass -> 24
-  | Path -> 50
-  | Lava | FirstAid -> 13
+  | Grass -> 20
+  | Path -> 40
+  | Lava | FirstAid -> 20
   | _ -> 0
 
 let initialize_map_with_probabilities width height =
@@ -158,16 +121,21 @@ let decide_fate g =
   let x, y = (g.x, g.y) in
   if string_of_tile g.map.(x).(y) = "X" then begin
     print_endline "in decide fate";
-    true
-  end
+    if Random.int 4 = 1 then begin
+      true
+    end
+    else
+      false
+    end
   else begin
     print_endline "in decide fate";
     false
   end
-  
+   
 let encounter poke =
-  if Pokemon.battle (poke) (Pokemon.oshawott ()) = Win then ()
-  else print_string "GAME OVER"
+  if Pokemon.battle poke (List.nth Pokemon.pokelist (Random.int 
+  (List.length Pokemon.pokelist)-1) ()) = Win then ()
+  else print_string "GAME OVER!"
 
 let print_list_with_spacing lst =
   let rec print_elements = function
@@ -199,7 +167,46 @@ let choose_starter_pokemon () =
 let initialize_starter_pokemon name =
   match name with
   | "Pikachu" ->
-      Pokemon.pikachu ()
+    Pokemon.pikachu ()
+  |"Oshawott" ->
+    Pokemon.oshawott ()
+  |"Charizard" ->
+    Pokemon.charizard ()
+  |"Pyroar" ->
+    Pokemon.pyroar ()
+  |"Eevee" ->
+    Pokemon.eevee ()
+  |"Haunter" ->
+    Pokemon.haunter ()
+  |"Mewtwo" ->
+    Pokemon.mewtwo ()
+  |"Geodude" -> 
+    Pokemon.geodude ()
+  |"Abra" ->
+    Pokemon.abra ()
+  |"Poliwhirl" ->
+    Pokemon.poliwhirl ()
+  |"Meowth" ->
+    Pokemon.meowth ()
+  |"Diglett" ->
+    Pokemon.diglett ()
+  |"Parasect" ->
+    Pokemon.parasect ()
+  |"Golbat" -> 
+    Pokemon.golbat ()
+  |"Jigglypuff" ->
+    Pokemon.jigglypuff ()
+  |"Nidoran" ->
+    Pokemon.nidoran ()
+  |"Spearow" -> 
+    Pokemon.spearow ()
+  |"Raticate" -> 
+    Pokemon.raticate ()
+  |"Beedrill" ->
+    Pokemon.beedrill ()
+  |"Squirtle" -> 
+    Pokemon.squirtle ()
+    
   | _ -> failwith "Invalid Pokemon choice"
 
 let rec game_loop game_state =
@@ -235,7 +242,7 @@ let rec game_loop game_state =
 
 let () =
   let width = 5 in
-  let height = 5 in
+  let height = 20 in
   let init_x = width / 2 in
   let init_y = height / 2 in
   let game_state =
