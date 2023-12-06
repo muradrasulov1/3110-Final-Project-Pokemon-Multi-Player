@@ -4,7 +4,7 @@ let p_list =
   [
     "pikachu";
     "oshawott";
-    "pcharizard";
+    "charizard";
     "pyroar";
     "eevee";
     "haunter";
@@ -130,19 +130,10 @@ let rec end_game () =
       end_game ()
 
 let decide_fate g =
-  print_endline "in decide fate";
   let x, y = (g.x, g.y) in
-  if string_of_tile g.map.(x).(y) = "X" then begin
-    print_endline "in decide fate";
-    if Random.int 4 = 1 then begin
-      true
-    end
-    else false
-  end
-  else begin
-    print_endline "in decide fate";
-    false
-  end
+  if string_of_tile g.map.(x).(y) = "X" then
+    if Random.int 4 = 1 then true else false
+  else false
 
 let encounter poke =
   if
@@ -209,6 +200,9 @@ let rec game_loop game_state =
   match game_state.starter_pokemon with
   | Some name, Some pokemon -> (
       Printf.printf "You chose %s as your starter Pokemon!\n" name;
+      Printf.printf "Your little fellas health: %i \n"
+        (Pokemon.get_health pokemon);
+
       if decide_fate game_state then encounter pokemon
       else print_game_state game_state;
       print_string "Enter a direction (WASD), or 'q' to quit: ";

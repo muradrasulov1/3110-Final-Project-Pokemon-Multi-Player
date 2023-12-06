@@ -62,10 +62,6 @@ type t = {
   move_list : moves list;
   (* Type of the pokemon *)
   poke_typ : poke_tp * poke_tp;
-  (* Image of Pokemon in battle *)
-  battle_image : string;
-  (* Image of Pokemon for profile picture *)
-  search_image : string;
   (* Description of Pokemon *)
   descr : string;
 }
@@ -134,64 +130,6 @@ let typ_indx = function
   | None -> 14
   | Dragon -> 15
   | Bug -> 16
-
-let battle_images = function
-  | Charizard ->
-      "https://img.pokemondb.net/sprites/black-white/normal/charizard.png"
-  | Squirtle ->
-      "https://img.pokemondb.net/sprites/black-white/shiny/squirtle.png"
-  | Beedrill ->
-      "https://img.pokemondb.net/sprites/black-white/normal/beedrill.png"
-  | Raticate ->
-      "https://img.pokemondb.net/sprites/black-white/normal/raticate-f.png"
-  | Spearow ->
-      "https://img.pokemondb.net/sprites/black-white/normal/spearow.png"
-  | Pikachu ->
-      "https://img.pokemondb.net/sprites/black-white/normal/pikachu-f.png"
-  | Nidoran ->
-      "https://img.pokemondb.net/sprites/black-white/normal/nidoran-f.png"
-  | Jigglypuff -> "https://img.pokemondb.net/sprites/x-y/normal/jigglypuff.png"
-  | Golbat ->
-      "https://img.pokemondb.net/sprites/black-white/normal/golbat-f.png"
-  | Parasect ->
-      "https://img.pokemondb.net/sprites/black-white/normal/parasect.png"
-  | Diglett ->
-      "https://img.pokemondb.net/sprites/black-white/normal/diglett.png"
-  | Meowth -> "https://img.pokemondb.net/sprites/black-white/normal/meowth.png"
-  | Poliwhirl ->
-      "https://img.pokemondb.net/sprites/black-white/normal/poliwhirl.png"
-  | Abra -> "https://img.pokemondb.net/sprites/black-white/normal/abra.png"
-  | Geodude ->
-      "https://img.pokemondb.net/sprites/black-white/normal/geodude.png"
-  | Mewtwo -> "https://img.pokemondb.net/sprites/black-white/normal/mewtwo.png"
-  | Haunter ->
-      "https://img.pokemondb.net/sprites/black-white/normal/haunter.png"
-  | Eevee -> "https://img.pokemondb.net/sprites/black-white/normal/eevee.png"
-  | Pyroar -> "https://img.pokemondb.net/sprites/x-y/normal/pyroar-f.png"
-  | Oshawott ->
-      "https://img.pokemondb.net/sprites/black-white/normal/oshawott.png"
-
-let search_images = function
-  | Charizard -> "https://img.pokemondb.net/artwork/large/charizard.jpg"
-  | Squirtle -> "https://img.pokemondb.net/artwork/large/squirtle.jpg"
-  | Beedrill -> "https://img.pokemondb.net/artwork/large/beedrill.jpg"
-  | Raticate -> "https://img.pokemondb.net/artwork/large/raticate.jpg"
-  | Spearow -> "https://img.pokemondb.net/artwork/large/spearow.jpg"
-  | Pikachu -> "https://img.pokemondb.net/artwork/large/pikachu.jpg"
-  | Nidoran -> "https://img.pokemondb.net/artwork/large/nidoran-f.jpg"
-  | Jigglypuff -> "https://img.pokemondb.net/artwork/large/jigglypuff.jpg"
-  | Golbat -> "https://img.pokemondb.net/artwork/large/golbat.jpg"
-  | Parasect -> "https://img.pokemondb.net/artwork/large/parasect.jpg"
-  | Diglett -> "https://img.pokemondb.net/artwork/large/diglett.jpg"
-  | Meowth -> "https://img.pokemondb.net/artwork/large/meowth.jpg"
-  | Poliwhirl -> "https://img.pokemondb.net/artwork/large/poliwhirl.jpg"
-  | Abra -> "https://img.pokemondb.net/artwork/large/abra.jpg"
-  | Geodude -> "https://img.pokemondb.net/artwork/large/geodude.jpg"
-  | Mewtwo -> "https://img.pokemondb.net/artwork/large/mewtwo.jpg"
-  | Haunter -> "https://img.pokemondb.net/artwork/large/haunter.jpg"
-  | Eevee -> "https://img.pokemondb.net/artwork/large/eevee.jpg"
-  | Pyroar -> "https://img.pokemondb.net/artwork/large/pyroar.jpg"
-  | Oshawott -> "https://img.pokemondb.net/artwork/large/oshawott.jpg"
 
 let create_move p n d t de =
   { fighter = p; name = n; tp = d; basep = t; descr = de }
@@ -542,6 +480,13 @@ let effectivity_list =
   ]
 
 let get_health a = a.health
+let pokemon_heal a = { a with health = get_health a + 50 }
+
+let lava_dmg_calc =
+  let rand_res = Random.int 4 in
+  if rand_res = 1 then 30 else 20
+
+let pokemon_burn a = { a with health = get_health a - lava_dmg_calc }
 let random_float_in_range min max = min +. Random.float (max -. min)
 let random_dmg_modifier = random_float_in_range 0.9 1.1
 
@@ -880,8 +825,6 @@ let charizard () =
     defense = 78;
     speed = 100;
     poke_typ = (Fire, Flying);
-    battle_image = battle_images Charizard;
-    search_image = search_images Charizard;
     descr =
       "Charizard flies around the sky in search of powerful opponents.\n\
       \   It breathes fire of such great heat that it melts anything. \n\
@@ -898,8 +841,6 @@ let squirtle () =
     defense = 65;
     speed = 43;
     poke_typ = (Water, None);
-    battle_image = battle_images Squirtle;
-    search_image = search_images Squirtle;
     descr =
       "Squirtle's shell is not merely used for protection.\n\
       \   The shell's rounded shape and the grooves on its surface help \
@@ -916,8 +857,6 @@ let beedrill () =
     defense = 40;
     speed = 75;
     poke_typ = (Bug, Poison);
-    battle_image = battle_images Beedrill;
-    search_image = search_images Beedrill;
     descr =
       "Beedrill is extremely territorial. For safety reasons, \n\
       \    no one should ever approach its nest. \n\
@@ -933,8 +872,6 @@ let raticate () =
     defense = 60;
     speed = 97;
     poke_typ = (Normal, None);
-    battle_image = battle_images Raticate;
-    search_image = search_images Raticate;
     descr =
       "Raticate's sturdy fangs grow steadily.\n\
       \   To keep them ground down, it gnaws on rocks and logs.\n\
@@ -950,8 +887,6 @@ let spearow () =
     defense = 30;
     speed = 70;
     poke_typ = (Normal, Flying);
-    battle_image = battle_images Spearow;
-    search_image = search_images Spearow;
     descr =
       "Spearow has a very loud cry that can be heard over\n\
       \   half a mile away. If its high, keening cry is heard echoing all \
@@ -968,8 +903,6 @@ let pikachu () =
     defense = 40;
     speed = 90;
     poke_typ = (Electric, None);
-    battle_image = battle_images Pikachu;
-    search_image = search_images Pikachu;
     descr =
       "Pikachu, which can generate powerful electricity,\n\
       \   has cheek sacs that are extra soft and super stretchy.";
@@ -984,8 +917,6 @@ let nidoran () =
     defense = 40;
     speed = 50;
     poke_typ = (Poison, None);
-    battle_image = battle_images Nidoran;
-    search_image = search_images Nidoran;
     descr =
       "Nidoran has developed muscles for moving its ears.\n\
       \   Thanks to them, the ears can be freely moved in any direction.\n\
@@ -1001,8 +932,6 @@ let jigglypuff () =
     defense = 20;
     speed = 20;
     poke_typ = (Normal, Normal);
-    battle_image = battle_images Jigglypuff;
-    search_image = search_images Jigglypuff;
     descr =
       "Jigglypuff's vocal cords can freely adjust the\n\
       \  wavelength of its voice. This Pokémon uses this ability to\n\
@@ -1018,8 +947,6 @@ let golbat () =
     defense = 70;
     speed = 90;
     poke_typ = (Poison, Flying);
-    battle_image = battle_images Golbat;
-    search_image = search_images Golbat;
     descr =
       "Golbat loves to drink the blood of living things.\n\
       \   It is particularly active in the pitch black of night.\n\
@@ -1035,8 +962,6 @@ let parasect () =
     defense = 80;
     speed = 30;
     poke_typ = (Bug, Grass);
-    battle_image = battle_images Parasect;
-    search_image = search_images Parasect;
     descr =
       "Parasect is known to infest large trees en masse and drain\n\
       \   nutrients from the lower trunk and roots. When an infested tree dies,\n\
@@ -1052,8 +977,6 @@ let diglett () =
     defense = 25;
     speed = 95;
     poke_typ = (Ground, None);
-    battle_image = battle_images Diglett;
-    search_image = search_images Diglett;
     descr =
       "Diglett are raised in most farms. The reason is simple—wherever\n\
       \   this Pokémon burrows, the soil is left perfectly tilled for planting\n\
@@ -1069,8 +992,6 @@ let meowth () =
     defense = 35;
     speed = 90;
     poke_typ = (Normal, None);
-    battle_image = battle_images Meowth;
-    search_image = search_images Meowth;
     descr =
       "Meowth withdraws its sharp claws into its paws to silently\n\
       \   sneak about without making any incriminating footsteps. For some \n\
@@ -1086,8 +1007,6 @@ let poliwhirl () =
     defense = 65;
     speed = 90;
     poke_typ = (Water, None);
-    battle_image = battle_images Poliwhirl;
-    search_image = search_images Poliwhirl;
     descr =
       "Poliwhirl's skin is always moist. This slimy film helps\n\
       \   reduce the Pokémon's resistance in water. Its skin is also very\n\
@@ -1103,8 +1022,6 @@ let abra () =
     defense = 15;
     speed = 90;
     poke_typ = (Psychic, Psychic);
-    battle_image = battle_images Abra;
-    search_image = search_images Abra;
     descr =
       "Abra sleeps for 18 hours a day. However, it can sense \n\
       \  the presence of danger and quickly use its extrasensory abilities\n\
@@ -1121,8 +1038,6 @@ let geodude () =
     defense = 100;
     speed = 20;
     poke_typ = (Ground, Ground);
-    battle_image = battle_images Geodude;
-    search_image = search_images Geodude;
     descr =
       "Commonly found near mountain trails and the like. \n\
       \  If you step on Geodude by accident, it gets angry.";
@@ -1137,8 +1052,6 @@ let mewtwo () =
     defense = 90;
     speed = 130;
     poke_typ = (Psychic, None);
-    battle_image = battle_images Mewtwo;
-    search_image = search_images Mewtwo;
     descr =
       "Mewto's DNA is almost the same as Mew's. \n\
       \  However, its size and disposition are vastly different.";
@@ -1153,8 +1066,6 @@ let haunter () =
     defense = 45;
     speed = 95;
     poke_typ = (Ghost, Poison);
-    battle_image = battle_images Haunter;
-    search_image = search_images Haunter;
     descr =
       "Because of its ability to slip through block walls,\n\
       \   Haunter is said to be from another dimension.";
@@ -1169,8 +1080,6 @@ let eevee () =
     defense = 50;
     speed = 55;
     poke_typ = (Normal, None);
-    battle_image = battle_images Eevee;
-    search_image = search_images Eevee;
     descr =
       "Eevee's genetic code is irregular.\n\
       \   It may mutate if it is exposed to radiation from element stones.";
@@ -1185,8 +1094,6 @@ let pyroar () =
     defense = 72;
     speed = 106;
     poke_typ = (Fire, Normal);
-    battle_image = battle_images Pyroar;
-    search_image = search_images Pyroar;
     descr =
       "Pyroar has the largest mane of fire. There's a reason why they are\n\
       \  declared is the leader of the pride.";
@@ -1201,8 +1108,6 @@ let oshawott () =
     defense = 45;
     speed = 45;
     poke_typ = (Water, None);
-    battle_image = battle_images Oshawott;
-    search_image = search_images Oshawott;
     descr =
       "Oshawott fights using the scalchop on its stomach.\n\
       \   In response to an attack, it retaliates immediately by slashing.";
