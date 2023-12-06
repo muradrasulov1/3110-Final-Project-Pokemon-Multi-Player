@@ -116,26 +116,36 @@ let move_pokemon game direction =
   end
   else Invalid
 
-let decide_fate g =
-  print_endline "in decide fate";
-  let x, y = (g.x, g.y) in
-  if string_of_tile g.map.(x).(y) = "X" then begin
+  let rec end_game () =
+    print_string "GAME OVER!!!\n";
+    print_string ("Don't give up yet\n" ^ 
+    "Click 'r' to pick up from where you've left off or 'q' to quit:");
+    match read_line () with
+      | "r" | "R" -> ()
+      | "q" | "Q"-> exit 0
+      | _ -> print_string "Enter command to quit the game or continue:\n";
+       end_game ()
+  
+  let decide_fate g =
     print_endline "in decide fate";
-    if Random.int 4 = 1 then begin
-      true
-    end
-    else
+    let x, y = (g.x, g.y) in
+    if string_of_tile g.map.(x).(y) = "X" then begin
+      print_endline "in decide fate";
+      if Random.int 4 = 1 then begin
+        true
+      end
+      else
+        false
+      end
+    else begin
+      print_endline "in decide fate";
       false
     end
-  else begin
-    print_endline "in decide fate";
-    false
-  end
-   
-let encounter poke =
-  if Pokemon.battle poke (List.nth Pokemon.pokelist (Random.int 
-  (List.length Pokemon.pokelist)-1) ()) = Win then ()
-  else print_string "GAME OVER!"
+     
+  let encounter poke =
+    if Pokemon.battle poke (List.nth Pokemon.pokelist (Random.int 
+    (List.length Pokemon.pokelist)-1) ()) = Win then ()
+    else end_game ()
 
 let print_list_with_spacing lst =
   let rec print_elements = function
