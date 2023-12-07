@@ -1,4 +1,3 @@
-open Pokemon
 
 let p_list =
   [
@@ -198,50 +197,65 @@ let initialize_starter_pokemon name =
   | "squirtle" -> Pokemon.squirtle ()
   | _ -> failwith "Invalid Pokemon choice"
 
-let rec game_loop game_state =
-  match game_state.starter_pokemon with
-  | Some name, Some pokemon -> (
-      Printf.printf "You chose %s as your starter Pokemon!\n" name;
-      Printf.printf "Your little fellas health: %i \n"
-        (Pokemon.get_health pokemon);
+  let rec game_loop game_state =
+    match game_state.starter_pokemon with
+    | Some name, Some pokemon -> (
+        print_newline ();
+        Printf.printf "You chose %s as your starter Pokemon!\n" name;
+        print_newline ();
+        let stats = name
+        in print_string (initialize_starter_pokemon stats).descr;
+        print_newline ();
+        print_newline ();
 
-      (match decide_fate game_state with
-      | "battle" ->
-          if Random.int 4 = 1 then encounter pokemon
-          else print_game_state game_state
-      | "firstaid" ->
-          let new_poke = Pokemon.pokemon_heal pokemon in
-          game_state.starter_pokemon <-
-            (Some pokemon.pokemon_name, Some new_poke)
-      | "lava" ->
-          let new_poke = Pokemon.pokemon_burn pokemon in
-          game_state.starter_pokemon <-
-            (Some pokemon.pokemon_name, Some new_poke)
-      | _ -> ());
-
-      print_string "Enter a direction (WASD), or 'q' to quit: ";
-      match read_line () with
-      | "w" | "W" ->
-          if move_pokemon game_state Up = Valid then game_loop game_state
-          else game_loop game_state
-      | "a" | "A" ->
-          if move_pokemon game_state Left = Valid then game_loop game_state
-          else game_loop game_state
-      | "s" | "S" ->
-          if move_pokemon game_state Down = Valid then game_loop game_state
-          else game_loop game_state
-      | "d" | "D" ->
-          if move_pokemon game_state Right = Valid then game_loop game_state
-          else game_loop game_state
-      | "q" | "Q" -> exit 0
-      | _ -> game_loop game_state)
-  | None, None ->
-      let starter_pokemon_name = choose_starter_pokemon () in
-      let starter_pokemon = initialize_starter_pokemon starter_pokemon_name in
-      game_state.starter_pokemon <-
-        (Some starter_pokemon_name, Some starter_pokemon);
-      game_loop game_state
-  | _ -> failwith "Not_found"
+        Printf.printf "Your little fellas health: %i \n"
+          (Pokemon.get_health pokemon);
+        print_newline ();
+        print_game_state game_state;
+        (match decide_fate game_state with
+        | "battle" ->
+            if Random.int 4 = 1 then encounter pokemon
+            else print_game_state game_state
+        | "firstaid" ->
+            print_string "Stay safe fella. Health increased.";
+            print_newline ();
+  
+            let new_poke = Pokemon.pokemon_heal pokemon in
+            game_state.starter_pokemon <-
+              (Some pokemon.pokemon_name, Some new_poke)
+        | "lava" ->
+            print_string "You really thought you were cooking? Health reduced.";
+            print_newline ();
+  
+            let new_poke = Pokemon.pokemon_burn pokemon in
+            game_state.starter_pokemon <-
+              (Some pokemon.pokemon_name, Some new_poke)
+        | _ -> ());
+        (* if decide_fate game_state then encounter pokemon else *)
+        print_string "Enter a direction (WASD), or 'q' to quit: ";
+        match read_line () with
+        | "w" | "W" ->
+            if move_pokemon game_state Up = Valid then game_loop game_state
+            else game_loop game_state
+        | "a" | "A" ->
+            if move_pokemon game_state Left = Valid then game_loop game_state
+            else game_loop game_state
+        | "s" | "S" ->
+            if move_pokemon game_state Down = Valid then game_loop game_state
+            else game_loop game_state
+        | "d" | "D" ->
+            if move_pokemon game_state Right = Valid then game_loop game_state
+            else game_loop game_state
+        | "q" | "Q" -> exit 0
+        | _ -> game_loop game_state)
+    | None, None ->
+        let starter_pokemon_name = choose_starter_pokemon () in
+        let starter_pokemon = initialize_starter_pokemon starter_pokemon_name in
+        game_state.starter_pokemon <-
+          (Some starter_pokemon_name, Some starter_pokemon);
+        game_loop game_state
+    | _ -> failwith "Not_found"
+  
 
 let () =
   let width = 20 in
