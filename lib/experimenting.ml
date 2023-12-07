@@ -131,9 +131,11 @@ let rec end_game () =
 
 let decide_fate g =
   let x, y = (g.x, g.y) in
-  if string_of_tile g.map.(x).(y) = "X" then
-    if Random.int 4 = 1 then true else false
-  else false
+  match string_of_tile g.map.(x).(y) with
+  | "X" -> "battle"
+  | "+" -> "firstaid"
+  | "!" -> "lava"
+  | _ -> "no tile event"
 
 let encounter poke =
   if
@@ -203,8 +205,20 @@ let rec game_loop game_state =
       Printf.printf "Your little fellas health: %i \n"
         (Pokemon.get_health pokemon);
 
-      if decide_fate game_state then encounter pokemon
-      else print_game_state game_state;
+      (match decide_fate game_state with
+      | "battle" ->
+          if Random.int 4 = 1 then encounter pokemon
+          else print_game_state game_state
+      | "firstaid" ->
+          let new_poke = Pokemon.pokemon_heal pokemon in
+          game_state.starter_pokemon <-
+            (Some pokemon.pokemon_name, Some new_poke)
+      | "lava" ->
+          let new_poke = Pokemon.pokemon_burn pokemon in
+          game_state.starter_pokemon <-
+            (Some pokemon.pokemon_name, Some new_poke)
+      | _ -> ());
+
       print_string "Enter a direction (WASD), or 'q' to quit: ";
       match read_line () with
       | "w" | "W" ->

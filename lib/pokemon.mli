@@ -53,7 +53,6 @@ val pokemon_heal : t -> t
 (** [pokemon_heal a] returns a new Pokemon with increased health. *)
 
 val pokemon_burn : t -> t
-(** [pokemon_burn a] returns a new Pokemon with reduced health. *)
 
 val battle : t -> t -> outcome
 (**Conducts battle between two Pokemon*)
