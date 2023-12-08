@@ -1,8 +1,46 @@
 (** The Pokemon type and its attributes to be used and displayed *)
-type pokemon
+type pokemon =
+  | Charizard
+  | Squirtle
+  | Beedrill
+  | Raticate
+  | Spearow
+  | Pikachu
+  | Nidoran
+  | Jigglypuff
+  | Golbat
+  | Parasect
+  | Diglett
+  | Meowth
+  | Poliwhirl
+  | Abra
+  | Geodude
+  | Mewtwo
+  | Haunter
+  | Eevee
+  | Pyroar
+  | Oshawott
 (** Represents Pokemon type of a sprite *)
 
-type poke_tp
+type poke_tp =
+  | Normal
+  | Electric
+  | Steel
+  | Flying
+  | Water
+  | Ice
+  | Fighting
+  | Poison
+  | Ghost
+  | Psychic
+  | Ground
+  | Grass
+  | Fire
+  | Dark
+  | None
+  | Bug
+  | Dragon
+  
 (** Represents species of a Pokemon *)
 
 type moves = {

@@ -1,2 +1,3 @@
 (library 
- (name sprite))
+ (name game)
+ (wrapped false))

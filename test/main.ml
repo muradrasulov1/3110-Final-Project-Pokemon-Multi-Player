@@ -556,6 +556,7 @@ let suite =
    "test_eevee_moves" >:: test_eevee_moves;
    "test_pyroar_moves" >:: test_pyroar_moves;
    "test_oshawott_moves" >:: test_oshawott_moves;
+   "test_golbat_moves" >:: test_golbat_moves
 
 
 

@@ -203,11 +203,9 @@ let initialize_starter_pokemon name =
         print_newline ();
         Printf.printf "You chose %s as your starter Pokemon!\n" name;
         print_newline ();
-        let stats = name
-        in print_string (initialize_starter_pokemon stats).descr;
         print_newline ();
+        print_string (pokemon).descr;
         print_newline ();
-
         Printf.printf "Your little fellas health: %i \n"
           (Pokemon.get_health pokemon);
         print_newline ();
