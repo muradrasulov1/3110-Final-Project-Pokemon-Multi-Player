@@ -155,7 +155,7 @@ let print_list_with_spacing lst =
         print_elements tl
   in
   print_elements lst
-
+  
 let choose_starter_pokemon () =
   print_endline "Welcome to POCaml";
   print_endline "Please choose the Pokemon you want to start as!";
@@ -201,6 +201,10 @@ let initialize_starter_pokemon name =
 let rec game_loop game_state =
   match game_state.starter_pokemon with
   | Some name, Some pokemon -> (
+      if Pokemon.get_health pokemon<=0 then match end_game () with 
+      | () -> game_loop {game_state with starter_pokemon=Some name,
+       Some (Pokemon.set_health pokemon 100)}
+      else
       print_newline ();
       Printf.printf "You chose %s as your starter Pokemon!\n" name;
       print_newline ();
