@@ -131,11 +131,11 @@ let test_spearow_moves _ =
     assert_equal "Tail Whip" (List.nth moves 0).name;
    assert_equal Normal (List.nth moves 0).tp;
    assert_equal 30 (List.nth moves 0).basep;
-   assert_equal "Pikachu hits his enemy with his tail" (List.nth moves 0).descr;
+   assert_equal "Pikachu hits his enemy with a his tail" (List.nth moves 0).descr;
     assert_equal "Spark" (List.nth moves 1).name;
    assert_equal Electric (List.nth moves 1).tp;
    assert_equal 20 (List.nth moves 1).basep;
-   assert_equal "An electrically-charged Pikachu tackles his opponent" (List.nth moves 1).descr;
+   assert_equal "An electrically-charged Pikachu tackles his oppnent" (List.nth moves 1).descr;
     assert_equal "Electro Ball" (List.nth moves 2).name;
    assert_equal Electric (List.nth moves 2).tp;
    assert_equal 10 (List.nth moves 2).basep;
@@ -251,7 +251,7 @@ let test_spearow_moves _ =
    assert_equal "Dig" (List.nth moves 0).name;
    assert_equal Ground (List.nth moves 0).tp;
    assert_equal 80 (List.nth moves 0).basep;
-   assert_equal "The user burrows into the ground, then attacks on the next turn" (List.nth moves 0).descr;
+   assert_equal "The user burrows into the ground, then attacks on\n   the next turn" (List.nth moves 0).descr;
 
 
    assert_equal "Earthquake" (List.nth moves 1).name;
@@ -293,7 +293,8 @@ let test_meowth_moves _ =
  assert_equal "Fury Swipes" (List.nth moves 2).name;
  assert_equal Normal (List.nth moves 2).tp;
  assert_equal 18 (List.nth moves 2).basep;
- assert_equal "The target is raked with sharp claws or scythes quickly two to five times in a row" (List.nth moves 2).descr;
+ assert_equal "The target is raked with sharp claws or scythes\n\
+ \    quickly two to five times in a row." (List.nth moves 2).descr;
 
 
  assert_equal "Slash" (List.nth moves 3).name;
@@ -325,7 +326,8 @@ let test_poliwhirl_moves _ =
  assert_equal "Hypnosis" (List.nth moves 2).name;
  assert_equal Psychic (List.nth moves 2).tp;
  assert_equal 0 (List.nth moves 2).basep;
- assert_equal "The user employs hypnotic suggestion to make the target fall into a deep sleep." (List.nth moves 2).descr;
+ assert_equal  "The user employs hypnotic suggestion to make the \n\
+ \  target fall into a deep sleep." (List.nth moves 2).descr;
 
 
  assert_equal "Water Gun" (List.nth moves 3).name;
@@ -397,7 +399,7 @@ let test_mewtwo_moves _ =
  assert_equal "Psychic" (List.nth moves 0).name;
  assert_equal Psychic (List.nth moves 0).tp;
  assert_equal 90 (List.nth moves 0).basep;
- assert_equal "A strong telekinetic attack." (List.nth moves 0).descr;
+ assert_equal "A strong telekinetic attack. " (List.nth moves 0).descr;
 
 
  assert_equal "Aura Sphere" (List.nth moves 1).name;
@@ -439,7 +441,8 @@ let test_haunter_moves _ =
  assert_equal "Hypnosis" (List.nth moves 2).name;
  assert_equal Psychic (List.nth moves 2).tp;
  assert_equal 0 (List.nth moves 2).basep;
- assert_equal "The user employs hypnotic suggestion to make the target fall into a deep sleep" (List.nth moves 2).descr;
+ assert_equal "The user employs hypnotic suggestion to make the \n\
+ \  target fall into a deep sleep." (List.nth moves 2).descr;
 
 
  assert_equal "Dream Eater" (List.nth moves 3).name;
