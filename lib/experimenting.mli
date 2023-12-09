@@ -59,7 +59,7 @@ val decide_fate : game_state -> string
     tile. If player is standing on a grass tile and a random function evaluates
     to true, returns true. Otherwise, returns false*)
 
-val encounter : Pokemon.t -> unit
+val encounter : Pokemon.t -> int
 (** Conducts battle between two Pokemon*)
 
 val choose_starter_pokemon : unit -> string

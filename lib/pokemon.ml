@@ -155,6 +155,7 @@ let effectivity_list =
         1.0;
         1.0;
         1.0;
+        1.0;
       ] );
     (* Electric *)
     ( Electric,
@@ -196,6 +197,7 @@ let effectivity_list =
         1.0;
         1.0;
         1.0;
+        1.0;
       ] );
     (* Flying *)
     ( Flying,
@@ -216,6 +218,7 @@ let effectivity_list =
         1.0;
         2.0;
         1.0;
+        2.0;
       ] );
     (* Water *)
     ( Water,
@@ -236,6 +239,7 @@ let effectivity_list =
         1.0;
         1.0;
         0.5;
+        1.0;
       ] );
     (* Ice *)
     ( Ice,
@@ -256,6 +260,7 @@ let effectivity_list =
         1.0;
         1.0;
         2.0;
+        1.0;
       ] );
     (* Fighting *)
     ( Fighting,
@@ -276,6 +281,7 @@ let effectivity_list =
         2.0;
         0.5;
         1.0;
+        0.5;
       ] );
     (* Poison *)
     ( Poison,
@@ -296,6 +302,7 @@ let effectivity_list =
         1.0;
         1.0;
         1.0;
+        0.5;
       ] );
     (* Ghost *)
     ( Ghost,
@@ -314,6 +321,7 @@ let effectivity_list =
         1.0;
         1.0;
         0.5;
+        1.0;
         1.0;
         1.0;
       ] );
@@ -336,6 +344,7 @@ let effectivity_list =
         0.0;
         1.0;
         1.0;
+        0.5;
       ] );
     (* Ground *)
     ( Ground,
@@ -356,6 +365,7 @@ let effectivity_list =
         1.0;
         0.5;
         1.0;
+        0.5;
       ] );
     (* Grass *)
     ( Grass,
@@ -374,6 +384,7 @@ let effectivity_list =
         0.5;
         0.5;
         1.0;
+        0.5;
         0.5;
         0.5;
       ] );
@@ -396,6 +407,7 @@ let effectivity_list =
         1.0;
         2.0;
         0.5;
+        2.0;
       ] );
     (* Dark *)
     ( Dark,
@@ -416,10 +428,12 @@ let effectivity_list =
         0.5;
         1.0;
         1.0;
+        0.5;
       ] );
     (* None *)
     ( None,
       [
+        1.0;
         1.0;
         1.0;
         1.0;
@@ -456,6 +470,7 @@ let effectivity_list =
         2.0;
         1.0;
         1.0;
+        0.5;
       ] );
     (* Dragon *)
     ( Dragon,
@@ -476,6 +491,7 @@ let effectivity_list =
         1.0;
         1.0;
         2.0;
+        1.0;
       ] );
   ]
 
@@ -487,6 +503,7 @@ let lava_dmg_calc =
   if rand_res = 1 then 30 else 20
 
 let pokemon_burn a = { a with health = get_health a - lava_dmg_calc }
+let set_health poke new_hp = { poke with health = new_hp }
 let random_float_in_range min max = min +. Random.float (max -. min)
 let random_dmg_modifier = random_float_in_range 0.9 1.1
 
@@ -527,28 +544,33 @@ let rec print_moves (m : moves list) : string =
   | h :: t -> h.name ^ ", " ^ print_moves t
 
 let rec get_valid_input max =
-  let index = read_int () - 1 in
-  if index < 0 || index >= max then begin
+  try
+    let index = read_int () - 1 in
+    if index < 0 || index >= max then begin
+      Printf.printf "Invalid move. Please choose a move between 1 and %d.\n" max;
+      get_valid_input max
+    end
+    else index
+  with Failure _ ->
+    (* Handle the case where read_int() fails to parse an integer *)
     Printf.printf "Invalid move. Please choose a move between 1 and %d.\n" max;
     get_valid_input max
-  end
-  else index
 
 let rec ally_move ally_hp enemy_hp ally enemy =
   if !ally_hp <= 0 then begin
     Printf.printf "%s fainted! Enemy wins.\n" ally.pokemon_name;
-    Loss
+    (Loss, !ally_hp)
   end
   else if !enemy_hp <= 0 then begin
     Printf.printf "%s fainted! Ally wins.\n" enemy.pokemon_name;
-    Win
+    (Win, !ally_hp)
   end
   else begin
     Printf.printf "Ally %s's turn. Choose a move:\n" ally.pokemon_name;
     Printf.printf "Your moves are: %s\n" (print_moves ally.move_list);
     let index = get_valid_input (List.length ally.move_list) in
     (* Printf.printf "You entered: %s\n" (print_moves ally.move_list); *)
-    Printf.printf "You entered: %s\n" (string_of_int index);
+    (*Printf.printf "You entered: %s\n" (string_of_int index);*)
     let move = List.nth ally.move_list index in
     Printf.printf "Ally used %s.\n" move.name;
     let dmg = dmg_done move ally enemy in
@@ -560,11 +582,11 @@ let rec ally_move ally_hp enemy_hp ally enemy =
 and enemy_move ally_hp enemy_hp ally enemy =
   if !enemy_hp <= 0 then begin
     Printf.printf "%s fainted! Ally wins.\n" enemy.pokemon_name;
-    Win
+    (Win, !ally_hp)
   end
   else if !ally_hp <= 0 then begin
     Printf.printf "%s fainted! Enemy wins.\n" ally.pokemon_name;
-    Loss
+    (Loss, !ally_hp)
   end
   else begin
     Printf.printf "Enemy %s's turn.\n" enemy.pokemon_name;
@@ -578,7 +600,7 @@ and enemy_move ally_hp enemy_hp ally enemy =
     ally_move ally_hp enemy_hp ally enemy
   end
 
-let battle (ally : t) (enemy : t) : outcome =
+let battle (ally : t) (enemy : t) : outcome * int =
   let ally_hp = ref (get_health ally) in
   let enemy_hp = ref (get_health enemy) in
   Printf.printf "Battle Start! %s vs %s\n" ally.pokemon_name enemy.pokemon_name;
