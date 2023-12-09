@@ -1,5 +1,112 @@
 open OUnit2
 open Pokemon
+open Experimenting
+
+
+let test_string_of_tile _ = 
+  assert_equal "W" (string_of_tile(Wall));
+  assert_equal "X" (string_of_tile(Grass));
+  assert_equal "." (string_of_tile(Path));
+  assert_equal "!" (string_of_tile(Lava));
+  assert_equal "+" (string_of_tile(FirstAid));
+  assert_equal "." (string_of_tile(Empty))
+
+;;
+
+let test_prob_of _ = 
+  assert_equal 20 (prob_of Grass);
+  assert_equal 40 (prob_of Path);
+  assert_equal 20 (prob_of Lava);
+  assert_equal 20 (prob_of FirstAid);
+  assert_equal 0 (prob_of Wall);
+  assert_equal 0 (prob_of Empty);
+
+;;
+
+let test_name _ = 
+  assert_equal "Charizard" (name Charizard);
+  assert_equal "Squirtle" (name Squirtle);
+  assert_equal "Beedrill" (name Beedrill);
+  assert_equal "Raticate" (name Raticate);
+  assert_equal "Spearow" (name Spearow);
+  assert_equal "Pikachu" (name Pikachu);
+  assert_equal "Nidoran" (name Nidoran);
+  assert_equal "Jigglypuff" (name Jigglypuff);
+  assert_equal "Golbat" (name Golbat);
+  assert_equal "Parasect" (name Parasect);
+  assert_equal "Diglett" (name Diglett);
+  assert_equal "Meowth" (name Meowth);
+  assert_equal "Poliwhirl" (name Poliwhirl);
+  assert_equal "Abra" (name Abra);
+  assert_equal "Geodude" (name Geodude);
+  assert_equal "Mewtwo" (name Mewtwo);
+  assert_equal "Haunter" (name Haunter);
+  assert_equal "Eevee" (name Eevee);
+  assert_equal "Pyroar" (name Pyroar);
+  assert_equal "Oshawott" (name Oshawott);
+
+;;
+let test_pokemon_health_and_heal _ =
+  let original_health_squirtle = get_health (squirtle ()) in
+  assert_equal original_health_squirtle (get_health (squirtle ()));
+  assert_equal (original_health_squirtle + 50) (get_health (pokemon_heal (squirtle ())));
+
+  let original_health_beedrill = get_health (beedrill ()) in
+  assert_equal original_health_beedrill (get_health (beedrill ()));
+  assert_equal (original_health_beedrill + 50) (get_health (pokemon_heal (beedrill ())));
+
+  let original_health_raticate = get_health (raticate ()) in
+  assert_equal original_health_raticate (get_health (raticate ()));
+  assert_equal (original_health_raticate + 50) (get_health (pokemon_heal (raticate ())));
+
+  let original_health_spearow = get_health (spearow ()) in
+  assert_equal original_health_spearow (get_health (spearow ()));
+  assert_equal (original_health_spearow + 50) (get_health (pokemon_heal (spearow ())));
+
+  let original_health_pikachu = get_health (pikachu ()) in
+  assert_equal original_health_pikachu (get_health (pikachu ()));
+  assert_equal (original_health_pikachu + 50) (get_health (pokemon_heal (pikachu ())));
+
+  let original_health_nidoran = get_health (nidoran ()) in
+  assert_equal original_health_nidoran (get_health (nidoran ()));
+  assert_equal (original_health_nidoran + 50) (get_health (pokemon_heal (nidoran ())));
+
+  let original_health_jigglypuff = get_health (jigglypuff ()) in
+  assert_equal original_health_jigglypuff (get_health (jigglypuff ()));
+  assert_equal (original_health_jigglypuff + 50) (get_health (pokemon_heal (jigglypuff ())));
+
+  let original_health_golbat = get_health (golbat ()) in
+  assert_equal original_health_golbat (get_health (golbat ()));
+  assert_equal (original_health_golbat + 50) (get_health (pokemon_heal (golbat ())));
+
+;;
+
+
+let test_initialize_starter_pokemon _ =
+  assert_equal "Pikachu" ((initialize_starter_pokemon "pikachu").pokemon_name);
+  assert_equal "Oshawott" ((initialize_starter_pokemon "oshawott").pokemon_name);
+  assert_equal "Charizard" ((initialize_starter_pokemon "charizard").pokemon_name);
+  assert_equal "Pyroar" ((initialize_starter_pokemon "pyroar").pokemon_name);
+  assert_equal "Eevee" ((initialize_starter_pokemon "eevee").pokemon_name);
+  assert_equal "Haunter" ((initialize_starter_pokemon "haunter").pokemon_name);
+  assert_equal "Mewtwo" ((initialize_starter_pokemon "mewtwo").pokemon_name);
+  assert_equal "Geodude" ((initialize_starter_pokemon "geodude").pokemon_name);
+  assert_equal "Abra" ((initialize_starter_pokemon "abra").pokemon_name);
+  assert_equal "Poliwhirl" ((initialize_starter_pokemon "poliwhirl").pokemon_name);
+  assert_equal "Meowth" ((initialize_starter_pokemon "meowth").pokemon_name);
+  assert_equal "Diglett" ((initialize_starter_pokemon "diglett").pokemon_name);
+  assert_equal "Parasect" ((initialize_starter_pokemon "parasect").pokemon_name);
+  assert_equal "Golbat" ((initialize_starter_pokemon "golbat").pokemon_name);
+  assert_equal "Jigglypuff" ((initialize_starter_pokemon "jigglypuff").pokemon_name);
+  assert_equal "Nidoran" ((initialize_starter_pokemon "nidoran").pokemon_name);
+  assert_equal "Spearow" ((initialize_starter_pokemon "spearow").pokemon_name);
+  assert_equal "Raticate" ((initialize_starter_pokemon "raticate").pokemon_name);
+  assert_equal "Beedrill" ((initialize_starter_pokemon "beedrill").pokemon_name);
+  assert_equal "Squirtle" ((initialize_starter_pokemon "squirtle").pokemon_name);
+  assert_raises (Failure "Invalid Pokemon choice") (fun () -> initialize_starter_pokemon "invalid_name");
+
+;;
+
 
 
 let test_charizard_moves _ =
@@ -219,7 +326,7 @@ let test_spearow_moves _ =
 
 
    assert_equal "Spore" (List.nth moves 0).name;
-   assert_equal Grass (List.nth moves 0).tp;
+   assert_equal (Grass: poke_tp) (List.nth moves 0).tp;
    assert_equal 0 (List.nth moves 0).basep;
    assert_equal "The user scatters bursts of spores that induce sleep" (List.nth moves 0).descr;
 
@@ -231,7 +338,7 @@ let test_spearow_moves _ =
 
 
    assert_equal "Giga Drain" (List.nth moves 2).name;
-   assert_equal Grass (List.nth moves 2).tp;
+   assert_equal (Grass: poke_tp)  (List.nth moves 2).tp;
    assert_equal 75 (List.nth moves 2).basep;
    assert_equal "A nutrient-draining attack" (List.nth moves 2).descr;
 
@@ -359,7 +466,7 @@ let test_abra_moves _ =
 
 
  assert_equal "Energy Ball" (List.nth moves 3).name;
- assert_equal Grass (List.nth moves 3).tp;
+ assert_equal (Grass: poke_tp) (List.nth moves 3).tp;
  assert_equal 90 (List.nth moves 3).basep;
  assert_equal "The user draws power from nature and fires it at the target" (List.nth moves 3).descr;
 ;;
