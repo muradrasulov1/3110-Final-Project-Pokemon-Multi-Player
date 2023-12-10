@@ -1,4 +1,4 @@
-.PHONY: test check
+.PHONY: test check doc opendoc
 
 build:
 	dune build src

@@ -1,3 +1,4 @@
-(library 
+(library
  (name game)
+ (libraries yojson)
  (wrapped false))

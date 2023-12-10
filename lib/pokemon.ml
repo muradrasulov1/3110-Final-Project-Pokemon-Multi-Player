@@ -1,3 +1,5 @@
+open Yojson.Basic
+
 type pokemon =
   | Charizard
   | Squirtle
@@ -134,367 +136,50 @@ let typ_indx = function
 let create_move p n d t de =
   { fighter = p; name = n; tp = d; basep = t; descr = de }
 
-let effectivity_list =
-  [
-    (* Normal *)
-    ( Normal,
-      [
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        0.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-      ] );
-    (* Electric *)
-    ( Electric,
-      [
-        1.0;
-        0.5;
-        1.0;
-        2.0;
-        2.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        0.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-      ] );
-    (* Steel *)
-    ( Steel,
-      [
-        1.0;
-        0.5;
-        0.5;
-        1.0;
-        0.5;
-        2.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-      ] );
-    (* Flying *)
-    ( Flying,
-      [
-        1.0;
-        0.5;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        1.0;
-        1.0;
-        2.0;
-        1.0;
-        2.0;
-      ] );
-    (* Water *)
-    ( Water,
-      [
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        0.5;
-        2.0;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-      ] );
-    (* Ice *)
-    ( Ice,
-      [
-        1.0;
-        1.0;
-        0.5;
-        2.0;
-        0.5;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        2.0;
-        0.5;
-        1.0;
-        1.0;
-        2.0;
-        1.0;
-      ] );
-    (* Fighting *)
-    ( Fighting,
-      [
-        2.0;
-        1.0;
-        2.0;
-        0.5;
-        1.0;
-        2.0;
-        1.0;
-        0.5;
-        0.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        0.5;
-        1.0;
-        0.5;
-      ] );
-    (* Poison *)
-    ( Poison,
-      [
-        1.0;
-        1.0;
-        0.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-        0.5;
-        1.0;
-        0.5;
-        2.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-      ] );
-    (* Ghost *)
-    ( Ghost,
-      [
-        0.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        2.0;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-      ] );
-    (* Psychic *)
-    ( Psychic,
-      [
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        2.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        0.0;
-        1.0;
-        1.0;
-        0.5;
-      ] );
-    (* Ground *)
-    ( Ground,
-      [
-        1.0;
-        2.0;
-        2.0;
-        0.0;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        0.5;
-      ] );
-    (* Grass *)
-    ( Grass,
-      [
-        1.0;
-        1.0;
-        0.5;
-        0.5;
-        2.0;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        2.0;
-        0.5;
-        0.5;
-        1.0;
-        0.5;
-        0.5;
-        0.5;
-      ] );
-    (* Fire *)
-    ( Fire,
-      [
-        1.0;
-        1.0;
-        2.0;
-        1.0;
-        0.5;
-        2.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        0.5;
-        1.0;
-        2.0;
-        0.5;
-        2.0;
-      ] );
-    (* Dark *)
-    ( Dark,
-      [
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        2.0;
-        2.0;
-        1.0;
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        0.5;
-      ] );
-    (* None *)
-    ( None,
-      [
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-      ] );
-    (* Bug *)
-    ( Bug,
-      [
-        1.0;
-        1.0;
-        0.5;
-        0.5;
-        1.0;
-        1.0;
-        0.5;
-        0.5;
-        0.5;
-        2.0;
-        1.0;
-        2.0;
-        0.5;
-        2.0;
-        1.0;
-        1.0;
-        0.5;
-      ] );
-    (* Dragon *)
-    ( Dragon,
-      [
-        1.0;
-        1.0;
-        0.5;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        1.0;
-        2.0;
-        1.0;
-      ] );
-  ]
+let json_filename = "effectivity_list.json"
 
+let read_effectiveness_list () : (poke_tp * float list) list =
+  try
+    let json_data = from_file json_filename in
+    match json_data with
+    | `List entries ->
+        List.map
+          (fun entry ->
+            match entry with
+            | `Assoc [ ("type", `String t); ("values", `List values) ] ->
+                let pokemon_type =
+                  match t with
+                  | "Normal" -> Normal
+                  | "Electric" -> Electric
+                  | "Steel" -> Steel
+                  | "Flying" -> Flying
+                  | "Water" -> Water
+                  | "Ice" -> Ice
+                  | "Fighting" -> Fighting
+                  | "Poison" -> Poison
+                  | "Ghost" -> Ghost
+                  | "Psychic" -> Psychic
+                  | "Ground" -> Ground
+                  | "Grass" -> Grass
+                  | "Fire" -> Fire
+                  | "Dark" -> Dark
+                  | "None" -> None
+                  | "Bug" -> Bug
+                  | "Dragon" -> Dragon
+                  | _ -> failwith "Unknown Pokemon type"
+                in
+                ( pokemon_type,
+                  List.map
+                    (function
+                      | `Float f -> f
+                      | _ -> failwith "Invalid JSON format")
+                    values )
+            | _ -> failwith "Invalid JSON format")
+          entries
+    | _ -> failwith "Invalid JSON format"
+  with _ -> failwith "Error reading JSON file"
+
+let effectivity_list = read_effectiveness_list ()
 let get_health a = a.health
 let pokemon_heal a = { a with health = get_health a + 50 }
 
@@ -544,17 +229,14 @@ let rec print_moves (m : moves list) : string =
   | h :: t -> h.name ^ ", " ^ print_moves t
 
 let rec get_valid_input max =
-  try
-    let index = read_int () - 1 in
-    if index < 0 || index >= max then begin
-      Printf.printf "Invalid move. Please choose a move between 1 and %d.\n" max;
+  match int_of_string_opt (read_line ()) with
+  | Some move when move >= 1 && move <= max -> move - 1
+  | Some _ ->
+      Printf.printf "Invalid move! Please choose a move between 1 and %d.\n" max;
       get_valid_input max
-    end
-    else index
-  with Failure _ ->
-    (* Handle the case where read_int() fails to parse an integer *)
-    Printf.printf "Invalid move. Please choose a move between 1 and %d.\n" max;
-    get_valid_input max
+  | None ->
+      Printf.printf "Invalid move! Please choose a move between 1 and %d.\n" max;
+      get_valid_input max
 
 let rec ally_move ally_hp enemy_hp ally enemy =
   if !ally_hp <= 0 then begin
