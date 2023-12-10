@@ -1,0 +1,9 @@
+running "cloc --by-file --include-lang=OCaml .", initially 2312 lines of code is counted
+
+however, in our "lib" file, we have a _build folder that is created upon running the game, which adds unnecessary lines of code.
+
+When this _build is deleted (as it is not necessary for compilation), the total lines of code are 1878, still meeting the minimum.
+
+Based on what our PG said, we implemented a .json file to utilize data in our code without adding to the LOC.
+
+Considering our Pokemon type implementation however, we couldn't convert all of our data to json within our timeframe.
