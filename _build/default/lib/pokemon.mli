@@ -1,8 +1,45 @@
 (** The Pokemon type and its attributes to be used and displayed *)
-type pokemon
-(** Represents Pokemon type of a sprite *)
+type pokemon =
+  | Charizard
+  | Squirtle
+  | Beedrill
+  | Raticate
+  | Spearow
+  | Pikachu
+  | Nidoran
+  | Jigglypuff
+  | Golbat
+  | Parasect
+  | Diglett
+  | Meowth
+  | Poliwhirl
+  | Abra
+  | Geodude
+  | Mewtwo
+  | Haunter
+  | Eevee
+  | Pyroar
+  | Oshawott  (** Represents Pokemon type of a sprite *)
 
-type poke_tp
+type poke_tp =
+  | Normal
+  | Electric
+  | Steel
+  | Flying
+  | Water
+  | Ice
+  | Fighting
+  | Poison
+  | Ghost
+  | Psychic
+  | Ground
+  | Grass
+  | Fire
+  | Dark
+  | None
+  | Bug
+  | Dragon
+
 (** Represents species of a Pokemon *)
 
 type moves = {
@@ -53,8 +90,12 @@ val pokemon_heal : t -> t
 (** [pokemon_heal a] returns a new Pokemon with increased health. *)
 
 val pokemon_burn : t -> t
+(** [pokemon_burn a] returns a new Pokemon with decreased health. *)
 
-val battle : t -> t -> outcome
+val set_health : t -> int -> t
+(** [set_health poke new_hp] returns a new Pokemon with health set to new_hp. *)
+
+val battle : t -> t -> outcome * int
 (**Conducts battle between two Pokemon*)
 
 val charizard_moves : moves list

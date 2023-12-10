@@ -1,9 +1,9 @@
-# dune build
+# dune build @doc
 # OCAMLPARAM: unset
 # Shared cache: disabled
 # Workspace root: /home/ooa7/cs3110/final
 # Auto-detected concurrency: 8
-$ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_13585d_output
+$ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_d96daf_output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -112,10 +112,3 @@ $ /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /tmp/dune_13585d_outpu
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -intf lib/experimenting.mli) > _build/default/lib/.sprite.objs/sprite__Experimenting.intf.d
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Experimenting.cmi -c -intf lib/experimenting.mli)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I lib/.sprite.objs/byte -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/byte/sprite__Experimenting.cmo -c -impl lib/experimenting.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o lib/sprite.cma lib/.sprite.objs/byte/sprite.cmo lib/.sprite.objs/byte/sprite__Wall.cmo lib/.sprite.objs/byte/sprite__Tile.cmo lib/.sprite.objs/byte/sprite__Pokemon.cmo lib/.sprite.objs/byte/sprite__Player.cmo lib/.sprite.objs/byte/sprite__Map.cmo lib/.sprite.objs/byte/sprite__Lava.cmo lib/.sprite.objs/byte/sprite__Health.cmo lib/.sprite.objs/byte/sprite__Grass.cmo lib/.sprite.objs/byte/sprite__Experimenting.cmo lib/.sprite.objs/byte/sprite__Empty.cmo)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.sprite.objs/byte -I lib/.sprite.objs/native -intf-suffix .ml -no-alias-deps -opaque -open Sprite -o lib/.sprite.objs/native/sprite__Experimenting.cmx -c -impl lib/experimenting.ml)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o lib/sprite.cmxa lib/.sprite.objs/native/sprite.cmx lib/.sprite.objs/native/sprite__Wall.cmx lib/.sprite.objs/native/sprite__Tile.cmx lib/.sprite.objs/native/sprite__Pokemon.cmx lib/.sprite.objs/native/sprite__Player.cmx lib/.sprite.objs/native/sprite__Map.cmx lib/.sprite.objs/native/sprite__Lava.cmx lib/.sprite.objs/native/sprite__Health.cmx lib/.sprite.objs/native/sprite__Grass.cmx lib/.sprite.objs/native/sprite__Experimenting.cmx lib/.sprite.objs/native/sprite__Empty.cmx)
-$ (cd _build/default && /home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I lib -o lib/sprite.cmxs lib/sprite.cmxa)

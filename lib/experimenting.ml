@@ -47,8 +47,9 @@ type game_state = {
   mutable y : int;
   mutable map : tile array array;
   mutable starter_pokemon : string option * Pokemon.t option;
-      (* mutable starter_pokemon : Pokemon.t option; *)
-      (* Option type to represent the possibility of no starter Pokemon *)
+  (* mutable starter_pokemon : Pokemon.t option; *)
+  (* Option type to represent the possibility of no starter Pokemon *)
+  mutable just_moved : bool;
 }
 
 let string_of_tile = function
@@ -155,7 +156,7 @@ let print_list_with_spacing lst =
         print_elements tl
   in
   print_elements lst
-  
+
 let choose_starter_pokemon () =
   print_endline "Welcome to POCaml";
   print_endline "Please choose the Pokemon you want to start as!";
@@ -201,11 +202,16 @@ let initialize_starter_pokemon name =
 let rec game_loop game_state =
   match game_state.starter_pokemon with
   | Some name, Some pokemon -> (
-      if Pokemon.get_health pokemon<=0 then match end_game () with 
-      | () -> game_loop {game_state with starter_pokemon=Some name,
-       Some (Pokemon.set_health pokemon 100)}
-      else
-      print_newline ();
+      if Pokemon.get_health pokemon <= 0 then
+        match end_game () with
+        | () ->
+            game_loop
+              {
+                game_state with
+                starter_pokemon =
+                  (Some name, Some (Pokemon.set_health pokemon 100));
+              }
+      else print_newline ();
       Printf.printf "You chose %s as your starter Pokemon!\n" name;
       print_newline ();
       print_newline ();
@@ -216,44 +222,63 @@ let rec game_loop game_state =
       print_newline ();
       print_game_state game_state;
       (match decide_fate game_state with
-      | "battle" ->
+      | "battle" when game_state.just_moved = true ->
           if Random.int 4 = 1 then
             let new_poke = Pokemon.set_health pokemon (encounter pokemon) in
             game_state.starter_pokemon <-
               (Some pokemon.pokemon_name, Some new_poke)
-          else game_loop game_state
-      | "firstaid" ->
-          print_string "Stay safe fella. Health increased.";
-          print_newline ();
-
+          else ()
+      | "firstaid" when game_state.just_moved = true ->
           let new_poke = Pokemon.pokemon_heal pokemon in
           game_state.starter_pokemon <-
-            (Some pokemon.pokemon_name, Some new_poke)
-      | "lava" ->
-          print_string "You really thought you were cooking? Health reduced.";
-          print_newline ();
-
+            (Some pokemon.pokemon_name, Some new_poke);
+          Printf.printf "Stay safe fella. Health increased to %i."
+            (Pokemon.get_health new_poke);
+          print_newline ()
+      | "lava" when game_state.just_moved = true ->
           let new_poke = Pokemon.pokemon_burn pokemon in
           game_state.starter_pokemon <-
-            (Some pokemon.pokemon_name, Some new_poke)
+            (Some pokemon.pokemon_name, Some new_poke);
+          Printf.printf
+            "You really thought you were cooking? Health reduced to %i."
+            (Pokemon.get_health new_poke);
+          print_newline ()
       | _ -> ());
       (* if decide_fate game_state then encounter pokemon else *)
       print_string "Enter a direction (WASD), or 'q' to quit: ";
       match read_line () with
       | "w" | "W" ->
-          if move_pokemon game_state Up = Valid then game_loop game_state
-          else game_loop game_state
+          if move_pokemon game_state Up = Valid then (
+            game_state.just_moved <- true;
+            game_loop game_state)
+          else (
+            game_state.just_moved <- false;
+            game_loop game_state)
       | "a" | "A" ->
-          if move_pokemon game_state Left = Valid then game_loop game_state
-          else game_loop game_state
+          if move_pokemon game_state Left = Valid then (
+            game_state.just_moved <- true;
+            game_loop game_state)
+          else (
+            game_state.just_moved <- false;
+            game_loop game_state)
       | "s" | "S" ->
-          if move_pokemon game_state Down = Valid then game_loop game_state
-          else game_loop game_state
+          if move_pokemon game_state Down = Valid then (
+            game_state.just_moved <- true;
+            game_loop game_state)
+          else (
+            game_state.just_moved <- false;
+            game_loop game_state)
       | "d" | "D" ->
-          if move_pokemon game_state Right = Valid then game_loop game_state
-          else game_loop game_state
+          if move_pokemon game_state Right = Valid then (
+            game_state.just_moved <- true;
+            game_loop game_state)
+          else (
+            game_state.just_moved <- false;
+            game_loop game_state)
       | "q" | "Q" -> exit 0
-      | _ -> game_loop game_state)
+      | _ ->
+          game_state.just_moved <- false;
+          game_loop game_state)
   | None, None ->
       let starter_pokemon_name = choose_starter_pokemon () in
       let starter_pokemon = initialize_starter_pokemon starter_pokemon_name in
@@ -273,6 +298,7 @@ let () =
       y = init_y;
       map = initialize_map_with_probabilities width height;
       starter_pokemon = (None, None);
+      just_moved = false;
     }
   in
 

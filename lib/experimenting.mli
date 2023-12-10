@@ -32,6 +32,7 @@ type game_state = {
   mutable starter_pokemon : string option * Pokemon.t option;
       (* Comment: Option type to represent the possibility of no starter
          Pokemon *)
+  mutable just_moved : bool;
 }
 (** type representing game state (x,y) as current position of player map as
     current map of tiles being played on starter_pokemon as player's choice of

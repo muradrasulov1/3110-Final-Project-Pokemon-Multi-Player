@@ -32,6 +32,7 @@ type game_state = {
   mutable starter_pokemon : string option * Pokemon.t option;
       (* Comment: Option type to represent the possibility of no starter
          Pokemon *)
+  mutable just_moved : bool;
 }
 (** type representing game state (x,y) as current position of player map as
     current map of tiles being played on starter_pokemon as player's choice of
@@ -59,7 +60,7 @@ val decide_fate : game_state -> string
     tile. If player is standing on a grass tile and a random function evaluates
     to true, returns true. Otherwise, returns false*)
 
-val encounter : Pokemon.t -> unit
+val encounter : Pokemon.t -> int
 (** Conducts battle between two Pokemon*)
 
 val choose_starter_pokemon : unit -> string

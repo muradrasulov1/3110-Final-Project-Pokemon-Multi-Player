@@ -1,15 +1,24 @@
 .PHONY: test check
 
 build:
-	dune build
+	dune build src
 
 code:
 	-dune build
 	code .
 	! dune build --watch
 
-start:
-	OCAMLRUNPARAM=b dune exec lib/my_program
+utop:
+	OCAMLRUNPARAM=b dune utop src
 
 test:
 	OCAMLRUNPARAM=b dune exec test/main.exe
+
+check:
+	@bash check.sh
+
+doc:
+	dune build @doc
+
+opendoc: doc
+	@bash opendoc.sh	
