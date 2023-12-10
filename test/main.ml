@@ -1,3 +1,31 @@
+(*Testing plan:
+
+	Our plan for testing the correctness of our functions and system as a whole consists of 
+  a combination of unit testing and manually testing functionality that is only able to be 
+  analyzed when playing our pokemon game. 
+  We performed glass-box unit testing on all functions in pokemon.ml that have a deterministic 
+  result.This excludes functions such as battle, enemy_move, dmg_done (and any relevant helper
+  functions used in either of these functions), whose result utilized any sort of randomization
+  (using the Random module). We tested each of these functions manually. Additionally, we 
+  performed glass-boxing on all functions in the experimenting.ml file that were able to be 
+  tested in the OUnit test suite that did not require the instantiation of random game suites.
+  In order to manually test functions that required game states or randomness, we utilized specific 
+  seeds of maps in order to compensate for the “randomness” while manually testing the functions 
+  that couldn’t be tested just with OUnit tests. We performed exhaustive testing of our game’s
+  functionality by doing multiple test runs of each pokemon in the game, using each of the 
+  moves, and testing a variety of maps with different Random seeds. 
+  The modules we tested were the Pokemon and Experimenting modules. These were the modules 
+  we used to create the pokemon and run the game state, respectively. As mentioned above, we 
+  used glass-box testing for all functions testable by unit tests. 
+  We ensured the correctness of the functionality of our game state by testing out all possible
+  combinations of interactions of each pokemon, their moves, and each of tile types in our game
+  while also trying to “break our game” and essentially trying to enter incorrect inputs to make
+  sure our game worked how we wanted it to. Since we tested all unit-testable functions with 
+  unit functions, and tested the rest of the (particularly ones that required specific game 
+  states and randomness) manually, we are confident that we have ample validation for the 
+  correctness of our system. 
+
+*)
 open OUnit2
 open Pokemon
 
@@ -85,7 +113,7 @@ let test_pokemon_health_and_heal _ =
         (original_health_golbat + 50)
         (get_health (pokemon_heal (golbat ()))) );
   ]
-
+  
 let test_charizard_moves _ =
   let charizard = charizard () in
   let moves = charizard.move_list in
