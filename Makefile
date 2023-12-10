@@ -1,8 +1,5 @@
 .PHONY: test check doc opendoc
 
-build:
-	dune build src
-
 code:
 	-dune build
 	code .
