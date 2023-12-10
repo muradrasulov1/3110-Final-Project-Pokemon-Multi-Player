@@ -1,3 +1,0 @@
-(executable
- (name execute)
- (libraries graphics yojson))
