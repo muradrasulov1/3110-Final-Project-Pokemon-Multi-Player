@@ -1,0 +1,26 @@
+lib: [
+  "_build/install/default/lib/Game/META"
+  "_build/install/default/lib/Game/dune-package"
+  "_build/install/default/lib/Game/experimenting.cmi"
+  "_build/install/default/lib/Game/experimenting.cmt"
+  "_build/install/default/lib/Game/experimenting.cmti"
+  "_build/install/default/lib/Game/experimenting.cmx"
+  "_build/install/default/lib/Game/experimenting.ml"
+  "_build/install/default/lib/Game/experimenting.mli"
+  "_build/install/default/lib/Game/game.a"
+  "_build/install/default/lib/Game/game.cma"
+  "_build/install/default/lib/Game/game.cmxa"
+  "_build/install/default/lib/Game/opam"
+  "_build/install/default/lib/Game/pokemon.cmi"
+  "_build/install/default/lib/Game/pokemon.cmt"
+  "_build/install/default/lib/Game/pokemon.cmti"
+  "_build/install/default/lib/Game/pokemon.cmx"
+  "_build/install/default/lib/Game/pokemon.ml"
+  "_build/install/default/lib/Game/pokemon.mli"
+]
+libexec: [
+  "_build/install/default/lib/Game/game.cmxs"
+]
+doc: [
+  "_build/install/default/doc/Game/README.md"
+]

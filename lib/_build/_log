@@ -1,0 +1,12 @@
+### Starting build.
+# Target: pokemon.ml.depends, tags: { extension:ml, file:pokemon.ml, ocaml, ocamldep, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules pokemon.ml > pokemon.ml.depends # cached
+# Target: pokemon.mli.depends, tags: { extension:mli, file:pokemon.mli, ocaml, ocamldep, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules pokemon.mli > pokemon.mli.depends # cached
+# Target: pokemon.cmi, tags: { byte, compile, extension:mli, file:pokemon.mli, interf, ocaml, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -c -I /home/ooa7/.opam/cs3110-2023fa/lib/seq -I /home/ooa7/.opam/cs3110-2023fa/lib/yojson -o pokemon.cmi pokemon.mli # cached
+# Target: pokemon.cmx, tags: { compile, extension:cmx, extension:ml, file:pokemon.cmx, file:pokemon.ml, implem, native, ocaml, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -c -I /home/ooa7/.opam/cs3110-2023fa/lib/seq -I /home/ooa7/.opam/cs3110-2023fa/lib/yojson -o pokemon.cmx pokemon.ml # cached
+# Target: pokemon.native, tags: { dont_link_with, extension:native, file:pokemon.native, link, native, ocaml, program, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -I /home/ooa7/.opam/cs3110-2023fa/lib/seq -I /home/ooa7/.opam/cs3110-2023fa/lib/yojson /home/ooa7/.opam/cs3110-2023fa/lib/yojson/yojson.cmxa pokemon.cmx -o pokemon.native # cached
+# Compilation successful.

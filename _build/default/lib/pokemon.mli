@@ -1,3 +1,5 @@
+(**Pokemon module that contains functions used on and by Pokemon.*)
+
 (** The Pokemon type and its attributes to be used and displayed *)
 type pokemon =
   | Charizard
@@ -73,8 +75,6 @@ val name : pokemon -> string
 
 val typ : poke_tp -> string
 (** Returns string representation of Pokemon type*)
-
-(** A list of Pokemon images for information tab*)
 
 val create_move : pokemon -> string -> poke_tp -> int -> string -> moves
 (** Creates a Pokemon move with related information*)

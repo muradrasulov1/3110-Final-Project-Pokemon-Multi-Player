@@ -1,4 +1,4 @@
-(* pokemon_game.mli *)
+(**The main game function that utlizes the Pokemon module.*)
 
 val p_list : string list
 (**List of Pokemon names*)

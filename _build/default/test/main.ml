@@ -450,17 +450,21 @@ let test_meowth_moves _ =
     ( "" >:: fun _ ->
       assert_equal "Bites opponent with viciously sharp fangs"
         (List.nth moves 1).descr );
-    ("" >:: fun _ -> assert_equal "Fury Swipes" (List.nth moves 2).name);
-    ("" >:: fun _ -> assert_equal Normal (List.nth moves 2).tp);
-    ("" >:: fun _ -> assert_equal 18 (List.nth moves 2).basep);
-    ( "" >:: fun _ ->
+    ( "string for Fury Swipes" >:: fun _ ->
+      assert_equal "Fury Swipes" (List.nth moves 2).name );
+    ( "type of Fury Swipes" >:: fun _ ->
+      assert_equal Normal (List.nth moves 2).tp );
+    ( "damage of Fury Swipes" >:: fun _ ->
+      assert_equal 18 (List.nth moves 2).basep );
+    ( "descrp of Fury Swipes" >:: fun _ ->
       assert_equal
         "The target is raked with sharp claws or scythes\n\
-        \   quickly two to five times in a row." (List.nth moves 2).descr );
-    ("" >:: fun _ -> assert_equal "Slash" (List.nth moves 3).name);
-    ("" >:: fun _ -> assert_equal Normal (List.nth moves 3).tp);
-    ("" >:: fun _ -> assert_equal 70 (List.nth moves 3).basep);
-    ( "" >:: fun _ ->
+        \    quickly two to five times in a row." (List.nth moves 2).descr );
+    ( "string for Slash" >:: fun _ ->
+      assert_equal "Slash" (List.nth moves 3).name );
+    ("type of Slash" >:: fun _ -> assert_equal Normal (List.nth moves 3).tp);
+    ("damage of Slash" >:: fun _ -> assert_equal 70 (List.nth moves 3).basep);
+    ( "descrp of Slash" >:: fun _ ->
       assert_equal "The target is attacked with a slash of claws or blades"
         (List.nth moves 3).descr );
   ]
@@ -488,11 +492,12 @@ let test_poliwhirl_moves _ =
     ( "" >:: fun _ ->
       assert_equal
         "The user employs hypnotic suggestion to make the \n\
-        \ target fall into a deep sleep." (List.nth moves 2).descr );
-    ("" >:: fun _ -> assert_equal "Water Gun" (List.nth moves 3).name);
-    ("" >:: fun _ -> assert_equal Water (List.nth moves 3).tp);
-    ("" >:: fun _ -> assert_equal 40 (List.nth moves 3).basep);
-    ( "" >:: fun _ ->
+        \  target fall into a deep sleep." (List.nth moves 2).descr );
+    ( "string for Water Gun" >:: fun _ ->
+      assert_equal "Water Gun" (List.nth moves 3).name );
+    ("type of Water Gun" >:: fun _ -> assert_equal Water (List.nth moves 3).tp);
+    ("damage of Water Gun" >:: fun _ -> assert_equal 40 (List.nth moves 3).basep);
+    ( "descrp of Water Gun" >:: fun _ ->
       assert_equal "The user shoots a stream of water at the target"
         (List.nth moves 3).descr );
   ]
@@ -610,14 +615,17 @@ let test_haunter_moves _ =
     ( "" >:: fun _ ->
       assert_equal
         "The user employs hypnotic suggestion to make \n\
-        \ the target fall into a deep sleep" (List.nth moves 2).descr );
-    ("" >:: fun _ -> assert_equal "Dream Eater" (List.nth moves 3).name);
-    ("" >:: fun _ -> assert_equal Psychic (List.nth moves 3).tp);
-    ("" >:: fun _ -> assert_equal 100 (List.nth moves 3).basep);
-    ( "" >:: fun _ ->
+        \  the target fall into a deep sleep" (List.nth moves 2).descr );
+    ( "string for Dream Eater" >:: fun _ ->
+      assert_equal "Dream Eater" (List.nth moves 3).name );
+    ( "type of Dream Eater" >:: fun _ ->
+      assert_equal Psychic (List.nth moves 3).tp );
+    ( "damage of Dream Eater" >:: fun _ ->
+      assert_equal 100 (List.nth moves 3).basep );
+    ( "descrp of Dream Eater" >:: fun _ ->
       assert_equal
         "Absorbs the dreams of a sleeping target. \n\
-        \ The user's HP is restored by half the damage taken by the target"
+        \  The user's HP is restored by half the damage taken by the target"
         (List.nth moves 3).descr );
   ]
 

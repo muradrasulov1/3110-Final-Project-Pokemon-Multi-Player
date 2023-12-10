@@ -1,0 +1,20 @@
+### Starting build.
+# Target: lib/experimenting.ml.depends, tags: { extension:ml, file:lib/experimenting.ml, ocaml, ocamldep, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules lib/experimenting.ml > lib/experimenting.ml.depends # cached
+# Target: lib/experimenting.mli.depends, tags: { extension:mli, file:lib/experimenting.mli, ocaml, ocamldep, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules lib/experimenting.mli > lib/experimenting.mli.depends # cached
+# Target: lib/pokemon.mli.depends, tags: { extension:mli, file:lib/pokemon.mli, ocaml, ocamldep, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules lib/pokemon.mli > lib/pokemon.mli.depends # cached
+# Target: lib/pokemon.cmi, tags: { byte, compile, extension:mli, file:lib/pokemon.mli, interf, ocaml, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -c -I /home/ooa7/.opam/cs3110-2023fa/lib/seq -I /home/ooa7/.opam/cs3110-2023fa/lib/yojson -I lib -o lib/pokemon.cmi lib/pokemon.mli # cached
+# Target: lib/experimenting.cmi, tags: { byte, compile, extension:mli, file:lib/experimenting.mli, interf, ocaml, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamlc.opt -c -I /home/ooa7/.opam/cs3110-2023fa/lib/seq -I /home/ooa7/.opam/cs3110-2023fa/lib/yojson -I lib -o lib/experimenting.cmi lib/experimenting.mli # cached
+# Target: lib/pokemon.ml.depends, tags: { extension:ml, file:lib/pokemon.ml, ocaml, ocamldep, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamldep.opt -modules lib/pokemon.ml > lib/pokemon.ml.depends # cached
+# Target: lib/pokemon.cmx, tags: { compile, extension:cmx, extension:ml, file:lib/pokemon.cmx, file:lib/pokemon.ml, implem, native, ocaml, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -c -I /home/ooa7/.opam/cs3110-2023fa/lib/seq -I /home/ooa7/.opam/cs3110-2023fa/lib/yojson -I lib -o lib/pokemon.cmx lib/pokemon.ml # cached
+# Target: lib/experimenting.cmx, tags: { compile, extension:cmx, extension:ml, file:lib/experimenting.cmx, file:lib/experimenting.ml, implem, native, ocaml, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -c -I /home/ooa7/.opam/cs3110-2023fa/lib/seq -I /home/ooa7/.opam/cs3110-2023fa/lib/yojson -I lib -o lib/experimenting.cmx lib/experimenting.ml # cached
+# Target: lib/experimenting.native, tags: { dont_link_with, extension:native, file:lib/experimenting.native, link, native, ocaml, program, quiet }
+/home/ooa7/.opam/cs3110-2023fa/bin/ocamlopt.opt -I /home/ooa7/.opam/cs3110-2023fa/lib/seq -I /home/ooa7/.opam/cs3110-2023fa/lib/yojson /home/ooa7/.opam/cs3110-2023fa/lib/yojson/yojson.cmxa -I lib lib/pokemon.cmx lib/experimenting.cmx -o lib/experimenting.native # cached
+# Compilation successful.

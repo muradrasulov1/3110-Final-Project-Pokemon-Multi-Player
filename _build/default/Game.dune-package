@@ -1,0 +1,46 @@
+(lang dune 3.10)
+(name Game)
+(sections (lib .) (libexec .) (doc ../../doc/Game))
+(files
+ (lib
+  (META
+   dune-package
+   experimenting.cmi
+   experimenting.cmt
+   experimenting.cmti
+   experimenting.cmx
+   experimenting.ml
+   experimenting.mli
+   game.a
+   game.cma
+   game.cmxa
+   opam
+   pokemon.cmi
+   pokemon.cmt
+   pokemon.cmti
+   pokemon.cmx
+   pokemon.ml
+   pokemon.mli))
+ (libexec (game.cmxs))
+ (doc (README.md)))
+(library
+ (name Game)
+ (kind normal)
+ (archives (byte game.cma) (native game.cmxa))
+ (plugins (byte game.cma) (native game.cmxs))
+ (native_archives game.a)
+ (requires yojson)
+ (modes byte native)
+ (modules
+  (unwrapped
+   (module
+    (obj_name experimenting)
+    (visibility public)
+    (source
+     (path Experimenting)
+     (intf (path experimenting.mli))
+     (impl (path experimenting.ml))))
+   (module
+    (obj_name pokemon)
+    (visibility public)
+    (source (path Pokemon) (intf (path pokemon.mli)) (impl (path pokemon.ml)))))))

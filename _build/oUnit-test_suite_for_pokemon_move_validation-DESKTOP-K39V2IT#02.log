@@ -1,0 +1,255 @@
+2023-12-10T17:19:34+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:1:type of Flamethrower.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:1:type of Flamethrower is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:1:type of Flamethrower.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:6:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:6: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:6:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:10:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:10: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:10:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:13:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:13: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:13:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:20:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:20: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:20:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:24:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:24: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:24:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:28:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:28: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:28:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:32:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:32: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:32:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:38:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:38: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:38:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:41:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:41: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:41:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:44:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:44: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:44:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:49:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:49: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:49:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:51:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:51: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:51:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:55:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:55: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:55:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:60:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:60: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:60:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:64:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:64: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:64:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:68:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:68: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:68:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:72:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:72: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:72:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:76:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:76: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:76:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:80:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:80: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:80:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:85:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:85: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:85:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:89:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:89: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:89:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:93:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:93: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:93:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:97:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:97: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:97:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:101:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:101: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:101:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:104:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:104: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:104:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:110:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:110: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:110:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:113:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:113: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:113:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:118:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:118: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:118:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:122:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:122: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:122:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:126:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:126: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:126:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:129:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:129: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:129:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:133:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:133: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:133:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:137:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:137: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:137:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:141:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:141: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:141:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:146:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:146: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:146:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:150:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:150: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:150:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:154:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:154: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:154:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:159:descrp of Fury Swipes.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:159:descrp of Fury Swipes is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:159:descrp of Fury Swipes.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:163:descrp of Slash.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:163:descrp of Slash is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:163:descrp of Slash.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:167:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:167: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:167:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:172:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:172: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:172:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:176:string for Water Gun.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:176:string for Water Gun is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:176:string for Water Gun.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:180:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:180: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:180:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:184:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:184: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:184:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:189:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:189: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:189:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:193:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:193: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:193:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:197:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:197: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:197:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:202:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:202: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:202:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:206:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:206: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:206:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:210:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:210: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:210:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:215:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:215: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:215:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:218:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:218: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:218:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:221:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:221: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:221:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:225:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:225: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:225:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:229:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:229: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:229:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:233:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:233: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:233:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:237:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:237: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:237:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:238:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:238: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:238:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:242:damage of Dream Eater.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:242:damage of Dream Eater is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:242:damage of Dream Eater.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:246:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:246: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:246:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:250:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:250: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:250:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:254:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:254: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:254:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:257:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:257: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:257:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:259:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:259: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:259:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:263:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:263: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:263:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:268:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:268: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:268:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:272:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:272: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:272:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:276:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:276: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:276:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:280:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:280: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:280:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:284:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:284: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:284:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:289:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:289: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:289:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:293:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:293: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:293:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:298:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:298: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:298:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:303:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:303: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:303:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:306:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:306: is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:306:.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:309:beedrill name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:309:beedrill name is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:309:beedrill name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:312:spearow name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:312:spearow name is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:312:spearow name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:316:golbat name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:316:golbat name is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:316:golbat name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:320:poliwhirl name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:320:poliwhirl name is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:320:poliwhirl name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:323:mewtwo name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:323:mewtwo name is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:323:mewtwo name.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:328:original health-squirtle.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:328:original health-squirtle is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:328:original health-squirtle.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:335:updated health-spearow.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:335:updated health-spearow is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:335:updated health-spearow.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:337:updated health-pikachu.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:337:updated health-pikachu is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:337:updated health-pikachu.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Start test test_suite_for_pokemon_move_validation:341:updated health-jigglypuff.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: Test test_suite_for_pokemon_move_validation:341:updated health-jigglypuff is successful.
+2023-12-10T17:19:35+00:00 DESKTOP-K39V2IT#02 I: End test test_suite_for_pokemon_move_validation:341:updated health-jigglypuff.
