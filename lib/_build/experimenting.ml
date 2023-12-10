@@ -54,10 +54,10 @@ type game_state = {
 
 let string_of_tile = function
   | Wall -> "W"
-  | Grass -> "⚔️"
+  | Grass -> "X"
   | Path -> "."
-  | Lava -> "🔥"
-  | FirstAid -> "💖"
+  | Lava -> "!"
+  | FirstAid -> "+"
   | Empty -> "."
 
 let print_game_state game =
@@ -131,9 +131,9 @@ let rec end_game () =
 let decide_fate g =
   let x, y = (g.x, g.y) in
   match string_of_tile g.map.(x).(y) with
-  | "⚔️" -> "battle"
-  | "💖" -> "firstaid"
-  | "🔥" -> "lava"
+  | "X" -> "battle"
+  | "+" -> "firstaid"
+  | "!" -> "lava"
   | _ -> "no tile event"
 
 let encounter poke : int =
