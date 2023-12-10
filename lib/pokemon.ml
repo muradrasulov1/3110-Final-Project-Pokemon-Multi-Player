@@ -177,7 +177,7 @@ let read_effectiveness_list () : (poke_tp * float list) list =
             | _ -> failwith "Invalid JSON format")
           entries
     | _ -> failwith "Invalid JSON format"
-  with _ -> failwith "Error reading JSON file"
+  with _ -> []
 
 let effectivity_list = read_effectiveness_list ()
 let get_health a = a.health
