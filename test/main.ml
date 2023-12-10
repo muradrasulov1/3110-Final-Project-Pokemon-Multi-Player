@@ -1,19 +1,5 @@
 open OUnit2
 open Pokemon
-(*open Experimenting
-
-  let test_string_of_tile _ = assert_equal "W" (string_of_tile(Wall));
-  assert_equal "X" (string_of_tile(Grass)); assert_equal "."
-  (string_of_tile(Path)); assert_equal "!" (string_of_tile(Lava)); assert_equal
-  "+" (string_of_tile(FirstAid)); assert_equal "." (string_of_tile(Empty))
-
-  ;;
-
-  let test_prob_of _ = assert_equal 20 (prob_of Grass); assert_equal 40 (prob_of
-  Path); assert_equal 20 (prob_of Lava); assert_equal 20 (prob_of FirstAid);
-  assert_equal 0 (prob_of Wall); assert_equal 0 (prob_of Empty);
-
-  ;;*)
 
 let test_name _ =
   [
@@ -99,32 +85,6 @@ let test_pokemon_health_and_heal _ =
         (original_health_golbat + 50)
         (get_health (pokemon_heal (golbat ()))) );
   ]
-
-(*let test_initialize_starter_pokemon _ = assert_equal "Pikachu"
-  ((initialize_starter_pokemon "pikachu").pokemon_name); assert_equal "Oshawott"
-  ((initialize_starter_pokemon "oshawott").pokemon_name); assert_equal
-  "Charizard" ((initialize_starter_pokemon "charizard").pokemon_name);
-  assert_equal "Pyroar" ((initialize_starter_pokemon "pyroar").pokemon_name);
-  assert_equal "Eevee" ((initialize_starter_pokemon "eevee").pokemon_name);
-  assert_equal "Haunter" ((initialize_starter_pokemon "haunter").pokemon_name);
-  assert_equal "Mewtwo" ((initialize_starter_pokemon "mewtwo").pokemon_name);
-  assert_equal "Geodude" ((initialize_starter_pokemon "geodude").pokemon_name);
-  assert_equal "Abra" ((initialize_starter_pokemon "abra").pokemon_name);
-  assert_equal "Poliwhirl" ((initialize_starter_pokemon
-  "poliwhirl").pokemon_name); assert_equal "Meowth" ((initialize_starter_pokemon
-  "meowth").pokemon_name); assert_equal "Diglett" ((initialize_starter_pokemon
-  "diglett").pokemon_name); assert_equal "Parasect" ((initialize_starter_pokemon
-  "parasect").pokemon_name); assert_equal "Golbat" ((initialize_starter_pokemon
-  "golbat").pokemon_name); assert_equal "Jigglypuff"
-  ((initialize_starter_pokemon "jigglypuff").pokemon_name); assert_equal
-  "Nidoran" ((initialize_starter_pokemon "nidoran").pokemon_name); assert_equal
-  "Spearow" ((initialize_starter_pokemon "spearow").pokemon_name); assert_equal
-  "Raticate" ((initialize_starter_pokemon "raticate").pokemon_name);
-  assert_equal "Beedrill" ((initialize_starter_pokemon
-  "beedrill").pokemon_name); assert_equal "Squirtle"
-  ((initialize_starter_pokemon "squirtle").pokemon_name); assert_raises (Failure
-  "Invalid Pokemon choice") (fun () -> initialize_starter_pokemon
-  "invalid_name");*)
 
 let test_charizard_moves _ =
   let charizard = charizard () in
