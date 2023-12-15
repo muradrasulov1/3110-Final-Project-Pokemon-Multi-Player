@@ -1,33 +1,59 @@
-(*Testing plan:
-
-	Our plan for testing the correctness of our functions and system as a whole consists of 
-  a combination of unit testing and manually testing functionality that is only able to be 
-  analyzed when playing our pokemon game. 
-  We performed glass-box unit testing on all functions in pokemon.ml that have a deterministic 
-  result.This excludes functions such as battle, enemy_move, dmg_done (and any relevant helper
-  functions used in either of these functions), whose result utilized any sort of randomization
-  (using the Random module). We tested each of these functions manually. Additionally, we 
-  performed glass-boxing on all functions in the experimenting.ml file that were able to be 
-  tested in the OUnit test suite that did not require the instantiation of random game suites.
-  In order to manually test functions that required game states or randomness, we utilized specific 
-  seeds of maps in order to compensate for the “randomness” while manually testing the functions 
-  that couldn’t be tested just with OUnit tests. We performed exhaustive testing of our game’s
-  functionality by doing multiple test runs of each pokemon in the game, using each of the 
-  moves, and testing a variety of maps with different Random seeds. 
-  The modules we tested were the Pokemon and Experimenting modules. These were the modules 
-  we used to create the pokemon and run the game state, respectively. As mentioned above, we 
-  used glass-box testing for all functions testable by unit tests. 
-  We ensured the correctness of the functionality of our game state by testing out all possible
-  combinations of interactions of each pokemon, their moves, and each of tile types in our game
-  while also trying to “break our game” and essentially trying to enter incorrect inputs to make
-  sure our game worked how we wanted it to. Since we tested all unit-testable functions with 
-  unit functions, and tested the rest of the (particularly ones that required specific game 
-  states and randomness) manually, we are confident that we have ample validation for the 
-  correctness of our system. 
-
-*)
 open OUnit2
 open Pokemon
+open Experimenting
+
+(*Testing plan:
+
+  Our plan for testing the correctness of our functions and system as a whole
+  consists of a combination of unit testing and manually testing functionality
+  that is only able to be analyzed when playing our pokemon game. We performed
+  glass-box unit testing on all functions in pokemon.ml that have a
+  deterministic result.This excludes functions such as battle, enemy_move,
+  dmg_done (and any relevant helper functions used in either of these
+  functions), whose result utilized any sort of randomization (using the Random
+  module). We tested each of these functions manually. Additionally, we
+  performed glass-boxing on all functions in the experimenting.ml file that were
+  able to be tested in the OUnit test suite that did not require the
+  instantiation of random game suites. In order to manually test functions that
+  required game states or randomness, we utilized specific seeds of maps in
+  order to compensate for the “randomness” while manually testing the functions
+  that couldn’t be tested just with OUnit tests. We performed exhaustive testing
+  of our game’s functionality by doing multiple test runs of each pokemon in the
+  game, using each of the moves, and testing a variety of maps with different
+  Random seeds. The modules we tested were the Pokemon and Experimenting
+  modules. These were the modules we used to create the pokemon and run the game
+  state, respectively. As mentioned above, we used glass-box testing for all
+  functions testable by unit tests. We ensured the correctness of the
+  functionality of our game state by testing out all possible combinations of
+  interactions of each pokemon, their moves, and each of tile types in our game
+  while also trying to “break our game” and essentially trying to enter
+  incorrect inputs to make sure our game worked how we wanted it to. There was
+  no need for the testing of game.ml, since that file solely consisted of
+  running an Experimenting-defined game starter function. Since we tested all
+  unit-testable functions with unit functions, and tested the rest of the
+  (particularly ones that required specific game states and randomness)
+  manually, we are confident that we have ample validation for the correctness
+  of our system. *)
+
+let test_string_of_tile _ =
+  [
+    ("Wall tile" >:: fun _ -> assert_equal "W" (string_of_tile Wall));
+    ("Grass tile" >:: fun _ -> assert_equal "X" (string_of_tile Grass));
+    ("Path tile" >:: fun _ -> assert_equal "." (string_of_tile Path));
+    ("Lava tile" >:: fun _ -> assert_equal "!" (string_of_tile Lava));
+    ("FirstAid tile" >:: fun _ -> assert_equal "+" (string_of_tile FirstAid));
+    ("Empty tile" >:: fun _ -> assert_equal "." (string_of_tile Empty));
+  ]
+
+let test_prob_of _ =
+  [
+    ("Grass probability" >:: fun _ -> assert_equal 20 (prob_of Grass));
+    ("Path probability" >:: fun _ -> assert_equal 40 (prob_of Path));
+    ("Lava probability" >:: fun _ -> assert_equal 20 (prob_of Lava));
+    ("FirstAid probability" >:: fun _ -> assert_equal 20 (prob_of FirstAid));
+    ("Wall probability" >:: fun _ -> assert_equal 0 (prob_of Wall));
+    ("Empty probability" >:: fun _ -> assert_equal 0 (prob_of Empty));
+  ]
 
 let test_name _ =
   [
@@ -113,7 +139,72 @@ let test_pokemon_health_and_heal _ =
         (original_health_golbat + 50)
         (get_health (pokemon_heal (golbat ()))) );
   ]
-  
+
+let test_initialize_starter_pokemon _ =
+  [
+    ( "Pikachu initialization" >:: fun _ ->
+      assert_equal "Pikachu" (initialize_starter_pokemon "pikachu").pokemon_name
+    );
+    ( "Oshawott initialization" >:: fun _ ->
+      assert_equal "Oshawott"
+        (initialize_starter_pokemon "oshawott").pokemon_name );
+    ( "Charizard initialization" >:: fun _ ->
+      assert_equal "Charizard"
+        (initialize_starter_pokemon "charizard").pokemon_name );
+    ( "Pyroar initialization" >:: fun _ ->
+      assert_equal "Pyroar" (initialize_starter_pokemon "pyroar").pokemon_name
+    );
+    ( "Eevee initialization" >:: fun _ ->
+      assert_equal "Eevee" (initialize_starter_pokemon "eevee").pokemon_name );
+    ( "Haunter initialization" >:: fun _ ->
+      assert_equal "Haunter" (initialize_starter_pokemon "haunter").pokemon_name
+    );
+    ( "Mewtwo initialization" >:: fun _ ->
+      assert_equal "Mewtwo" (initialize_starter_pokemon "mewtwo").pokemon_name
+    );
+    ( "Geodude initialization" >:: fun _ ->
+      assert_equal "Geodude" (initialize_starter_pokemon "geodude").pokemon_name
+    );
+    ( "Abra initialization" >:: fun _ ->
+      assert_equal "Abra" (initialize_starter_pokemon "abra").pokemon_name );
+    ( "Poliwhirl initialization" >:: fun _ ->
+      assert_equal "Poliwhirl"
+        (initialize_starter_pokemon "poliwhirl").pokemon_name );
+    ( "Meowth initialization" >:: fun _ ->
+      assert_equal "Meowth" (initialize_starter_pokemon "meowth").pokemon_name
+    );
+    ( "Diglett initialization" >:: fun _ ->
+      assert_equal "Diglett" (initialize_starter_pokemon "diglett").pokemon_name
+    );
+    ( "Parasect initialization" >:: fun _ ->
+      assert_equal "Parasect"
+        (initialize_starter_pokemon "parasect").pokemon_name );
+    ( "Golbat initialization" >:: fun _ ->
+      assert_equal "Golbat" (initialize_starter_pokemon "golbat").pokemon_name
+    );
+    ( "Jigglypuff initialization" >:: fun _ ->
+      assert_equal "Jigglypuff"
+        (initialize_starter_pokemon "jigglypuff").pokemon_name );
+    ( "Nidoran initialization" >:: fun _ ->
+      assert_equal "Nidoran" (initialize_starter_pokemon "nidoran").pokemon_name
+    );
+    ( "Spearow initialization" >:: fun _ ->
+      assert_equal "Spearow" (initialize_starter_pokemon "spearow").pokemon_name
+    );
+    ( "Raticate initialization" >:: fun _ ->
+      assert_equal "Raticate"
+        (initialize_starter_pokemon "raticate").pokemon_name );
+    ( "Beedrill initialization" >:: fun _ ->
+      assert_equal "Beedrill"
+        (initialize_starter_pokemon "beedrill").pokemon_name );
+    ( "Squirtle initialization" >:: fun _ ->
+      assert_equal "Squirtle"
+        (initialize_starter_pokemon "squirtle").pokemon_name );
+    ( "Invalid Pokemon choice" >:: fun _ ->
+      assert_raises (Failure "Invalid Pokemon choice") (fun () ->
+          initialize_starter_pokemon "invalid_name") );
+  ]
+
 let test_charizard_moves _ =
   let charizard = charizard () in
   let moves = charizard.move_list in
@@ -741,6 +832,9 @@ let suite =
            test_golbat_moves ();
            test_name ();
            test_pokemon_health_and_heal ();
+           test_string_of_tile ();
+           test_prob_of ();
+           test_initialize_starter_pokemon ();
          ]
 
 let _ = run_test_tt_main suite

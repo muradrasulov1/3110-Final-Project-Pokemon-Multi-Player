@@ -70,5 +70,9 @@ val choose_starter_pokemon : unit -> string
 val initialize_starter_pokemon : string -> Pokemon.t
 (** Initializes player choice of Pokemon as their avatar*)
 
+val start_game : unit -> unit
+(** Initializes and starts the game, setting up the initial game state and
+    entering the game loop. *)
+
 val game_loop : game_state -> unit
 (** Keeps game running until the player selects 'quit' command*)

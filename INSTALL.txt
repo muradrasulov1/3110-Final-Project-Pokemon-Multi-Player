@@ -17,9 +17,9 @@ and, once there, do
 
 5) 'ocamlbuild -pkg yojson pokemon.native'
 
-6) 'ocamlbuild -pkg yojson experimenting.native'
+6) 'ocamlbuild -pkg yojson game.native'
 
-7) './experimenting.native'
+7) 'game.native'
 
 8) Congrats! You are now in the game!
 

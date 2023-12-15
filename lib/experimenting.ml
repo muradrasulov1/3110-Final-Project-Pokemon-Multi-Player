@@ -47,6 +47,7 @@ type game_state = {
   mutable y : int;
   mutable map : tile array array;
   mutable starter_pokemon : string option * Pokemon.t option;
+  (* mutable starter_pokemon : Pokemon.t option; *)
   (* Option type to represent the possibility of no starter Pokemon *)
   mutable just_moved : bool;
 }
@@ -286,7 +287,7 @@ let rec game_loop game_state =
       game_loop game_state
   | _ -> failwith "Not_found"
 
-let () =
+let start_game () =
   let width = 20 in
   let height = 6 in
   let init_x = width / 2 in
